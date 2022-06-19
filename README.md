@@ -11,3 +11,7 @@
 ## Belarus OSM `name`, `name:be`, `name:ru` tags statistic per category
 
 [belarus-osm-name-statistic.ipynb](belarus-osm-name-statistic.md)
+
+## Belarus OSM full language tag statistic per category
+
+[index.html](https://tbicr.github.io/osm-name-migrate/)
