@@ -63,7 +63,6 @@ CATEGORIES_RULES = {
     'suburb': [
         ['landuse', 'commercial'],
         ['landuse', 'construction'],
-        ['landuse', 'education'],
         ['landuse', 'industrial'],
         ['landuse', 'residential'],
         ['landuse', 'retail'],
@@ -105,17 +104,65 @@ CATEGORIES_RULES = {
         ['man_made', None],
         ['embankment', None],
     ],
+    'religion': [
+        ['religion', None],
+        ['amenity', 'place_of_worship'],
+        ['amenity', 'monastery'],
+        ['building', 'church'],
+        ['building', 'cathedral'],
+        ['building', 'chapel'],
+    ],
+    'education': [
+        ['landuse', 'education'],
+        ['amenity', 'university'],
+        ['amenity', 'college'],
+        ['amenity', 'school'],
+        ['amenity', 'kindergarten'],
+        ['building', 'university'],
+        ['building', 'college'],
+        ['building', 'school'],
+        ['building', 'kindergarten'],
+    ],
+    'healthcare': [
+        ['healthcare', None],
+        ['amenity', 'hospital'],
+        ['amenity', 'pharmacy'],
+        ['amenity', 'clinic'],
+        ['amenity', 'doctors'],
+        ['amenity', 'dentist'],
+        ['building', 'hospital'],
+        ['building', 'clinic'],
+    ],
+    'government': [
+        ['amenity', 'post_office'],
+        ['amenity', 'police'],
+        ['amenity', 'library'],
+        ['office', 'government'],
+        ['government', None],
+        ['landuse', 'military'],
+        ['military', None],
+    ],
+    'office': [
+        ['office', None],
+    ],
+    'tourism': [
+        ['tourism', None],
+        ['historic', None],
+        ['memorial', None],
+        ['ruins', None],
+        ['information', None],
+        ['attraction', None],
+        ['resort', None],
+        ['artwork_type', None],
+    ],
     'amenity': [
         ['amenity', 'cafe'],
         ['amenity', 'atm'],
-        ['amenity', 'pharmacy'],
         ['amenity', 'bank'],
         ['amenity', 'fast_food'],
         ['amenity', 'fuel'],
         ['amenity', 'community_centre'],
         ['amenity', 'restaurant'],
-        ['amenity', 'clinic'],
-        ['amenity', 'doctors'],
         ['amenity', 'bar'],
         ['amenity', None],
         ['shop', 'convenience'],
@@ -147,47 +194,16 @@ CATEGORIES_RULES = {
         ['craft', 'shoemaker'],
         ['clothes', None],
     ],
-    'government': [
-        ['amenity', 'place_of_worship'],
-        ['amenity', 'school'],
-        ['amenity', 'kindergarten'],
-        ['amenity', 'post_office'],
-        ['amenity', 'hospital'],
-        ['amenity', 'police'],
-        ['amenity', 'library'],
-        ['healthcare', None],
-        ['office', 'government'],
-        ['government', None],
-        ['landuse', 'military'],
-        ['military', None],
-    ],
-    'office': [
-        ['office', None],
-    ],
     'building': [
         ['building', 'industrial'],
         ['building', 'service'],
         ['building', 'retail'],
-        ['building', 'school'],
-        ['building', 'kindergarten'],
         ['building', 'commercial'],
-        ['building', 'church'],
         ['building', 'warehouse'],
         ['building', 'public'],
         ['building', 'dormitory'],
-        ['building', 'hospital'],
         ['building', 'warehouse'],
         ['building', None],
-    ],
-    'tourism': [
-        ['tourism', None],
-        ['historic', None],
-        ['memorial', None],
-        ['ruins', None],
-        ['information', None],
-        ['attraction', None],
-        ['resort', None],
-        ['artwork_type', None],
     ],
     'water': [
         ['waterway', 'drain'],
@@ -287,8 +303,10 @@ for category, group in CATEGORIES_RULES2.items():
                 category_condition = condition
         elif vv and not eq:
             tag = f'{k} = *'
-            condition = f'["{k}"]' + ''.join(f'["{k}"!="{v}"]' for v in vv)
-            category_condition = f'["{k}"]' + ''.join(f'["{k}"!="{v}"]' for v in vv if v not in tag_star_values[k])
+            condition = f'["{k}"]' + ''.join(
+                f'["{k}"!="{v}"]' for v in sorted(vv))
+            category_condition = f'["{k}"]' + ''.join(
+                f'["{k}"!="{v}"]' for v in sorted(vv) if v not in tag_star_values[k])
         elif not eq:
             tag = f'{k} = *'
             condition = f'["{k}"]'
