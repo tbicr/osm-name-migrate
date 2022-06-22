@@ -323,7 +323,7 @@ def run_psql(command):
 
 
 print('load dump to postgis')
-os.system('wget --backups=1 -N -q https://download.geofabrik.de/europe/belarus-latest.osm.pbf')
+os.system('wget --backups=1 -N -nv https://download.geofabrik.de/europe/belarus-latest.osm.pbf')
 run_psql('CREATE EXTENSION IF NOT EXISTS hstore')
 run_psql('CREATE EXTENSION IF NOT EXISTS postgis')
 run_psql('DROP MATERIALIZED VIEW IF EXISTS planet_osm_region CASCADE')
@@ -392,7 +392,8 @@ def precalculate_field_data(lang_tag):
 
 def get_stat_query(lang_tag, data_table):
     query_template = """
-        SELECT osm_type,
+        SELECT DISTINCT
+               osm_type,
                osm_id,
               '{category}' AS category,
                {num} AS num,
