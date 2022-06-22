@@ -10,7 +10,7 @@ import shapely.wkt
 import shapely.strtree
 from jinja2 import Template
 
-from belarus_utils import PostgisSearchReadEngine, OverpassApiSearchEnigne
+from belarus_utils import PostgisSearchReadEngine, OverpassApiSearchEnigne, CYRILIC_REGEXP
 
 POSTGRES_HOST = os.environ['POSTGRES_HOST']
 POSTGRES_PORT = os.environ.get('POSTGRES_PORT', 5432)
@@ -28,10 +28,6 @@ FLOAT_FORMAT = '{:.3f}'.format
 TABLE_ATTRS = 'class="table table-sm table-hover caption-top"'
 pd.set_option('display.max_rows', None)
 pd.set_option('display.float_format', FLOAT_FORMAT)
-
-
-CYRILIC_CHARS = frozenset('абвгдеёжзіийклмнопрстуўфхцчшщьыъэюяАБВГДЕЁЖЗІИІЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ')
-CYRILIC_REGEXP = '(' + '|'.join(CYRILIC_CHARS) + ')'
 
 # define rules
 CATEGORIES_RULES = {
@@ -94,12 +90,10 @@ CATEGORIES_RULES = {
         ['route_master', None],
     ],
     'infrastructure': [
-        ['tunnel', None],
         ['barrier', None],
         ['power', None],
         ['bridge', None],
         ['substation', None],
-        ['emergency', None],
         ['ele', None],
         ['man_made', None],
         ['embankment', None],
@@ -124,6 +118,7 @@ CATEGORIES_RULES = {
         ['building', 'kindergarten'],
     ],
     'healthcare': [
+        ['emergency', None],
         ['healthcare', None],
         ['amenity', 'hospital'],
         ['amenity', 'pharmacy'],
@@ -206,6 +201,7 @@ CATEGORIES_RULES = {
         ['building', None],
     ],
     'water': [
+        ['tunnel', None],
         ['waterway', 'drain'],
         ['waterway', 'ditch'],
         ['waterway', 'stream'],
@@ -486,12 +482,12 @@ def get_overpass_link(lang_tag, category, tag, column):
     if column == 'be=ru':
         parts = [(
             f'{base}["{lang_tag}:be"]["{lang_tag}:ru"]{part}(area.b)'
-            f'(if: t["{lang_tag}"] = t["{lang_tag}:be"] && t["{lang_tag}"] = t["{lang_tag}:ru"]);'
+            f'(if: t["{lang_tag}"] == t["{lang_tag}:be"] && t["{lang_tag}"] == t["{lang_tag}:ru"]);'
         ) for part in parts]
     elif column == 'be+ru':
         parts = [(
             f'{base}["{lang_tag}:be"]["{lang_tag}:ru"]{part}(area.b)'
-            f'(if: t["{lang_tag}"] = t["{lang_tag}:be"] && t["{lang_tag}"] != t["{lang_tag}:ru"]);'
+            f'(if: t["{lang_tag}"] == t["{lang_tag}:be"] && t["{lang_tag}"] != t["{lang_tag}:ru"]);'
         ) for part in parts]
     elif column == 'be+ru':
         parts = [(
@@ -501,12 +497,12 @@ def get_overpass_link(lang_tag, category, tag, column):
     elif column == 'be':
         parts = [(
             f'{base}["{lang_tag}:be"][!"{lang_tag}:ru"]{part}(area.b)'
-            f'(if: t["{lang_tag}"] = t["{lang_tag}:be"]);'
+            f'(if: t["{lang_tag}"] == t["{lang_tag}:be"]);'
         ) for part in parts]
     elif column == 'ru':
         parts = [(
             f'{base}[!"{lang_tag}:be"]["{lang_tag}:ru"]{part}(area.b)'
-            f'(if: t["{lang_tag}"] = t["{lang_tag}:ru"]);'
+            f'(if: t["{lang_tag}"] == t["{lang_tag}:ru"]);'
         ) for part in parts]
     elif column == 'other_both':
         parts = [(

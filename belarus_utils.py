@@ -18,6 +18,10 @@ import shapely.validation
 import shapely.wkt
 
 
+CYRILIC_CHARS = frozenset('абвгдеёжзіийклмнопрстуўфхцчшщьыъэюяАБВГДЕЁЖЗІИІЙКЛМНОПРСТУФХЦЧШЩЬЫЪЭЮЯ')
+CYRILIC_REGEXP = '(' + '|'.join(CYRILIC_CHARS) + ')'
+
+
 def _split_chunks(items: Sequence, max_chunk_size: int):
     for i in range(0, len(items), max_chunk_size):
         yield items[i:i + max_chunk_size]

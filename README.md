@@ -15,3 +15,7 @@
 ## Belarus OSM full language tag statistic per category
 
 [index.html](https://tbicr.github.io/osm-name-migrate/)
+
+To create report run:
+
+    docker-compose run --rm management python belarus_report.py
