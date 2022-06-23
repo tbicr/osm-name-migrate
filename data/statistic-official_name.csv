@@ -33,10 +33,10 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,highway = motorway,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,highway = trunk,202,98,98,0.485,0.485,7,2,2,0.286,0.286
 ,highway = primary,1981,112,107,0.057,0.054,76,3,3,0.039,0.039
-,highway = secondary,1453,101,77,0.070,0.053,149,13,8,0.087,0.054
-,highway = tertiary,16872,180,150,0.011,0.009,4401,32,25,0.007,0.006
-,highway = unclassified,465,11,6,0.024,0.013,270,4,2,0.015,0.007
-,highway = residential,384,1,1,0.003,0.003,274,1,1,0.004,0.004
+,highway = secondary,1452,101,77,0.070,0.053,149,13,8,0.087,0.054
+,highway = tertiary,16868,180,150,0.011,0.009,4400,32,25,0.007,0.006
+,highway = unclassified,469,11,6,0.023,0.013,271,4,2,0.015,0.007
+,highway = residential,385,1,1,0.003,0.003,275,1,1,0.004,0.004
 ,highway = service,45,2,2,0.044,0.044,34,1,1,0.029,0.029
 ,highway = track,90,0,0,0.000,0.000,74,0,0,0.000,0.000
 ,type = associatedStreet,3,3,3,1.000,1.000,3,3,3,1.000,1.000
