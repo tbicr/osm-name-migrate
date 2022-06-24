@@ -28,18 +28,16 @@ def _split_chunks(items: Sequence, max_chunk_size: int):
 
 
 @dataclasses.dataclass(frozen=True, slots=True)
-class ChangeDependant:
+class ChangeRule:
     comment: str
-    search_tags: Dict[str, Optional[Sequence[str]]]
     update_tag: str
+    search_tags: Dict[str, Optional[Sequence[str]]]
 
 
 @dataclasses.dataclass(frozen=True, slots=True)
-class ChangeRule:
+class DependantChangeRule:
     comment: str
-    search_tags: Dict[str, Optional[Sequence[str]]]
     update_tag: str
-    dependants: Sequence[ChangeDependant]
 
 
 @dataclasses.dataclass(frozen=True, slots=True)
@@ -104,12 +102,18 @@ class ElementChanges:
 
 
 @dataclasses.dataclass(frozen=True, slots=True)
+class ManualChange:
+    osm_type: str
+    osm_id: int
+    value_from: str
+    value_to: str
+
+
+@dataclasses.dataclass(frozen=True, slots=True)
 class Issue:
     ISSUE_TAG_VALUE_NOT_IN_LANGUAGE_TAGS = '111 tag value not in language tags'
-    ISSUE_SAME_VALUES_IN_FROM_AND_TO_LANGUAGE_TAGS = '222 same values in from and to language tags'
-    ISSUE_FROM_HAS_MORE_THAN_ONE_TO_VARIANTS = '333 from has more than one to variants'
-    ISSUE_TO_HAS_MORE_THAN_ONE_FROM_VARIANTS = '444 to has more than one from variants'
     ISSUE_TAG_CHANGED_WITH_DIFFERENT_VALUES = '555 tag changed with different values'
+    ISSUE_CANNOT_CHAHNGE_DEP = '666 cannot change dependency'
 
     message: str
     changes: Sequence[ElementRuleChange]
