@@ -11,5 +11,4 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN pip install -U pip wheel && \
-    pip install ipython[notebook] pandas matplotlib psycopg2-binary shapely requests PyGithub && \
-    pip install https://github.com/lechup/imposm-parser/archive/python3.zip
+    pip install ipython[notebook] pandas matplotlib psycopg2-binary shapely osmium requests PyGithub

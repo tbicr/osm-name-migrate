@@ -172,26 +172,105 @@ class BaseSearchReadWriteEngine:
         raise NotImplementedError
 
 
-class DumpSearchEngine(BaseSearchReadWriteEngine):
+class DumpSearchReadEngine(BaseSearchReadWriteEngine):
     def __init__(self, filename: str = 'belarus-latest.osm.pbf'):
         self._filename = filename
 
     def search(self, search_tags: Dict[str, Optional[Sequence[str]]]) -> List[FoundElement]:
-        from imposm.parser import OSMParser
+        import osmium
 
         results = []
+        match_tags = self._match_tags
 
-        def process(params, osm_type):
-            for osm_id, tags, _ in params:
-                if self._match_tags(search_tags, tags):
-                    results.append(FoundElement(osm_id, osm_type, None, None, None, tags))
+        class Handler(osmium.SimpleHandler):
+            def process(self, osm_type, obj):
+                if match_tags(search_tags, obj.tags):
+                    results.append(FoundElement(obj.id, osm_type, None, None, None, dict(obj.tags)))
 
-        OSMParser(
-            nodes_callback=partial(process, type_='node'),
-            ways_callback=partial(process, type_='way'),
-            relations_callback=partial(process, type_='relation'),
-        ).parse(self._filename)
+            def node(self, n):
+                self.process('node', n)
 
+            def way(self, w):
+                self.process('way', w)
+
+            def relation(self, r):
+                self.process('relation', r)
+
+        Handler().apply_file(self._filename)
+        return results
+
+    def read_nodes(self, osm_ids: Iterable[int]) -> Dict[int, dict]:
+        import osmium
+
+        osm_ids_set = frozenset(osm_ids)
+        results = {}
+
+        class Handler(osmium.SimpleHandler):
+            def node(self, n):
+                if n.id in osm_ids_set:
+                    results[n.id] = {
+                        'id': n.id,
+                        'visible': n.visible,
+                        'version': n.version,
+                        'changeset': n.changeset,
+                        'timestamp': n.timestamp,
+                        'user': n.user,
+                        'uid': n.uid,
+                        'tag': dict(n.tags),
+                        'lon': n.location.lon,
+                        'lat': n.location.lat,
+                    }
+
+        Handler().apply_file(self._filename)
+        return results
+
+    def read_ways(self, osm_ids: Iterable[int]) -> Dict[int, dict]:
+        import osmium
+
+        osm_ids_set = frozenset(osm_ids)
+        results = {}
+
+        class Handler(osmium.SimpleHandler):
+            def way(self, w):
+                if w.id in osm_ids_set:
+                    results[w.id] = {
+                        'id': w.id,
+                        'visible': w.visible,
+                        'version': w.version,
+                        'changeset': w.changeset,
+                        'timestamp': w.timestamp,
+                        'user': w.user,
+                        'uid': w.uid,
+                        'tag': dict(w.tags),
+                        'nd': [n.ref for n in w.nodes],
+                    }
+
+        Handler().apply_file(self._filename)
+        return results
+
+    def read_relations(self, osm_ids: Iterable[int]) -> Dict[int, dict]:
+        import osmium
+
+        osm_ids_set = frozenset(osm_ids)
+        type_map = {'n': 'node', 'w': 'way', 'r': 'relation'}
+        results = {}
+
+        class Handler(osmium.SimpleHandler):
+            def relation(self, r):
+                if r.id in osm_ids_set:
+                    results[r.id] = {
+                        'id': r.id,
+                        'visible': r.visible,
+                        'version': r.version,
+                        'changeset': r.changeset,
+                        'timestamp': r.timestamp,
+                        'user': r.user,
+                        'uid': r.uid,
+                        'tag': dict(r.tags),
+                        'member': [{'type': type_map[m.type], 'ref': m.ref, 'role': m.role} for m in r.members],
+                    }
+
+        Handler().apply_file(self._filename)
         return results
 
 
@@ -408,13 +487,13 @@ class PostgisSearchReadEngine(BaseSearchReadWriteEngine):
         for table in tables:
             query = f"""
                 SELECT
-                    0 AS changeset,  -- TODO
+                    (tags->'osm_changeset')::integer AS changeset,
                     ABS(osm_id) AS id,
                     hstore_to_json(tags) AS tag,
-                    '2030-01-01T00:00:00'::timestamp AS timestamp,  -- TODO
-                    0 AS uid,  -- TODO
-                    '' AS user,  -- TODO
-                    0 AS version,  -- TODO
+                    (tags->'osm_timestamp')::timestamp AS timestamp,
+                    (tags->'osm_uid')::integer AS uid,
+                    (tags->'osm_user') AS user,
+                    (tags->'osm_version')::integer AS version,
                     TRUE AS visible,
                     way AS way
                 FROM {table}
@@ -588,7 +667,16 @@ class OverpassApiSearchEnigne(BaseSearchReadWriteEngine):
             geom = self._osm_to_geometry(osm_type, osm_id, type_id_elements)
             center = geom.centroid
             results.append(FoundElement(
-                osm_id, osm_type, center.x, center.y, shapely.wkt.dumps(geom), element.get('tags', {}),
+                osm_id, osm_type, center.x, center.y, shapely.wkt.dumps(geom), {
+                    **element.get('tags', {}),
+                    **{
+                        'osm_user': element['user'],
+                        'osm_uid': str(element['uid']),
+                        'osm_changeset': str(element['changeset']),
+                        'osm_version': str(element['version']),
+                        'osm_timestamp': element['timestamp'],
+                    },
+                }
             ))
 
         return results
@@ -603,7 +691,7 @@ class OverpassApiSearchEnigne(BaseSearchReadWriteEngine):
               area({self._area_region})->.b;
               {query_parts}
             );
-            out body;
+            out meta;
             >;
             out skel qt;
         """
