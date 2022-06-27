@@ -7,7 +7,6 @@ import os
 import time
 import urllib.parse
 from collections import defaultdict
-from functools import partial
 from itertools import chain
 from typing import Sequence, Dict, Optional, Tuple, List, Iterable
 from xml.sax.saxutils import quoteattr
