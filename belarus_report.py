@@ -57,14 +57,18 @@ CATEGORIES_RULES = {
         ['abandoned:place', None],
     ],
     'suburb': [
+        ['landuse', 'cemetery'],
         ['landuse', 'commercial'],
         ['landuse', 'construction'],
+        ['landuse', 'farmland'],
+        ['landuse', 'farmyard'],
         ['landuse', 'industrial'],
         ['landuse', 'residential'],
         ['landuse', 'retail'],
         ['place', None],
         ['residential', None],
         ['industrial', None],
+        ['landuse', None],
     ],
     'highway': [
         ['highway', 'motorway'],
@@ -79,6 +83,7 @@ CATEGORIES_RULES = {
         ['highway', None],
         ['type', 'associatedStreet'],
         ['type', 'street'],
+        ['bridge', None],
     ],
     'public_transport': [
         ['highway', 'bus_stop'],
@@ -92,9 +97,7 @@ CATEGORIES_RULES = {
     'infrastructure': [
         ['barrier', None],
         ['power', None],
-        ['bridge', None],
         ['substation', None],
-        ['ele', None],
         ['man_made', None],
         ['embankment', None],
     ],
@@ -218,7 +221,8 @@ CATEGORIES_RULES = {
         ['natural', None],
         ['place', 'island'],
         ['place', 'islet'],
-        ['landuse', None],
+        ['ele', None],
+        ['landuse', 'forest'],
     ],
 }
 
@@ -490,7 +494,7 @@ def get_overpass_link(lang_tag, category, tag, column):
             f'{base}["{lang_tag}:be"]["{lang_tag}:ru"]{part}(area.b)'
             f'(if: t["{lang_tag}"] == t["{lang_tag}:be"] && t["{lang_tag}"] != t["{lang_tag}:ru"]);'
         ) for part in parts]
-    elif column == 'be+ru':
+    elif column == 'ru+be':
         parts = [(
             f'{base}["{lang_tag}:be"]["{lang_tag}:ru"]{part}(area.b)'
             f'(if: t["{lang_tag}"] != t["{lang_tag}:be"] && t["{lang_tag}"] == t["{lang_tag}:ru"]);'
