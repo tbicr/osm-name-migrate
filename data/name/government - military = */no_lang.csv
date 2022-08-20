@@ -2,6 +2,7 @@ osm_type,osm_id,name,name:be,name:ru
 node,3033444590,Бункер (заброшенный узел связи),,
 node,8196667217,"ДОТ ""Niech Zyje Polska""",,
 node,3646635933,"ДОТ ""Twierdza Nam Bedzie Kazny Prog""",,
+way,29164346,КПП,,
 node,2627420357,КПП 38,,
 way,477098179,Казарма,,
 way,1067850953,Каземат,,
