@@ -20,7 +20,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 #,locality,20,0,0,0.000,0.000,18,0,0,0.000,0.000
 ,place = locality,20,0,0,0.000,0.000,18,0,0,0.000,0.000
 ,abandoned:place = *,6,0,0,0.000,0.000,5,0,0,0.000,0.000
-#,suburb,263,15,12,0.057,0.046,179,12,11,0.067,0.061
+#,suburb,264,15,12,0.057,0.045,180,12,11,0.067,0.061
 ,landuse = cemetery,42,10,8,0.238,0.190,37,7,7,0.189,0.189
 ,landuse = commercial,5,0,0,0.000,0.000,5,0,0,0.000,0.000
 ,landuse = construction,6,0,0,0.000,0.000,6,0,0,0.000,0.000
@@ -32,7 +32,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,place = *,6,0,0,0.000,0.000,6,0,0,0.000,0.000
 ,residential = *,8,0,0,0.000,0.000,8,0,0,0.000,0.000
 ,industrial = *,90,0,0,0.000,0.000,17,0,0,0.000,0.000
-,landuse = *,30,2,2,0.067,0.067,29,2,2,0.069,0.069
+,landuse = *,31,2,2,0.065,0.065,30,2,2,0.067,0.067
 #,natural,185,1,5,0.005,0.027,137,1,4,0.007,0.029
 ,place = island,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,place = islet,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -56,8 +56,8 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,highway = motorway,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,highway = trunk,642,18,18,0.028,0.028,11,3,3,0.273,0.273
 ,highway = primary,176,5,5,0.028,0.028,31,1,1,0.032,0.032
-,highway = secondary,293,1,0,0.003,0.000,44,1,0,0.023,0.000
-,highway = tertiary,3990,5,5,0.001,0.001,1122,2,2,0.002,0.002
+,highway = secondary,296,1,0,0.003,0.000,45,1,0,0.022,0.000
+,highway = tertiary,3987,5,5,0.001,0.001,1121,2,2,0.002,0.002
 ,highway = unclassified,146,1,1,0.007,0.007,102,1,1,0.010,0.010
 ,highway = residential,124,0,0,0.000,0.000,93,0,0,0.000,0.000
 ,highway = service,109,5,5,0.046,0.046,68,3,3,0.044,0.044
