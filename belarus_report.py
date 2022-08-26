@@ -121,6 +121,7 @@ CATEGORIES_RULES = {
         ['substation', None],
         ['man_made', None],
         ['embankment', None],
+        ['amenity', 'fuel'],
     ],
     'religion': [
         ['religion', None],
@@ -161,6 +162,10 @@ CATEGORIES_RULES = {
         ['landuse', 'military'],
         ['military', None],
     ],
+    'bank': [
+        ['amenity', 'atm'],
+        ['amenity', 'bank'],
+    ],
     'office': [
         ['office', None],
     ],
@@ -176,10 +181,7 @@ CATEGORIES_RULES = {
     ],
     'amenity': [
         ['amenity', 'cafe'],
-        ['amenity', 'atm'],
-        ['amenity', 'bank'],
         ['amenity', 'fast_food'],
-        ['amenity', 'fuel'],
         ['amenity', 'community_centre'],
         ['amenity', 'restaurant'],
         ['amenity', 'bar'],
@@ -593,7 +595,7 @@ def should_create_csv(lang_tag, category, tag, column):
         return False
     if category in CATEGORIES_RULES and tag is None:
         return False
-    if category == 'TOTAL':
+    if category in {'TOTAL', 'amenity', 'building'}:
         return False
     if column in SKIP_CSV_COLUMNS:
         return False
@@ -1156,8 +1158,7 @@ for name, content in htmls.items():
     table, tag = name[:-len('.html')].split('-')
     groups[tag][table] = content
 with open('belarus_report.html') as t:
-    c = Template(t.read()).render(groups=groups)
-result['index.html'] = c
+    result['index.html'] = Template(t.read()).render(groups=groups)
 
 if REPORT_OUTPUT_API:
     print('commit to github')

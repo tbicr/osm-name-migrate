@@ -64,22 +64,85 @@ RULES = [
     ChangeRule('урочышча - прэфіксы', 'was:name:prefix', {'abandoned:place': None}),
 
     # suburb
+    ChangeRule('раёны', 'name', {'landuse': None}),
+    ChangeRule('раёны', 'name', {'place': None}),
+    ChangeRule('раёны', 'name', {'landuse': None}),
+    ChangeRule('раёны', 'name', {'residential': None}),
+    ChangeRule('раёны', 'name', {'industrial': None}),
+
+    # natural
+    ChangeRule('прыродныя', 'name', {'place': ['island', 'islet']}),
+    ChangeRule('прыродныя', 'name', {'landuse': ['forest']}),
+    ChangeRule('прыродныя', 'name', {'boundary': None}),
+    ChangeRule('прыродныя', 'name', {'natural': None}),
+    ChangeRule('прыродныя', 'name', {'ele': None}),
+
+    # water
+    ChangeRule('рэкі і азёры', 'name', {'waterway': None}),
+    ChangeRule('рэкі і азёры', 'name', {'type': ['waterway']}),
+    ChangeRule('рэкі і азёры', 'name', {'natural': ['water', 'spring']}),
+    ChangeRule('рэкі і азёры', 'name', {'tunnel': None}),
+    ChangeRule('рэкі і азёры', 'name', {'water': None}),
 
     # highway
     ChangeRule('дарогі', 'name', {'highway': None}),
     ChangeRule('дарогі', 'name', {'type': ['associatedStreet', 'street']}),
 
     # public_transport
+    ChangeRule('грамадзкі транспарт', 'name', {'highway': ['bus_stop']}),
+    ChangeRule('грамадзкі транспарт', 'name', {'public_transport': None}),
+    ChangeRule('грамадзкі транспарт', 'name', {'type': ['route', 'route_master']}),
+    ChangeRule('грамадзкі транспарт', 'name', {'route': None}),
+    ChangeRule('грамадзкі транспарт', 'name', {'route_master': None}),
+    ChangeRule('грамадзкі транспарт', 'name', {'railway': None}),
+
     # infrastructure
+    ChangeRule('інфраструктура', 'name', {'barrier': None}),
+    ChangeRule('інфраструктура', 'name', {'power': None}),
+    ChangeRule('інфраструктура', 'name', {'substation': None}),
+    ChangeRule('інфраструктура', 'name', {'man_made': None}),
+    ChangeRule('інфраструктура', 'name', {'embankment': None}),
+    ChangeRule('інфраструктура', 'name', {'amenity': ['fuel']}),
+
     # religion
+    ChangeRule('рэлігійныя', 'name', {'amenity': ['place_of_worship', 'monastery']}),
+    ChangeRule('рэлігійныя', 'name', {'building': ['church', 'cathedral', 'chapel']}),
+    ChangeRule('рэлігійныя', 'name', {'religion': None}),
+
     # education
+    ChangeRule('адукацыя', 'name', {'landuse': ['education']}),
+    ChangeRule('адукацыя', 'name', {'amenity': ['university', 'college', 'school', 'kindergarten']}),
+    ChangeRule('адукацыя', 'name', {'building': ['university', 'college', 'school', 'kindergarten']}),
+
     # healthcare
+    ChangeRule('ахова здароўя', 'name', {'amenity': ['hospital', 'pharmacy', 'clinic', 'doctors', 'dentist']}),
+    ChangeRule('ахова здароўя', 'name', {'building': ['hospital', 'clinic']}),
+    ChangeRule('ахова здароўя', 'name', {'emergency': None}),
+    ChangeRule('ахова здароўя', 'name', {'healthcare': None}),
+
     # government
+    ChangeRule('дзяржаўныя', 'name', {'amenity': ['post_office', 'police', 'library']}),
+    ChangeRule('дзяржаўныя', 'name', {'office': ['government']}),
+    ChangeRule('дзяржаўныя', 'name', {'landuse': ['military']}),
+    ChangeRule('дзяржаўныя', 'name', {'government': None}),
+    ChangeRule('дзяржаўныя', 'name', {'military': None}),
+
+    # bank
+    ChangeRule('банкі', 'name', {'amenity': ['atm', 'bank']}),
+
+    # tourism
+    ChangeRule('турызм', 'name', {'tourism': None}),
+    ChangeRule('турызм', 'name', {'historic': None}),
+    ChangeRule('турызм', 'name', {'memorial': None}),
+    ChangeRule('турызм', 'name', {'ruins': None}),
+    ChangeRule('турызм', 'name', {'information': None}),
+    ChangeRule('турызм', 'name', {'attraction': None}),
+    ChangeRule('турызм', 'name', {'resort': None}),
+    ChangeRule('турызм', 'name', {'artwork_type': None}),
+
     # office
     # amenity
     # building
-    # water
-    # natural
 ]
 DEPENDANT_RULES = [
     DependantChangeRule('dep', 'addr:region'),
