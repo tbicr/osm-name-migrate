@@ -1,3 +1,7 @@
+import csv
+import datetime
+import io
+import json
 import os
 from collections import defaultdict
 from urllib.parse import urlencode
@@ -1159,6 +1163,48 @@ for name, content in htmls.items():
     groups[tag][table] = content
 with open('belarus_report.html') as t:
     result['index.html'] = Template(t.read()).render(groups=groups)
+
+print('create atom')
+rss_data = []
+for name, content in result.items():
+    if not name.startswith('data/name/'):
+        continue
+    _, lang_tag, category, issue = name.split('/')
+    issue = issue[:-len('.csv')]
+    reader = csv.DictReader(io.StringIO(content))
+    for row in reader:
+        row['category'] = category
+        row['issue'] = issue
+        rss_data.append(row)
+if os.path.exists('/tmp/belarus_issues.json'):
+    with open('/tmp/belarus_issues.json') as h:
+        rss_data_prev = json.load(h)
+else:
+    rss_data_prev = []
+with open('/tmp/belarus_issues.json', 'w') as h:
+    json.dump(rss_data, h, ensure_ascii=False)
+rss_data_dict = {tuple(row.values()): row for row in rss_data}
+rss_data_prev_dict = {tuple(row.values()): row for row in rss_data_prev}
+rss_data_new = [rss_data_dict[k] for k in rss_data_dict.keys() - rss_data_prev_dict.keys()]
+rss_groups = defaultdict(list)
+for row in rss_data_new:
+    key = tuple(v for k, v in row.items() if k not in {'category', 'tag', 'issue'})
+    rss_groups[key].append(row)
+rss_issues = []
+rss_time = datetime.datetime.utcnow().isoformat().split('.')[0] + 'Z'
+for rss_group in rss_groups.values():
+    osm_type = rss_group[0]['osm_type']
+    osm_id = rss_group[0]['osm_id']
+    report_issue = rss_group[0]['issue']
+    issue = {
+        'id': f'https://www.openstreetmap.org/{osm_type}/{osm_id}',
+        'time': rss_time,
+        'title': report_issue + ': ' + ' | '.join(row['category'] for row in rss_group),
+        'content': '\n'.join([report_issue + ':'] + [row['category'] for row in rss_group])
+    }
+    rss_issues.append(issue)
+with open('belarus_report.atom') as t:
+    result['index.atom'] = Template(t.read()).render(issues=rss_issues)
 
 if REPORT_OUTPUT_API:
     print('commit to github')
