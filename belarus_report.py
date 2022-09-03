@@ -1181,6 +1181,17 @@ if os.path.exists('/tmp/belarus_issues.json'):
         rss_data_prev = json.load(h)
 else:
     rss_data_prev = []
+    for root, _, files in os.walk('data/name/'):
+        for file in files:
+            name = os.path.join(root, file)
+            _, lang_tag, category, issue = name.split('/')
+            issue = issue[:-len('.csv')]
+            with open(name) as h:
+                reader = csv.DictReader(h)
+                for row in reader:
+                    row['category'] = category
+                    row['issue'] = issue
+                    rss_data_prev.append(row)
 with open('/tmp/belarus_issues.json', 'w') as h:
     json.dump(rss_data, h, ensure_ascii=False)
 rss_data_dict = {tuple(row.values()): row for row in rss_data}
