@@ -16,7 +16,7 @@
     <id>{{ name }}#{{ time }}</id>
     <updated>{{ time }}</updated>
     <published>{{ time }}</published>
-    <link href="{{ https://tbicr.github.io/osm-name-migrate/ }}" />
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
     <content type="html">{{ group['content'] | safe }}</content>
   </entry>
   {%- endfor -%}
