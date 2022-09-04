@@ -2,7 +2,6 @@ import csv
 import datetime
 import html
 import io
-import json
 import os
 from collections import defaultdict
 from urllib.parse import urlencode
@@ -1177,24 +1176,18 @@ for name, content in result.items():
         row['category'] = category
         row['issue'] = issue
         rss_data.append(row)
-if os.path.exists('/tmp/belarus_issues.json'):
-    with open('/tmp/belarus_issues.json') as h:
-        rss_data_prev = json.load(h)
-else:
-    rss_data_prev = []
-    for root, _, files in os.walk('data/name/'):
-        for file in files:
-            name = os.path.join(root, file)
-            _, lang_tag, category, issue = name.split('/')
-            issue = issue[:-len('.csv')]
-            with open(name) as h:
-                reader = csv.DictReader(h)
-                for row in reader:
-                    row['category'] = category
-                    row['issue'] = issue
-                    rss_data_prev.append(row)
-with open('/tmp/belarus_issues.json', 'w') as h:
-    json.dump(rss_data, h, ensure_ascii=False)
+rss_data_prev = []
+for root, _, files in os.walk('data/name/'):
+    for file in files:
+        name = os.path.join(root, file)
+        _, lang_tag, category, issue = name.split('/')
+        issue = issue[:-len('.csv')]
+        with open(name) as h:
+            reader = csv.DictReader(h)
+            for row in reader:
+                row['category'] = category
+                row['issue'] = issue
+                rss_data_prev.append(row)
 rss_data_dict = {tuple(row.values()): row for row in rss_data}
 rss_data_prev_dict = {tuple(row.values()): row for row in rss_data_prev}
 rss_data_new = [rss_data_dict[k] for k in rss_data_dict.keys() - rss_data_prev_dict.keys()]
