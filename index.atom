@@ -11,4 +11,504 @@
   <icon>https://openstreetmap.by/favicon.ico</icon>
   <generator>daily report</generator>
   
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">ru: tourism - memorial = *</title>
+    <id>https://www.openstreetmap.org/node/9633125117#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/node/9633125117" />
+    <content type="text">ru:
+tourism - memorial = *</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">no_lang: tourism - information = * | tourism - tourism = *</title>
+    <id>https://www.openstreetmap.org/node/9995923104#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/node/9995923104" />
+    <content type="text">no_lang:
+tourism - information = *
+tourism - tourism = *</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">no_lang: government - amenity = post_office</title>
+    <id>https://www.openstreetmap.org/way/334280213#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/334280213" />
+    <content type="text">no_lang:
+government - amenity = post_office</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:city</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:city</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">ru: religion - amenity = place_of_worship | religion - religion = *</title>
+    <id>https://www.openstreetmap.org/way/100590550#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/100590550" />
+    <content type="text">ru:
+religion - amenity = place_of_worship
+religion - religion = *</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">ru: tourism - tourism = *</title>
+    <id>https://www.openstreetmap.org/way/1091685391#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/1091685391" />
+    <content type="text">ru:
+tourism - tourism = *</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:city</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:city</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">no_lang: tourism - tourism = * | tourism - artwork_type = *</title>
+    <id>https://www.openstreetmap.org/node/9996662117#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/node/9996662117" />
+    <content type="text">no_lang:
+tourism - tourism = *
+tourism - artwork_type = *</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">other_ru: tourism - memorial = * | tourism - historic = *</title>
+    <id>https://www.openstreetmap.org/node/9996794718#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/node/9996794718" />
+    <content type="text">other_ru:
+tourism - memorial = *
+tourism - historic = *</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">other_both: tourism - artwork_type = * | tourism - historic = * | tourism - tourism = *</title>
+    <id>https://www.openstreetmap.org/node/2500327880#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/node/2500327880" />
+    <content type="text">other_both:
+tourism - artwork_type = *
+tourism - historic = *
+tourism - tourism = *</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">ru: water - water = * | water - natural = water</title>
+    <id>https://www.openstreetmap.org/way/1091622356#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/1091622356" />
+    <content type="text">ru:
+water - water = *
+water - natural = water</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:city</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:city</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">no_lang: addr:street</title>
+    <id>https://www.openstreetmap.org/way/25270783#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/25270783" />
+    <content type="text">no_lang:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:city</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:city</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">ru: infrastructure - power = * | infrastructure - substation = *</title>
+    <id>https://www.openstreetmap.org/way/62302402#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/62302402" />
+    <content type="text">ru:
+infrastructure - power = *
+infrastructure - substation = *</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:city</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:city</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">other_both: addr:street</title>
+    <id>https://www.openstreetmap.org/way/633815625#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/633815625" />
+    <content type="text">other_both:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">no_lang: highway - highway = residential</title>
+    <id>https://www.openstreetmap.org/way/25270783#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/25270783" />
+    <content type="text">no_lang:
+highway - highway = residential</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:city</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:city</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">no_lang: suburb - landuse = industrial</title>
+    <id>https://www.openstreetmap.org/way/1091600311#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/1091600311" />
+    <content type="text">no_lang:
+suburb - landuse = industrial</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:street</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">other_both: addr:street</title>
+    <id>https://www.openstreetmap.org/way/25277082#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/25277082" />
+    <content type="text">other_both:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: destination</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+destination</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:city</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:city</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:street</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:city</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:city</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:street</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:city</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:city</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:city</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:city</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:street</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">no_lang: addr:street</title>
+    <id>https://www.openstreetmap.org/way/25270783#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/25270783" />
+    <content type="text">no_lang:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">ru: tourism - artwork_type = * | tourism - tourism = *</title>
+    <id>https://www.openstreetmap.org/node/5997199662#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/node/5997199662" />
+    <content type="text">ru:
+tourism - artwork_type = *
+tourism - tourism = *</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">no_lang: tourism - information = * | tourism - tourism = *</title>
+    <id>https://www.openstreetmap.org/node/9997843078#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/node/9997843078" />
+    <content type="text">no_lang:
+tourism - information = *
+tourism - tourism = *</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:street</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:street</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:street</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:city</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:city</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:city</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:city</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">other_both: addr:street</title>
+    <id>https://www.openstreetmap.org/way/633815625#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/633815625" />
+    <content type="text">other_both:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">no_lang: tourism - tourism = *</title>
+    <id>https://www.openstreetmap.org/way/1091676579#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/1091676579" />
+    <content type="text">no_lang:
+tourism - tourism = *</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">no_lang: suburb - landuse = industrial</title>
+    <id>https://www.openstreetmap.org/way/1091619973#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/1091619973" />
+    <content type="text">no_lang:
+suburb - landuse = industrial</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">other_both: addr:street</title>
+    <id>https://www.openstreetmap.org/way/633815625#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/633815625" />
+    <content type="text">other_both:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">ru: tourism - memorial = *</title>
+    <id>https://www.openstreetmap.org/node/9634161317#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/node/9634161317" />
+    <content type="text">ru:
+tourism - memorial = *</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">other_both: addr:street</title>
+    <id>https://www.openstreetmap.org/way/633815625#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/633815625" />
+    <content type="text">other_both:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:city</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:city</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">not_found: addr:street</title>
+    <id>https://www.openstreetmap.org//#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org//" />
+    <content type="text">not_found:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">other_both: addr:street</title>
+    <id>https://www.openstreetmap.org/way/633815625#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/633815625" />
+    <content type="text">other_both:
+addr:street</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">no_lang: suburb - landuse = industrial</title>
+    <id>https://www.openstreetmap.org/way/1091619983#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/1091619983" />
+    <content type="text">no_lang:
+suburb - landuse = industrial</content>
+  </entry>
+  
+  <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">other_both: addr:street</title>
+    <id>https://www.openstreetmap.org/way/633815625#2022-09-04T06:16:25Z</id>
+    <updated>2022-09-04T06:16:25Z</updated>
+    <published>2022-09-04T06:16:25Z</published>
+    <link href="https://www.openstreetmap.org/way/633815625" />
+    <content type="text">other_both:
+addr:street</content>
+  </entry>
+  
 </feed>
