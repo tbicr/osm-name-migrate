@@ -1,5 +1,6 @@
 import csv
 import datetime
+import html
 import io
 import json
 import os
@@ -1197,25 +1198,36 @@ with open('/tmp/belarus_issues.json', 'w') as h:
 rss_data_dict = {tuple(row.values()): row for row in rss_data}
 rss_data_prev_dict = {tuple(row.values()): row for row in rss_data_prev}
 rss_data_new = [rss_data_dict[k] for k in rss_data_dict.keys() - rss_data_prev_dict.keys()]
-rss_groups = defaultdict(list)
+rss_groups = defaultdict(lambda: defaultdict(dict))
 for row in rss_data_new:
-    key = tuple(v for k, v in row.items() if k not in {'category', 'tag', 'issue'})
-    rss_groups[key].append(row)
-rss_issues = []
-rss_time = datetime.datetime.utcnow().isoformat().split('.')[0] + 'Z'
-for rss_group in rss_groups.values():
-    osm_type = rss_group[0]['osm_type']
-    osm_id = rss_group[0]['osm_id']
-    report_issue = rss_group[0]['issue']
-    issue = {
-        'id': f'https://www.openstreetmap.org/{osm_type}/{osm_id}',
-        'time': rss_time,
-        'title': report_issue + ': ' + ' | '.join(row['category'] for row in rss_group),
-        'content': '\n'.join([report_issue + ':'] + [row['category'] for row in rss_group])
+    main_category = row['category'].split(' - ')[0]
+    key = tuple(v for k, v in row.items() if k not in {'category', 'issue'})
+    item = rss_groups[main_category][key]
+    item.update(row)
+    item['categories'] = (item.get('categories', '') + ' | ' + row['category']).strip(' |')
+    del item['category']
+rss_groups_rendered = {}
+for name, group_dict in rss_groups.items():
+    group = list(group_dict.values())
+    rss_groups_rendered[name] = {
+        'title': f'{name} +{len(group)}',
+        'content': (
+            '<table>' +
+            '<tr>' +
+            ''.join(f'<th>{html.escape(k)}</th>' for k in group[0].keys()) +
+            '</tr>' +
+            ''.join('<tr>{}</tr>'.format(
+                ''.join(f'<td>{html.escape(v)}</td>' for v in item.values()))
+                for item in group
+            ) +
+            '</table>'
+        ),
     }
-    rss_issues.append(issue)
 with open('belarus_report.atom') as t:
-    result['index.atom'] = Template(t.read()).render(issues=rss_issues)
+    result['index.atom'] = Template(t.read()).render(
+        groups=rss_groups_rendered,
+        time=datetime.datetime.utcnow().isoformat().split('.')[0] + 'Z',
+    )
 
 if REPORT_OUTPUT_API:
     print('commit to github')

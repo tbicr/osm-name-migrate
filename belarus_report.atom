@@ -10,14 +10,14 @@
   </author>
   <icon>https://openstreetmap.by/favicon.ico</icon>
   <generator>daily report</generator>
-  {% for issue in issues %}
+  {%- for name, group in groups.items() -%}
   <entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">{{ issue['title'] }}</title>
-    <id>{{ issue['id'] }}#{{ issue['time'] }}</id>
-    <updated>{{ issue['time'] }}</updated>
-    <published>{{ issue['time'] }}</published>
-    <link href="{{ issue['id'] }}" />
-    <content type="text">{{ issue['content'] }}</content>
+    <title type="text">{{ group['title'] }}</title>
+    <id>{{ name }}#{{ time }}</id>
+    <updated>{{ time }}</updated>
+    <published>{{ time }}</published>
+    <link href="{{ https://tbicr.github.io/osm-name-migrate/ }}" />
+    <content type="html">{{ group['content'] | safe }}</content>
   </entry>
-  {% endfor %}
+  {%- endfor -%}
 </feed>
