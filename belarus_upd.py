@@ -333,12 +333,7 @@ class Engine:
                 if self._valid_for_update(element_change, found_element.tags):
                     yield element_change
 
-    def _dependant_rule_changes(
-            self,
-            dependant_rules: Iterable[DependantChangeRule],
-            out_border_name_map: Dict[str, str],
-    ) -> Iterable[ElementRuleChange]:
-        print('search dependants')
+    def build_name_spatial_index(self):
         names = list({
             (element.osm_id, element.osm_type): element
             for element in sorted(chain(
@@ -359,13 +354,12 @@ class Engine:
         name_index = {}
         for name, elements in name_elements.items():
             name_index[name] = shapely.strtree.STRtree([shapely.wkt.loads(element.way) for element in elements])
-
         names_full = [
             element
             for element in names
             if 'name' in element.tags
-            and 'name:be' in element.tags
-            and 'name:ru' in element.tags
+               and 'name:be' in element.tags
+               and 'name:ru' in element.tags
         ]
         name_elements_full = defaultdict(list)
         for element in names_full:
@@ -379,6 +373,15 @@ class Engine:
         name_index_full = {}
         for name, elements in name_elements_full.items():
             name_index_full[name] = shapely.strtree.STRtree([shapely.wkt.loads(element.way) for element in elements])
+        return name_elements, name_index, name_elements_full, name_index_full
+
+    def _dependant_rule_changes(
+            self,
+            dependant_rules: Iterable[DependantChangeRule],
+            out_border_name_map: Dict[str, str],
+    ) -> Iterable[ElementRuleChange]:
+        print('search dependants')
+        name_elements, name_index, name_elements_full, name_index_full = self.build_name_spatial_index()
 
         for dependant_rule in dependant_rules:
             print(f'search dependant {dependant_rule}')

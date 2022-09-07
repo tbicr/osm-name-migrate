@@ -14,6 +14,7 @@ import shapely.wkt
 import shapely.strtree
 from jinja2 import Template
 
+from belarus_upd import Engine
 from belarus_utils import PostgisSearchReadEngine, OverpassApiSearchEnigne, CYRILIC_REGEXP
 
 POSTGRES_HOST = os.environ['POSTGRES_HOST']
@@ -1192,13 +1193,53 @@ rss_data_dict = {tuple(row.values()): row for row in rss_data}
 rss_data_prev_dict = {tuple(row.values()): row for row in rss_data_prev}
 rss_data_new = [rss_data_dict[k] for k in rss_data_dict.keys() - rss_data_prev_dict.keys()]
 rss_groups = defaultdict(lambda: defaultdict(dict))
+engine = Engine(postgis_api, None, None, None, None, None)
+_, _, name_elements_full, name_index_full = engine.build_name_spatial_index()
 for row in rss_data_new:
     main_category = row['category'].split(' - ')[0]
+    sub_category = row['category'].split(' - ')[-1]
     key = tuple(v for k, v in row.items() if k not in {'category', 'issue'})
     item = rss_groups[main_category][key]
     item.update(row)
-    item['categories'] = (item.get('categories', '') + ' | ' + row['category']).strip(' |')
+    item['categories'] = (item.get('categories', '') + ' | ' + sub_category).strip(' |')
     del item['category']
+for name, group_dict in rss_groups.items():
+    for item in group_dict.values():
+        item['autofix:be'] = None
+        item['autofix:ru'] = None
+        if item['name'] and item['name'] in name_elements_full:
+            osm_type = item['osm_type']
+            osm_id = item['osm_id']
+            if osm_type == 'node':
+                element = postgis_api.read_nodes([osm_id])[0]
+            elif osm_type == 'way':
+                element = postgis_api.read_ways([osm_id])[0]
+            elif osm_type == 'relation':
+                element = postgis_api.read_relations([osm_id])[0]
+            nearest = engine._choose_nearest(name_index_full, name_elements_full, item['name'], element['way'])
+            distance = shapely.wkt.loads(element['way']).distance(shapely.wkt.loads(nearest.way)) * 1000 / 111
+            if 'dependant' in item or name == 'highway' or distance < 5000:
+                item['autofix:be'] = nearest.tags['name:be']
+                item['autofix:ru'] = nearest.tags['name:ru']
+
+
+def render_value(field, item):
+    value = item[field]
+    if field == 'name:be':
+        if value:
+            return html.escape(value)
+        autofix = item['autofix:be']
+        if autofix:
+            return f'<b>{html.escape(autofix)}</b>'
+    if field == 'name:ru':
+        if value:
+            return html.escape(value)
+        autofix = item['autofix:ru']
+        if autofix:
+            return f'<b>{html.escape(autofix)}</b>'
+    return html.escape(value)
+
+
 rss_groups_rendered = {}
 for name, group_dict in rss_groups.items():
     group = list(group_dict.values())
@@ -1209,8 +1250,12 @@ for name, group_dict in rss_groups.items():
             '<tr>' +
             ''.join(f'<th>{html.escape(k)}</th>' for k in group[0].keys()) +
             '</tr>' +
-            ''.join('<tr>{}</tr>'.format(
-                ''.join(f'<td>{html.escape(v)}</td>' for v in item.values()))
+            ''.join(('<tr style="background-color:#d9ead3;">{}</tr>' if item['autofix:be'] else '<tr>{}</tr>').format(
+                ''.join(
+                    f'<td>{render_value(k, item) or "&nbsp;"}</td>'
+                    for k in item.keys()
+                    if k not in {'autofix:be', 'autofix:ru'}
+                ))
                 for item in group
             ) +
             '</table>'
