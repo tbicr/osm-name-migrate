@@ -1209,13 +1209,13 @@ for name, group_dict in rss_groups.items():
         item['autofix:ru'] = None
         if item['name'] and item['name'] in name_elements_full:
             osm_type = item['osm_type']
-            osm_id = item['osm_id']
+            osm_id = int(item['osm_id'])
             if osm_type == 'node':
-                element = postgis_api.read_nodes([osm_id])[0]
+                element = postgis_api.read_nodes([osm_id])[osm_id]
             elif osm_type == 'way':
-                element = postgis_api.read_ways([osm_id])[0]
+                element = postgis_api.read_ways([osm_id])[osm_id]
             elif osm_type == 'relation':
-                element = postgis_api.read_relations([osm_id])[0]
+                element = postgis_api.read_relations([osm_id])[osm_id]
             nearest = engine._choose_nearest(name_index_full, name_elements_full, item['name'], element['way'])
             distance = shapely.wkt.loads(element['way']).distance(shapely.wkt.loads(nearest.way)) * 1000 / 111
             if 'dependant' in item or name == 'highway' or distance < 5000:
