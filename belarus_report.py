@@ -1223,6 +1223,14 @@ for name, group_dict in rss_groups.items():
                 item['autofix:ru'] = nearest.tags['name:ru']
 
 
+def render_style_template(item):
+    if item['issue'] == 'other_both':
+        return '<tr style="background-color:#fff2cc;">{}</tr>'
+    if item['autofix:be']:
+        return '<tr style="background-color:#d9ead3;">{}</tr>'
+    return '<tr>{}</tr>'
+
+
 def render_value(field, item):
     value = item[field]
     if field == 'name:be':
@@ -1243,7 +1251,7 @@ def render_value(field, item):
 rss_groups_rendered = {}
 for name, group_dict in rss_groups.items():
     group = list(group_dict.values())
-    non_fixed_group = [item for item in group if item['autofix:be']]
+    non_fixed_group = [item for item in group if item['issue'] != 'other_both' and item['autofix:be']]
     rss_groups_rendered[name] = {
         'title': f'{name} +{len(non_fixed_group)} not fixed +{len(group)} total',
         'content': (
@@ -1251,7 +1259,7 @@ for name, group_dict in rss_groups.items():
             '<tr>' +
             ''.join(f'<th>{html.escape(k)}</th>' for k in group[0].keys() if k not in {'autofix:be', 'autofix:ru'}) +
             '</tr>' +
-            ''.join(('<tr style="background-color:#d9ead3;">{}</tr>' if item['autofix:be'] else '<tr>{}</tr>').format(
+            ''.join(render_style_template(item).format(
                 ''.join(
                     f'<td>{render_value(k, item) or "&nbsp;"}</td>'
                     for k in item.keys()
