@@ -1243,12 +1243,13 @@ def render_value(field, item):
 rss_groups_rendered = {}
 for name, group_dict in rss_groups.items():
     group = list(group_dict.values())
+    non_fixed_group = [item for item in group if item['autofix:be']]
     rss_groups_rendered[name] = {
-        'title': f'{name} +{len(group)}',
+        'title': f'{name} +{len(non_fixed_group)} not fixed +{len(group)} total',
         'content': (
             '<table>' +
             '<tr>' +
-            ''.join(f'<th>{html.escape(k)}</th>' for k in group[0].keys()) +
+            ''.join(f'<th>{html.escape(k)}</th>' for k in group[0].keys() if k not in {'autofix:be', 'autofix:ru'}) +
             '</tr>' +
             ''.join(('<tr style="background-color:#d9ead3;">{}</tr>' if item['autofix:be'] else '<tr>{}</tr>').format(
                 ''.join(
