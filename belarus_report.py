@@ -1251,7 +1251,7 @@ def render_value(field, item):
 rss_groups_rendered = {}
 for name, group_dict in rss_groups.items():
     group = list(group_dict.values())
-    non_fixed_group = [item for item in group if item['issue'] != 'other_both' and item['autofix:be']]
+    non_fixed_group = [item for item in group if item['issue'] != 'other_both' and not item['autofix:be']]
     rss_groups_rendered[name] = {
         'title': f'{name} +{len(non_fixed_group)} not fixed +{len(group)} total',
         'content': (
