@@ -1,4 +1,8 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+way,25327519,Minsk,,,,,
+way,25327531,Minsk,,,,,
+way,536141671,Minsk,,,,,
+way,536141672,Minsk,,,,,
 node,2788683153,Mogilev,,,,,
 way,632497310,Могилевские ведомости,,,,,
 way,632497311,Могилевские ведомости,,,,,

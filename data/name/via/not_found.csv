@@ -1,5 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
-relation,7877316,Chernihiv,,,,,
 relation,7511612,Больничный городок,,,,,
 relation,10990466,Вільня,,,,,
 relation,10990466,Дзвінск,,,,,
@@ -12,4 +11,3 @@ relation,7873852,Почеп,,,,,
 relation,7930174,Псков,,,,,
 relation,8043974,Ратон,,,,,
 relation,8043989,Ратон,,,,,
-relation,7879000,Чернигов,,,,,
