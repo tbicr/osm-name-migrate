@@ -56,7 +56,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,highway = motorway,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,highway = trunk,642,18,18,0.028,0.028,11,3,3,0.273,0.273
 ,highway = primary,177,5,5,0.028,0.028,31,1,1,0.032,0.032
-,highway = secondary,301,1,0,0.003,0.000,45,1,0,0.022,0.000
+,highway = secondary,302,1,0,0.003,0.000,45,1,0,0.022,0.000
 ,highway = tertiary,4010,5,5,0.001,0.001,1125,2,2,0.002,0.002
 ,highway = unclassified,146,1,1,0.007,0.007,102,1,1,0.010,0.010
 ,highway = residential,124,0,0,0.000,0.000,93,0,0,0.000,0.000
@@ -64,7 +64,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,highway = track,246,11,12,0.045,0.049,157,3,5,0.019,0.032
 ,type = associatedStreet,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,type = street,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,highway = *,289,4,4,0.014,0.014,167,4,4,0.024,0.024
+,highway = *,288,4,4,0.014,0.014,166,4,4,0.024,0.024
 ,bridge = *,497,3,3,0.006,0.006,336,3,3,0.009,0.009
 #,public_transport,203,5,6,0.025,0.030,165,2,3,0.012,0.018
 ,highway = bus_stop,108,0,1,0.000,0.009,103,0,1,0.000,0.010
@@ -107,7 +107,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = hospital,7,1,0,0.143,0.000,6,1,0,0.167,0.000
 ,building = clinic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,emergency = *,1293,0,0,0.000,0.000,362,0,0,0.000,0.000
-,healthcare = *,100,0,0,0.000,0.000,80,0,0,0.000,0.000
+,healthcare = *,101,0,0,0.000,0.000,81,0,0,0.000,0.000
 #,government,117,1,5,0.009,0.043,102,1,4,0.010,0.039
 ,amenity = post_office,22,1,1,0.045,0.045,21,1,1,0.048,0.048
 ,amenity = police,8,0,0,0.000,0.000,8,0,0,0.000,0.000
