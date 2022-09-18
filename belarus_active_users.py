@@ -6,6 +6,7 @@ import io
 import json
 import os.path
 import sys
+import time
 from collections import defaultdict, Counter
 
 import osmapi
@@ -70,8 +71,16 @@ def iter_changes(dump):
     response.raise_for_status()
     last_id = int(response.text.splitlines()[2].split(': ')[1])
     for url in iter_changes_replication(last_id // 1_000_000, last_id // 1000 % 1000, last_id % 1000):
-        response = session.get(url)
-        response.raise_for_status()
+        for i in range(10 + 1):
+            try:
+                response = session.get(url)
+                response.raise_for_status()
+                break
+            except Exception as err:
+                print(url, err)
+                if i == 10:
+                    raise
+                time.sleep(2**i)
         new = 0
         with gzip.open(io.BytesIO(response.content)) as h:
             context = etree.iterparse(h, events=('end',), tag='changeset')
@@ -94,6 +103,15 @@ def iter_changes(dump):
             return
 
 
+def get_bbox_geom(min_lon, min_lat, max_lon, max_lat):
+    if min_lon == max_lon and min_lat == max_lat:
+        return shapely.geometry.Point(min_lon, min_lat)
+    elif min_lon == max_lon or min_lat == max_lat:
+        return shapely.geometry.LineString([(min_lon, min_lat), (max_lon, max_lat)])
+    else:
+        return shapely.geometry.box(min_lon, min_lat, max_lon, max_lat)
+
+
 def process():
     data = defaultdict(list)
     for cid, attrib_get in iter_changes(DUMP_FILE):
@@ -108,7 +126,6 @@ def process():
         else:
             continue
 
-        cid = int(attrib_get('id'))
         user = attrib_get('user')
         uid_str = attrib_get('uid')
         uid = int(uid_str) if uid_str is not None else None
@@ -119,9 +136,8 @@ def process():
 
         intersects = min_lat < B_MAX_LAT and B_MIN_LAT < max_lat and min_lon < B_MAX_LON and B_MIN_LON < max_lon
         if intersects:
-            geom = shapely.geometry.box(min_lon, min_lat, max_lon, max_lat)
+            geom = get_bbox_geom(min_lon, min_lat, max_lon, max_lat)
             if B_GEOM.intersects(geom):
-                # data[uid].append((cid, uid, user, created_at, closed_at, min_lat, min_lon, max_lat, max_lon))
                 data[uid].append({
                     'cid': cid,
                     'uid': uid,
@@ -140,7 +156,7 @@ def process():
 def geom_intersects(cc):
     result = []
     for c in cc:
-        geom = shapely.geometry.box(c['min_lon'], c['min_lat'], c['max_lon'], c['max_lat'])
+        geom = get_bbox_geom(c['min_lon'], c['min_lat'], c['max_lon'], c['max_lat'])
         if B_GEOM.intersects(geom):
             result.append(c)
     return result
@@ -149,7 +165,7 @@ def geom_intersects(cc):
 def geom_contains(cc):
     result = []
     for c in cc:
-        geom = shapely.geometry.box(c['min_lon'], c['min_lat'], c['max_lon'], c['max_lat'])
+        geom = get_bbox_geom(c['min_lon'], c['min_lat'], c['max_lon'], c['max_lat'])
         if B_GEOM_INNER.contains(geom):
             result.append(c)
     return result
@@ -235,7 +251,7 @@ def changeset_in_boundary(cid):
 
 def changeset_in_boundary_cached(c):
     cid = c['cid']
-    bbox = shapely.geometry.box(c['min_lon'], c['min_lat'], c['max_lon'], c['max_lat'])
+    bbox = get_bbox_geom(c['min_lon'], c['min_lat'], c['max_lon'], c['max_lat'])
 
     # simply check is bbox intersects with boundary
     if not B_GEOM.intersects(bbox):
