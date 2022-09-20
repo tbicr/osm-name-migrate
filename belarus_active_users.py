@@ -70,6 +70,7 @@ def iter_changes(dump):
     response = session.get('https://planet.openstreetmap.org/replication/changesets/state.yaml')
     response.raise_for_status()
     last_id = int(response.text.splitlines()[2].split(': ')[1])
+    old = 0
     for url in iter_changes_replication(last_id // 1_000_000, last_id // 1000 % 1000, last_id % 1000):
         for i in range(10 + 1):
             try:
@@ -81,11 +82,9 @@ def iter_changes(dump):
                 if i == 10:
                     raise
                 time.sleep(2**i)
-        new = 0
         with gzip.open(io.BytesIO(response.content)) as h:
             context = etree.iterparse(h, events=('end',), tag='changeset')
             for _, elem in context:
-                new += 1
                 i += 1
                 if i % 1_000_000 == 0:
                     end = datetime.datetime.utcnow()
@@ -95,11 +94,12 @@ def iter_changes(dump):
                 attrib_get = elem.attrib.get
                 cid = int(attrib_get('id'))
                 if cid <= latest_cid:
-                    new -= 1
+                    old += 1
                 else:
+                    old = 0
                     yield cid, attrib_get
                 elem.clear()
-        if new == 0:
+        if old > 1000:
             return
 
 
@@ -275,6 +275,7 @@ if not os.path.exists('belarus_users.json'):
         json.dump(data, h, indent=2, ensure_ascii=False)
 with open('belarus_users.json') as h:
     data = json.load(h)
+data = {u: [c for c in cc if DATE_FROM <= (c['closed_at'] or c['created_at']) < DATE_TO] for u, cc in data.items()}
 
 
 data_edited_3_month = {u: cc for u, cc in data.items() if count_mount(cc) >= 3}
@@ -304,6 +305,7 @@ dates = [
     '2021-12', '2022-01', '2022-02',
     '2022-03', '2022-04', '2022-05',
     '2022-06', '2022-07', '2022-08',
+    '2022-09',
 ]
 
 
