@@ -141,7 +141,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,shop = car_repair,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,shop = hairdresser,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,shop = chemist,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,shop = supermarket,1,0,1,0.000,1.000,1,0,1,0.000,1.000
+,shop = supermarket,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,shop = car_parts,2,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,shop = furniture,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,shop = hardware,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -156,7 +156,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,shop = electronics,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,shop = alcohol,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,shop = jewelry,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,shop = mall,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,shop = mall,1,0,1,0.000,1.000,1,0,1,0.000,1.000
 ,shop = butcher,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,shop = cosmetics,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,craft = shoemaker,0,0,0,0.000,0.000,0,0,0,0.000,0.000
