@@ -10,52 +10,38 @@
   </author>
   <icon>https://openstreetmap.by/favicon.ico</icon>
   <generator>daily report</generator><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">infrastructure +2 not fixed +3 total</title>
-    <id>infrastructure#2022-09-28T06:19:09Z</id>
-    <updated>2022-09-28T06:19:09Z</updated>
-    <published>2022-09-28T06:19:09Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>1098098931</td><td>ТП-464</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>substation = * | power = *</td></tr><tr><td>way</td><td>1098098932</td><td>ТП-471</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = * | substation = *</td></tr><tr style="background-color:#fff2cc;"><td>way</td><td>83986675</td><td>ГУО &quot;Социально-педагогический центр с приютом Заводского района г.Минска&quot;</td><td>ДУА &quot;Сацыяльна-педагагічны цэнтр з прытулкам Заводскага раена г.Мінска&quot;</td><td>Детский сад</td><td>other_both</td><td>barrier = *</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
     <title type="text">education +0 not fixed +1 total</title>
-    <id>education#2022-09-28T06:19:09Z</id>
-    <updated>2022-09-28T06:19:09Z</updated>
-    <published>2022-09-28T06:19:09Z</published>
+    <id>education#2022-09-29T06:19:00Z</id>
+    <updated>2022-09-29T06:19:00Z</updated>
+    <published>2022-09-29T06:19:00Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>way</td><td>83986675</td><td>ГУО &quot;Социально-педагогический центр с приютом Заводского района г.Минска&quot;</td><td>ДУА &quot;Сацыяльна-педагагічны цэнтр з прытулкам Заводскага раена г.Мінска&quot;</td><td>Детский сад</td><td>other_both</td><td>landuse = education | amenity = kindergarten</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>way</td><td>352995570</td><td>ЦКРОиР №1 Фрунзенского района г.Минска</td><td>ЦКРНіР №1 Фрунзенскага раёна г.Мiнска</td><td>ЦКРОиР №1 Фрунзенского района</td><td>other_both</td><td>amenity = kindergarten | landuse = education</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">office +5 not fixed +5 total</title>
-    <id>office#2022-09-28T06:19:09Z</id>
-    <updated>2022-09-28T06:19:09Z</updated>
-    <published>2022-09-28T06:19:09Z</published>
+    <title type="text">tourism +22 not fixed +22 total</title>
+    <id>tourism#2022-09-29T06:19:00Z</id>
+    <updated>2022-09-29T06:19:00Z</updated>
+    <published>2022-09-29T06:19:00Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>51928471</td><td>Минский РЭС</td><td>Мінскі РЭС</td><td>&nbsp;</td><td>other_be</td><td>office = *</td></tr><tr><td>node</td><td>6777109763</td><td>Чистый берег</td><td>Чысты бераг</td><td>&nbsp;</td><td>other_be</td><td>office = *</td></tr><tr><td>way</td><td>344028678</td><td>Острошицко-Городокский РЭС</td><td>Астрашыцкагарадоцкі РЭС</td><td>&nbsp;</td><td>other_be</td><td>office = *</td></tr><tr><td>way</td><td>429036467</td><td>Заславский РЭС</td><td>Заслаўский РЭС</td><td>&nbsp;</td><td>other_be</td><td>office = *</td></tr><tr><td>way</td><td>97816968</td><td>Пуховичский РЭС</td><td>Пухавіцкі РЭС</td><td>&nbsp;</td><td>other_be</td><td>office = *</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>10050776217</td><td>Крест</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>historic = *</td></tr><tr><td>node</td><td>10050799517</td><td>Крест</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>historic = *</td></tr><tr><td>node</td><td>10050515618</td><td>Зимородок</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>artwork_type = *</td></tr><tr><td>node</td><td>10050420517</td><td>Маша и медведь</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>artwork_type = *</td></tr><tr><td>node</td><td>10050892217</td><td>Памятник ВОВ</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>historic = *</td></tr><tr><td>node</td><td>10058102517</td><td>Костёл Св. Иосифа с надвратной колокольней, 1806-1815 гг.</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>historic = * | memorial = *</td></tr><tr><td>node</td><td>10042926517</td><td>«Искусство»</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>artwork_type = *</td></tr><tr><td>node</td><td>10050352017</td><td>Памятник отмены крепостного права 1887 г.</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>historic = * | memorial = *</td></tr><tr><td>node</td><td>3914862590</td><td>Иоан Павел II</td><td>&nbsp;</td><td>Епископ</td><td>other_ru</td><td>artwork_type = * | tourism = *</td></tr><tr><td>node</td><td>10058104717</td><td>Ансамбль бывшей резиденции Тышкевичей, конец 18-19 в.</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>historic = * | memorial = *</td></tr><tr><td>node</td><td>10009217317</td><td>Домик у водоёма</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>artwork_type = *</td></tr><tr><td>node</td><td>10009176417</td><td>Бульвар с бюстом Ф.Э.Дзержинского, 1955 год</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>memorial = * | historic = *</td></tr><tr><td>node</td><td>10043485317</td><td>Здание Белорусского общества дружбы и культурной связи с зарубежными странами, 1956 г.</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>historic = * | memorial = *</td></tr><tr><td>node</td><td>10058100017</td><td>Здание бывшей Иешивы, 1803 год</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>memorial = * | historic = *</td></tr><tr><td>node</td><td>7900674980</td><td>Богородица</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>historic = *</td></tr><tr><td>node</td><td>10050398418</td><td>Крест</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>historic = *</td></tr><tr><td>node</td><td>9641156517</td><td>«Часовня»</td><td>&nbsp;</td><td>«Часовня»</td><td>ru</td><td>artwork_type = * | tourism = *</td></tr><tr><td>node</td><td>10050474417</td><td>Воложин. 1400 / Шчаслівай дарогі</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>historic = *</td></tr><tr><td>node</td><td>10050340817</td><td>«Мельница»</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>artwork_type = *</td></tr><tr><td>node</td><td>10050532918</td><td>Герб Воложина</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>artwork_type = *</td></tr><tr><td>node</td><td>10050253119</td><td>Музыканты</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>artwork_type = *</td></tr><tr><td>node</td><td>10050271217</td><td>Мінскі раён / У добры шлях</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>historic = *</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">tourism +2 not fixed +2 total</title>
-    <id>tourism#2022-09-28T06:19:09Z</id>
-    <updated>2022-09-28T06:19:09Z</updated>
-    <published>2022-09-28T06:19:09Z</published>
+    <title type="text">infrastructure +3 not fixed +4 total</title>
+    <id>infrastructure#2022-09-29T06:19:00Z</id>
+    <updated>2022-09-29T06:19:00Z</updated>
+    <published>2022-09-29T06:19:00Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>10055266017</td><td>Ренесанс</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>tourism = *</td></tr><tr><td>node</td><td>10054672317</td><td>Вышка</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>tourism = *</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>way</td><td>352995570</td><td>ЦКРОиР №1 Фрунзенского района г.Минска</td><td>ЦКРНіР №1 Фрунзенскага раёна г.Мiнска</td><td>ЦКРОиР №1 Фрунзенского района</td><td>other_both</td><td>barrier = *</td></tr><tr><td>node</td><td>10050352018</td><td>Крест</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>man_made = *</td></tr><tr><td>node</td><td>10050532917</td><td>Крест</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>man_made = *</td></tr><tr><td>node</td><td>10050543617</td><td>Крест</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>man_made = *</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">government +0 not fixed +2 total</title>
-    <id>government#2022-09-28T06:19:09Z</id>
-    <updated>2022-09-28T06:19:09Z</updated>
-    <published>2022-09-28T06:19:09Z</published>
+    <title type="text">office +1 not fixed +1 total</title>
+    <id>office#2022-09-29T06:19:00Z</id>
+    <updated>2022-09-29T06:19:00Z</updated>
+    <published>2022-09-29T06:19:00Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>node</td><td>5183957843</td><td>ГУО &quot;Социально-педагогический центр Партизанского района г.Минска&quot;</td><td>ДУА &quot;Сацыяльна-педагагічны цэнтр Партызанская раёна г.Мінска&quot;</td><td>ГУО &quot;Социально-педагогический центр партизанского района г. Минска&quot;</td><td>other_both</td><td>government = * | office = government</td></tr><tr style="background-color:#fff2cc;"><td>node</td><td>10056381917</td><td>ГУО</td><td>ДУА &quot;Сацыяльна-педагагічны цэнтр з прытулкам Фрунзенскага раена г. Мінска&quot;</td><td>ГУО &quot;Социально-педагогический центр с приютом Фрунзенского района г.Минска&quot;</td><td>other_both</td><td>office = government</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>10057183914</td><td>Камянецкі ўчастак электрычнай сувязі</td><td>&nbsp;</td><td>Каменецкий участок электрической связи</td><td>other_ru</td><td>office = *</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">suburb +1 not fixed +1 total</title>
-    <id>suburb#2022-09-28T06:19:09Z</id>
-    <updated>2022-09-28T06:19:09Z</updated>
-    <published>2022-09-28T06:19:09Z</published>
+    <title type="text">government +3 not fixed +3 total</title>
+    <id>government#2022-09-29T06:19:00Z</id>
+    <updated>2022-09-29T06:19:00Z</updated>
+    <published>2022-09-29T06:19:00Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>1098200728</td><td>Свеклопункт</td><td>&nbsp;</td><td>Свеклопункт</td><td>ru</td><td>landuse = industrial</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">highway +0 not fixed +1 total</title>
-    <id>highway#2022-09-28T06:19:09Z</id>
-    <updated>2022-09-28T06:19:09Z</updated>
-    <published>2022-09-28T06:19:09Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#d9ead3;"><td>way</td><td>1098342871</td><td>1-й Парковый переулок</td><td><b>1-ы Паркавы завулак</b></td><td>1-й Парковый переулок</td><td>ru</td><td>highway = residential</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>10058661244</td><td>Выдача почтовых отправлений</td><td>&nbsp;</td><td>Выдача почтовых отправлений</td><td>ru</td><td>amenity = post_office</td></tr><tr><td>node</td><td>9251109645</td><td>Отдел доставки</td><td>&nbsp;</td><td>Отдел доставки</td><td>ru</td><td>amenity = post_office</td></tr><tr><td>node</td><td>9251109643</td><td>Бизнес-почта</td><td>&nbsp;</td><td>Бизнес-почта</td><td>ru</td><td>amenity = post_office</td></tr></table></content>
   </entry></feed>
