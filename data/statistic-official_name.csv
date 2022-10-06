@@ -58,8 +58,8 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,highway = primary,2085,113,107,0.054,0.051,76,3,3,0.039,0.039
 ,highway = secondary,1430,101,77,0.071,0.054,154,13,8,0.084,0.052
 ,highway = tertiary,16978,180,150,0.011,0.009,4388,32,25,0.007,0.006
-,highway = unclassified,510,10,6,0.020,0.012,283,4,2,0.014,0.007
-,highway = residential,402,1,1,0.002,0.002,286,1,1,0.003,0.003
+,highway = unclassified,507,10,6,0.020,0.012,282,4,2,0.014,0.007
+,highway = residential,405,1,1,0.002,0.002,286,1,1,0.003,0.003
 ,highway = service,43,2,2,0.047,0.047,33,1,1,0.030,0.030
 ,highway = track,94,2,0,0.021,0.000,76,1,0,0.013,0.000
 ,type = associatedStreet,3,3,3,1.000,1.000,3,3,3,1.000,1.000
