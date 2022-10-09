@@ -481,11 +481,17 @@ class Engine:
             )
         else:
             # dependant element in general miss language suffix tags
-            return (
-                element.update_tag in tags
-                and tags[element.update_tag] == element.value_from
-                and element.value_from != element.value_to
-            )
+            if element.value_from is None:
+                return (
+                    element.update_tag not in tags
+                    and element.value_from != element.value_to
+                )
+            else:
+                return (
+                    element.update_tag in tags
+                    and tags[element.update_tag] == element.value_from
+                    and element.value_from != element.value_to
+                )
 
     def _update_element(self, data: dict, elements: Iterable[ElementRuleChange]) -> ElementChanges:
         changes = []

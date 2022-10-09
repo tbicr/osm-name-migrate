@@ -15,7 +15,7 @@ import shapely.strtree
 from jinja2 import Template
 
 from belarus_upd import Engine
-from belarus_utils import PostgisSearchReadEngine, OverpassApiSearchEnigne, CYRILIC_REGEXP
+from belarus_utils import PostgisSearchReadEngine, OverpassApiSearchEnigne, CYRILIC_REGEXP, ElementRuleChange
 
 POSTGRES_HOST = os.environ['POSTGRES_HOST']
 POSTGRES_PORT = os.environ.get('POSTGRES_PORT', 5432)
@@ -25,6 +25,7 @@ POSTGRES_PASSWORD = os.environ['POSTGRES_PASSWORD']
 OSM2PGSQL_CACHE = os.environ['OSM2PGSQL_CACHE']
 GITHUB_TOKEN = os.environ['GITHUB_TOKEN']
 REPORT_OUTPUT_API = bool(int(os.environ['REPORT_OUTPUT_API']))
+AUTOFIX_OSM = bool(int(os.environ['AUTOFIX_OSM']))
 
 REPO_NAME = 'tbicr/osm-name-migrate'
 REPO = f'https://github.com/{REPO_NAME}'
@@ -1166,6 +1167,7 @@ with open('belarus_report.html') as t:
     result['index.html'] = Template(t.read()).render(groups=groups)
 
 print('create atom')
+autofix_items = []
 rss_data = []
 for name, content in result.items():
     if not name.startswith('data/name/'):
@@ -1218,9 +1220,23 @@ for name, group_dict in rss_groups.items():
                 element = postgis_api.read_relations([osm_id])[osm_id]
             nearest = engine._choose_nearest(name_index_full, name_elements_full, item['name'], element['way'])
             distance = shapely.wkt.loads(element['way']).distance(shapely.wkt.loads(nearest.way)) * 111000
-            if 'dependant' in item or name == 'highway' or distance < 5000:
-                item['autofix:be'] = nearest.tags['name:be']
-                item['autofix:ru'] = nearest.tags['name:ru']
+            if nearest.tags['name'] in {nearest.tags['name:be'], nearest.tags['name:ru']}:
+                if 'dependant' in item or name == 'highway' or distance < 5000:
+                    item['autofix:be'] = nearest.tags['name:be']
+                    item['autofix:ru'] = nearest.tags['name:ru']
+                    for tag in ['name:be', 'name:ru']:
+                        if not item[tag] and 'dependant' not in item:
+                            autofix_items.append(ElementRuleChange(
+                                comment='autofix using similar object',
+                                osm_id=osm_id,
+                                osm_type=osm_type,
+                                update_tag=tag,
+                                value_from=None,
+                                value_to=nearest.tags[tag],
+                                main=False,  # reuse dependant checks for update as main more restrictive
+                                use_osm_id=(nearest.osm_id,),
+                                use_osm_type=(nearest.osm_type,),
+                            ))
 
 
 def render_style_template(item):
@@ -1275,6 +1291,9 @@ with open('belarus_report.atom') as t:
         groups=rss_groups_rendered,
         time=datetime.datetime.utcnow().isoformat().split('.')[0] + 'Z',
     )
+
+if AUTOFIX_OSM:
+    engine._update_elements(autofix_items)
 
 if REPORT_OUTPUT_API:
     print('commit to github')

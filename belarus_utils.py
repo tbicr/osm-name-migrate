@@ -63,7 +63,7 @@ class ElementRuleChange:
     osm_id: int
     osm_type: str
     update_tag: str
-    value_from: str
+    value_from: Optional[str]
     value_to: str
     main: bool
     use_osm_id: Tuple[int, ...]
