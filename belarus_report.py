@@ -15,7 +15,10 @@ import shapely.strtree
 from jinja2 import Template
 
 from belarus_upd import Engine
-from belarus_utils import PostgisSearchReadEngine, OverpassApiSearchEnigne, CYRILIC_REGEXP, ElementRuleChange
+from belarus_utils import (
+    PostgisSearchReadEngine, OverpassApiSearchEnigne, OsmApiReadWriteEngine, PrintIssuesEngine,
+    CYRILIC_REGEXP, ElementRuleChange,
+)
 
 POSTGRES_HOST = os.environ['POSTGRES_HOST']
 POSTGRES_PORT = os.environ.get('POSTGRES_PORT', 5432)
@@ -1293,6 +1296,12 @@ with open('belarus_report.atom') as t:
     )
 
 if AUTOFIX_OSM:
+    OSM_USER = os.environ['OSM_USER']
+    OSM_PASSWORD = os.environ['OSM_PASSWORD']
+    DRY_RUN = bool(int(os.environ['DRY_RUN']))
+    osm_api_rw_engine = OsmApiReadWriteEngine(username=OSM_USER, password=OSM_PASSWORD, dry_run=DRY_RUN)
+    print_issues_engine = PrintIssuesEngine()
+    engine = Engine(None, osm_api_rw_engine, osm_api_rw_engine, print_issues_engine, None, None)
     engine._update_elements(autofix_items)
 
 if REPORT_OUTPUT_API:
