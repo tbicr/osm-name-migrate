@@ -1,2 +1,5 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+relation,7576941,Бобруйская,node,10091957444,Бобруйская,,
+relation,9417705,Бобруйская,node,10091957444,Бобруйская,,
+relation,9418651,Бобруйская,node,10091957444,Бобруйская,,
 relation,7894055,Вильнюс,way,864037266,Вильнюс,,
