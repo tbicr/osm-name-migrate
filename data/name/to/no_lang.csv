@@ -1,5 +1,3 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
-relation,3530698,Автовокзал,node,10094751569,Автовокзал,,
-relation,9418654,Бобруйская,node,10091957444,Бобруйская,,
 relation,7889931,Вильнюс,way,864037266,Вильнюс,,
 relation,5729728,ул. Лесная,way,95920426,ул. Лесная,,
