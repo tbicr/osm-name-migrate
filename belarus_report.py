@@ -166,6 +166,8 @@ CATEGORIES_RULES = {
         ['amenity', 'post_office'],
         ['amenity', 'police'],
         ['amenity', 'library'],
+        ['amenity', 'theatre'],
+        ['amenity', 'cinema'],
         ['office', 'government'],
         ['government', None],
         ['landuse', 'military'],
@@ -174,9 +176,6 @@ CATEGORIES_RULES = {
     'bank': [
         ['amenity', 'atm'],
         ['amenity', 'bank'],
-    ],
-    'office': [
-        ['office', None],
     ],
     'tourism': [
         ['tourism', None],
@@ -187,6 +186,13 @@ CATEGORIES_RULES = {
         ['attraction', None],
         ['resort', None],
         ['artwork_type', None],
+    ],
+    'sport': [
+        ['leisure', None],
+        ['sport', None],
+    ],
+    'office': [
+        ['office', None],
     ],
     'amenity': [
         ['amenity', 'cafe'],
@@ -219,8 +225,6 @@ CATEGORIES_RULES = {
         ['shop', 'butcher'],
         ['shop', 'cosmetics'],
         ['shop', None],
-        ['leisure', None],
-        ['sport', None],
         ['craft', 'shoemaker'],
         ['clothes', None],
     ],
