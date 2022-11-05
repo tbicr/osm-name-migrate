@@ -184,12 +184,12 @@ CATEGORIES_RULES = {
         ['ruins', None],
         ['information', None],
         ['attraction', None],
-        ['resort', None],
         ['artwork_type', None],
     ],
     'sport': [
         ['leisure', None],
         ['sport', None],
+        ['resort', None],
     ],
     'office': [
         ['office', None],
