@@ -1,2 +1,3 @@
 osm_type,osm_id,name,name:be,name:ru
-way,415790461,"Пункт пропуску ""Махро""",,"Пункт пропуска ""Мохро"""
+node,8196667217,"ДАП ""Niech Zyje Polska""",,"ДОТ ""Niech Zyje Polska"""
+node,3646635933,"ДАП ""Twierdza Nam Bedzie Kazny Prog""",,"ДОТ ""Twierdza Nam Bedzie Kazny Prog"""
