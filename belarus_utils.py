@@ -45,6 +45,7 @@ class FoundElement:
     osm_type: str
     lon: Optional[float]
     lat: Optional[float]
+    geohash: str
     way: Optional[str]
     tags: Dict[str, str]
 
@@ -68,6 +69,7 @@ class ElementRuleChange:
     main: bool
     use_osm_id: Tuple[int, ...]
     use_osm_type: Tuple[str, ...]
+    geohash: str = ''
 
     @property
     def osm_tid(self) -> str:
@@ -98,6 +100,10 @@ class ElementChanges:
     @property
     def osm_url(self) -> str:
         return self.changes[0].osm_url
+
+    @property
+    def geohash(self) -> str:
+        return self.changes[0].geohash
 
 
 @dataclasses.dataclass(frozen=True, slots=True)
@@ -184,7 +190,7 @@ class DumpSearchReadEngine(BaseSearchReadWriteEngine):
         class Handler(osmium.SimpleHandler):
             def process(self, osm_type, obj):
                 if match_tags(search_tags, obj.tags):
-                    results.append(FoundElement(obj.id, osm_type, None, None, None, dict(obj.tags)))
+                    results.append(FoundElement(obj.id, osm_type, None, None, '', None, dict(obj.tags)))
 
             def node(self, n):
                 self.process('node', n)
@@ -464,6 +470,7 @@ class PostgisSearchReadEngine(BaseSearchReadWriteEngine):
                 osm_type,
                 lon,
                 lat,
+                ST_GeoHash(ST_Centroid(way)) AS geohash,
                 ST_AsText(way) AS way,
                 hstore_to_json(tags) AS tags 
             FROM planet_osm_data_{self._suffix} 
@@ -473,8 +480,8 @@ class PostgisSearchReadEngine(BaseSearchReadWriteEngine):
         with psycopg2.connect(**self._params) as conn:
             with conn.cursor() as cur:
                 cur.execute(query)
-                for osm_id, osm_type, lon, lat, way, tags in cur.fetchall():
-                    results.append(FoundElement(osm_id, osm_type, lon, lat, way, tags))
+                for osm_id, osm_type, lon, lat, geohash, way, tags in cur.fetchall():
+                    results.append(FoundElement(osm_id, osm_type, lon, lat, geohash, way, tags))
 
         return results
 
@@ -666,7 +673,7 @@ class OverpassApiSearchEnigne(BaseSearchReadWriteEngine):
             geom = self._osm_to_geometry(osm_type, osm_id, type_id_elements)
             center = geom.centroid
             results.append(FoundElement(
-                osm_id, osm_type, center.x, center.y, shapely.wkt.dumps(geom), {
+                osm_id, osm_type, center.x, center.y, '', shapely.wkt.dumps(geom), {
                     **element.get('tags', {}),
                     **{
                         'osm_user': element['user'],
@@ -841,11 +848,14 @@ class OverpassApiSearchEnigne(BaseSearchReadWriteEngine):
 
 
 class OsmApiReadWriteEngine(BaseSearchReadWriteEngine):
-    def __init__(self, username, password, dry_run=False):
+    MAX_READ_CHUNK = 700
+    def __init__(self, username, password, dry_run=True, prefix='', suffix=''):
         import osmapi
 
         self._api = osmapi.OsmApi(username=username, password=password)
-        self._dry_run = False
+        self._dry_run = dry_run
+        self._prefix = prefix
+        self._suffix = suffix
 
     def read_nodes(self, osm_ids: Iterable[int]) -> Dict[int, dict]:
         result = {}
@@ -866,34 +876,29 @@ class OsmApiReadWriteEngine(BaseSearchReadWriteEngine):
         return result
 
     def write(self, changes: Sequence[ElementChanges]) -> List[int]:
-        group_changes_map = defaultdict(list)
-        group_comments_map = defaultdict(set)
-        for change in changes:
-            group_changes_map[change.changes[0].comment].append(change)
-            group_comments_map[change.changes[0].comment] |= {element.comment for element in change.changes}
+        if not changes:
+            return []
 
         changesets = []
-        for group, group_changes in group_changes_map.items():
-            comment = '; '.join(sorted(group_comments_map[group]))
-            chunks = math.ceil(len(group_changes) / self.MAX_WRITE_CHUNK)
+        comment = f'{self._prefix}{changes[0].changes[0].comment}{self._suffix}'
+        chunks = math.ceil(len(changes) / self.MAX_WRITE_CHUNK)
+        changes_data = [
+            {
+                'action': 'modify',
+                'type': change.osm_type,
+                'data': change.data,
+            }
+            for change in changes
+            if change.changes
+        ]
 
-            changes_data = [
-                {
-                    'action': 'modify',
-                    'type': change.osm_type,
-                    'data': change.data,
-                }
-                for change in group_changes
-                if change.changes
-            ]
-
-            for i, changes_data_chunk in enumerate(_split_chunks(changes_data, self.MAX_WRITE_CHUNK), 1):
-                if self._dry_run:
-                    continue
-                self._api.ChangesetCreate({'comment': f'{comment} ({i} of {chunks})'})
-                self._api.ChangesetUpload(changes_data_chunk)
-                changeset = self._api.ChangesetClose()
-                changesets.append(changeset)
+        for i, changes_data_chunk in enumerate(_split_chunks(changes_data, self.MAX_WRITE_CHUNK), 1):
+            if self._dry_run:
+                continue
+            self._api.ChangesetCreate({'comment': f'{comment} {i}/{chunks}'})
+            self._api.ChangesetUpload(changes_data_chunk)
+            changeset = self._api.ChangesetClose()
+            changesets.append(changeset)
         return changesets
 
 
@@ -1042,7 +1047,7 @@ class TestEngine(BaseSearchReadWriteEngine):
         results = []
         for (osm_id, osm_type), element in self.elements.items():
             if self._match_tags(search_tags, element['tag']):
-                results.append(FoundElement(osm_id, osm_type, None, None, None, element['tag']))
+                results.append(FoundElement(osm_id, osm_type, None, None, '', None, element['tag']))
         return results
 
     def _base_read(self, osm_ids: Iterable[int], osm_type: str) -> Dict[int, dict]:
@@ -1090,6 +1095,7 @@ class PostgisTestEngine(PostgisSearchReadEngine):
                         found_element.osm_type,
                         found_element.lon,
                         found_element.lat,
+                        found_element.geohash,
                         found_element.way,
                         changed_element_data['tag'].copy(),
                     ))
@@ -1106,6 +1112,7 @@ class PostgisTestEngine(PostgisSearchReadEngine):
                     osm_type,
                     data['lon'],
                     data['lat'],
+                    data['geohash'],
                     data['way'],
                     data['tag'].copy(),
                 ))
