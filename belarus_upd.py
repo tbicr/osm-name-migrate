@@ -1,4 +1,8 @@
+import datetime
+import json
 import os
+import time
+import traceback
 from collections import defaultdict
 from itertools import chain
 from typing import Dict, Optional, List, Iterable, Sequence, Tuple
@@ -13,7 +17,7 @@ import shapely.wkt
 from belarus_utils import (
     ChangeRule, DependantChangeRule, FoundElement, ElementRuleChange, ElementChanges, Issue,
     BaseSearchReadWriteEngine, PostgisSearchReadEngine, OsmApiReadWriteEngine, GeoJsonWriteEngine,
-    OsmChangeWriteEngine, PrintIssuesEngine, ManualChange, CYRILIC_CHARS,
+    OsmChangeWriteEngine, PrintIssuesEngine, ManualChange, CYRILIC_CHARS, DumpSearchReadEngine,
 )
 
 POSTGRES_HOST = os.environ['POSTGRES_HOST']
@@ -25,142 +29,161 @@ POSTGRES_PASSWORD = os.environ['POSTGRES_PASSWORD']
 OSM_USER = os.environ['OSM_USER']
 OSM_PASSWORD = os.environ['OSM_PASSWORD']
 DRY_RUN = bool(int(os.environ['DRY_RUN']))
-RULES = [
-    # admin
-    ChangeRule('вобласьці', 'name', {'admin_level': ['4']}),
-    ChangeRule('раёны', 'name', {'admin_level': ['6']}),
-    ChangeRule('сельскія саветы', 'name', {'admin_level': ['8']}),
-    ChangeRule('гарадзкія раёны', 'name', {'admin_level': ['9']}),
-
-    # place
-    ChangeRule('населенныя пункты', 'name', {'place': [
-        'city', 'town', 'village', 'hamlet', 'isolated_dwelling',
-    ]}),
-    ChangeRule('населенныя пункты', 'name', {'boundary': ['administrative']}),
-    ChangeRule('населенныя пункты', 'name', {'admin_level': None}),
-    ChangeRule('населенныя пункты', 'name', {'traffic_sign': ['city_limit']}),
-    ChangeRule('населенныя пункты - прэфіксы', 'name:prefix', {'place': [
-        'city', 'town', 'village', 'hamlet', 'isolated_dwelling',
-    ]}),
-    ChangeRule('населенныя пункты - прэфіксы', 'name:prefix', {'boundary': ['administrative']}),
-    ChangeRule('населенныя пункты - прэфіксы', 'name:prefix', {'admin_level': None}),
-
-    # allotments
-    ChangeRule('садовыя таварыствы', 'name', {'place': ['allotments']}),
-    ChangeRule('садовыя таварыствы', 'name', {'landuse': ['allotments']}),
-    ChangeRule('садовыя таварыствы', 'short_name', {'place': ['allotments']}),
-    ChangeRule('садовыя таварыствы', 'short_name', {'landuse': ['allotments']}),
-    ChangeRule('садовыя таварыствы', 'official_name', {'place': ['allotments']}),
-    ChangeRule('садовыя таварыствы', 'official_name', {'landuse': ['allotments']}),
-    ChangeRule('садовыя таварыствы - статусы', 'official_status', {'place': ['allotments']}),
-    ChangeRule('садовыя таварыствы - статусы', 'official_status', {'landuse': ['allotments']}),
-
-    # locality
-    ChangeRule('урочышча', 'name', {'place': ['locality']}),
-    ChangeRule('урочышча', 'name', {'abandoned:place': None}),
-    ChangeRule('урочышча - прэфіксы', 'name:prefix', {'place': ['locality']}),
-    ChangeRule('урочышча - прэфіксы', 'name:prefix', {'abandoned:place': None}),
-    ChangeRule('урочышча - прэфіксы', 'was:name:prefix', {'place': ['locality']}),
-    ChangeRule('урочышча - прэфіксы', 'was:name:prefix', {'abandoned:place': None}),
-
-    # suburb
-    ChangeRule('раёны', 'name', {'landuse': None}),
-    ChangeRule('раёны', 'name', {'place': None}),
-    ChangeRule('раёны', 'name', {'landuse': None}),
-    ChangeRule('раёны', 'name', {'residential': None}),
-    ChangeRule('раёны', 'name', {'industrial': None}),
-
-    # natural
-    ChangeRule('прыродныя', 'name', {'place': ['island', 'islet']}),
-    ChangeRule('прыродныя', 'name', {'landuse': ['forest']}),
-    ChangeRule('прыродныя', 'name', {'boundary': None}),
-    ChangeRule('прыродныя', 'name', {'natural': None}),
-    ChangeRule('прыродныя', 'name', {'ele': None}),
-
-    # water
-    ChangeRule('рэкі і азёры', 'name', {'waterway': None}),
-    ChangeRule('рэкі і азёры', 'name', {'type': ['waterway']}),
-    ChangeRule('рэкі і азёры', 'name', {'natural': ['water', 'spring']}),
-    ChangeRule('рэкі і азёры', 'name', {'tunnel': None}),
-    ChangeRule('рэкі і азёры', 'name', {'water': None}),
-
-    # highway
-    ChangeRule('дарогі', 'name', {'highway': None}),
-    ChangeRule('дарогі', 'name', {'type': ['associatedStreet', 'street']}),
-
-    # public_transport
-    ChangeRule('грамадзкі транспарт', 'name', {'highway': ['bus_stop']}),
-    ChangeRule('грамадзкі транспарт', 'name', {'public_transport': None}),
-    ChangeRule('грамадзкі транспарт', 'name', {'type': ['route', 'route_master']}),
-    ChangeRule('грамадзкі транспарт', 'name', {'route': None}),
-    ChangeRule('грамадзкі транспарт', 'name', {'route_master': None}),
-    ChangeRule('грамадзкі транспарт', 'name', {'railway': None}),
-
-    # infrastructure
-    ChangeRule('інфраструктура', 'name', {'barrier': None}),
-    ChangeRule('інфраструктура', 'name', {'power': None}),
-    ChangeRule('інфраструктура', 'name', {'substation': None}),
-    ChangeRule('інфраструктура', 'name', {'man_made': None}),
-    ChangeRule('інфраструктура', 'name', {'embankment': None}),
-    ChangeRule('інфраструктура', 'name', {'amenity': ['fuel']}),
-
-    # religion
-    ChangeRule('рэлігійныя', 'name', {'amenity': ['place_of_worship', 'monastery']}),
-    ChangeRule('рэлігійныя', 'name', {'building': ['church', 'cathedral', 'chapel']}),
-    ChangeRule('рэлігійныя', 'name', {'religion': None}),
-
-    # education
-    ChangeRule('адукацыя', 'name', {'landuse': ['education']}),
-    ChangeRule('адукацыя', 'name', {'amenity': ['university', 'college', 'school', 'kindergarten']}),
-    ChangeRule('адукацыя', 'name', {'building': ['university', 'college', 'school', 'kindergarten']}),
-
-    # healthcare
-    ChangeRule('ахова здароўя', 'name', {'amenity': ['hospital', 'pharmacy', 'clinic', 'doctors', 'dentist']}),
-    ChangeRule('ахова здароўя', 'name', {'building': ['hospital', 'clinic']}),
-    ChangeRule('ахова здароўя', 'name', {'emergency': None}),
-    ChangeRule('ахова здароўя', 'name', {'healthcare': None}),
-
-    # government
-    ChangeRule('дзяржаўныя', 'name', {'amenity': ['post_office', 'police', 'library']}),
-    ChangeRule('дзяржаўныя', 'name', {'office': ['government']}),
-    ChangeRule('дзяржаўныя', 'name', {'landuse': ['military']}),
-    ChangeRule('дзяржаўныя', 'name', {'government': None}),
-    ChangeRule('дзяржаўныя', 'name', {'military': None}),
-
-    # bank
-    ChangeRule('банкі', 'name', {'amenity': ['atm', 'bank']}),
-
-    # tourism
-    ChangeRule('турызм', 'name', {'tourism': None}),
-    ChangeRule('турызм', 'name', {'historic': None}),
-    ChangeRule('турызм', 'name', {'memorial': None}),
-    ChangeRule('турызм', 'name', {'ruins': None}),
-    ChangeRule('турызм', 'name', {'information': None}),
-    ChangeRule('турызм', 'name', {'attraction': None}),
-    ChangeRule('турызм', 'name', {'resort': None}),
-    ChangeRule('турызм', 'name', {'artwork_type': None}),
-
+CHANGE_RULES = [
+    [
+        # admin
+        ChangeRule('адміністратыўны падзел', 'name', {'admin_level': ['4', '6', '8', '9']}),
+    ],
+    [
+        # place
+        ChangeRule('населенныя пункты', 'name', {'place': [
+            'city', 'town', 'village', 'hamlet', 'isolated_dwelling',
+        ]}),
+        ChangeRule('населенныя пункты', 'name', {'boundary': ['administrative']}),
+        ChangeRule('населенныя пункты', 'name', {'admin_level': None}),
+        ChangeRule('населенныя пункты', 'name', {'traffic_sign': ['city_limit']}),
+        ChangeRule('населенныя пункты', 'name:prefix', {'place': [
+            'city', 'town', 'village', 'hamlet', 'isolated_dwelling',
+        ]}),
+        ChangeRule('населенныя пункты', 'name:prefix', {'boundary': ['administrative']}),
+        ChangeRule('населенныя пункты', 'name:prefix', {'admin_level': None}),
+    ],
+    [
+        # allotments
+        ChangeRule('садовыя таварыствы', 'name', {'place': ['allotments']}),
+        ChangeRule('садовыя таварыствы', 'name', {'landuse': ['allotments']}),
+        ChangeRule('садовыя таварыствы', 'short_name', {'place': ['allotments']}),
+        ChangeRule('садовыя таварыствы', 'short_name', {'landuse': ['allotments']}),
+        ChangeRule('садовыя таварыствы', 'official_name', {'place': ['allotments']}),
+        ChangeRule('садовыя таварыствы', 'official_name', {'landuse': ['allotments']}),
+        ChangeRule('садовыя таварыствы', 'official_status', {'place': ['allotments']}),
+        ChangeRule('садовыя таварыствы', 'official_status', {'landuse': ['allotments']}),
+    ],
+    [
+        # locality
+        ChangeRule('урочышча', 'name', {'place': ['locality']}),
+        ChangeRule('урочышча', 'name', {'abandoned:place': None}),
+        ChangeRule('урочышча', 'name:prefix', {'place': ['locality']}),
+        ChangeRule('урочышча', 'name:prefix', {'abandoned:place': None}),
+        ChangeRule('урочышча', 'was:name:prefix', {'place': ['locality']}),
+        ChangeRule('урочышча', 'was:name:prefix', {'abandoned:place': None}),
+    ],
+    [
+        # suburb
+        ChangeRule('раёны', 'name', {'landuse': None}),
+        ChangeRule('раёны', 'name', {'place': None}),
+        ChangeRule('раёны', 'name', {'landuse': None}),
+        ChangeRule('раёны', 'name', {'residential': None}),
+        ChangeRule('раёны', 'name', {'industrial': None}),
+    ],
+    [
+        DependantChangeRule('адрасы - адміністратыўны падзел', 'addr:region'),
+        DependantChangeRule('адрасы - адміністратыўны падзел', 'addr:district'),
+        DependantChangeRule('адрасы - адміністратыўны падзел', 'addr:subdistrict'),
+        DependantChangeRule('адрасы - адміністратыўны падзел', 'addr:city'),
+        DependantChangeRule('адрасы - адміністратыўны падзел', 'addr:place'),
+    ],
+    [
+        # natural
+        ChangeRule('прыродныя аб\'екты', 'name', {'place': ['island', 'islet']}),
+        ChangeRule('прыродныя аб\'екты', 'name', {'landuse': ['forest']}),
+        ChangeRule('прыродныя аб\'екты', 'name', {'boundary': None}),
+        ChangeRule('прыродныя аб\'екты', 'name', {'natural': None}),
+        ChangeRule('прыродныя аб\'екты', 'name', {'ele': None}),
+    ],
+    [
+        # water
+        ChangeRule('рэкі і азёры', 'name', {'waterway': None}),
+        ChangeRule('рэкі і азёры', 'name', {'type': ['waterway']}),
+        ChangeRule('рэкі і азёры', 'name', {'natural': ['water', 'spring']}),
+        ChangeRule('рэкі і азёры', 'name', {'tunnel': None}),
+        ChangeRule('рэкі і азёры', 'name', {'water': None}),
+    ],
+    [
+        # public_transport
+        ChangeRule('грамадзкі транспарт', 'name', {'highway': ['bus_stop']}),
+        ChangeRule('грамадзкі транспарт', 'name', {'public_transport': None}),
+        ChangeRule('грамадзкі транспарт', 'name', {'type': ['route', 'route_master']}),
+        ChangeRule('грамадзкі транспарт', 'name', {'route': None}),
+        ChangeRule('грамадзкі транспарт', 'name', {'route_master': None}),
+        ChangeRule('грамадзкі транспарт', 'name', {'railway': None}),
+    ],
+    [
+        # highway
+        ChangeRule('дарогі', 'name', {'highway': None}),
+        ChangeRule('дарогі', 'name', {'type': ['associatedStreet', 'street']}),
+    ],
+    [
+        DependantChangeRule('адрасы - дарогі', 'addr:street'),
+        DependantChangeRule('адрасы - дарогі', 'addr2:street'),
+    ],
+    [
+        DependantChangeRule('пункты прызначэньня', 'from'),
+        DependantChangeRule('пункты прызначэньня', 'to'),
+        DependantChangeRule('пункты прызначэньня', 'via'),
+        DependantChangeRule('пункты прызначэньня', 'destination'),
+        DependantChangeRule('пункты прызначэньня', 'destination:backward'),
+        DependantChangeRule('пункты прызначэньня', 'destination:forward'),
+    ],
+    # [
+    #     # infrastructure
+    #     ChangeRule('інфраструктура', 'name', {'barrier': None}),
+    #     ChangeRule('інфраструктура', 'name', {'power': None}),
+    #     ChangeRule('інфраструктура', 'name', {'substation': None}),
+    #     ChangeRule('інфраструктура', 'name', {'man_made': None}),
+    #     ChangeRule('інфраструктура', 'name', {'embankment': None}),
+    #     ChangeRule('інфраструктура', 'name', {'amenity': ['fuel']}),
+    # ],
+    # [
+    #     # religion
+    #     ChangeRule('рэлігійныя', 'name', {'amenity': ['place_of_worship', 'monastery']}),
+    #     ChangeRule('рэлігійныя', 'name', {'building': ['church', 'cathedral', 'chapel']}),
+    #     ChangeRule('рэлігійныя', 'name', {'religion': None}),
+    # ],
+    # [
+    #     # education
+    #     ChangeRule('адукацыя', 'name', {'landuse': ['education']}),
+    #     ChangeRule('адукацыя', 'name', {'amenity': ['university', 'college', 'school', 'kindergarten']}),
+    #     ChangeRule('адукацыя', 'name', {'building': ['university', 'college', 'school', 'kindergarten']}),
+    # ],
+    # [
+    #     # healthcare
+    #     ChangeRule('ахова здароўя', 'name', {'amenity': ['hospital', 'pharmacy', 'clinic', 'doctors', 'dentist']}),
+    #     ChangeRule('ахова здароўя', 'name', {'building': ['hospital', 'clinic']}),
+    #     ChangeRule('ахова здароўя', 'name', {'emergency': None}),
+    #     ChangeRule('ахова здароўя', 'name', {'healthcare': None}),
+    # ],
+    # [
+    #     # government
+    #     ChangeRule('дзяржаўныя', 'name', {'amenity': ['post_office', 'police', 'library', 'theatre', 'cinema']}),
+    #     ChangeRule('дзяржаўныя', 'name', {'office': ['government']}),
+    #     ChangeRule('дзяржаўныя', 'name', {'landuse': ['military']}),
+    #     ChangeRule('дзяржаўныя', 'name', {'government': None}),
+    #     ChangeRule('дзяржаўныя', 'name', {'military': None}),
+    # ],
+    #     [
+    #     # bank
+    #     ChangeRule('банкі', 'name', {'amenity': ['atm', 'bank']}),
+    # ],
+    # [
+    #     # tourism
+    #     ChangeRule('турызм', 'name', {'tourism': None}),
+    #     ChangeRule('турызм', 'name', {'historic': None}),
+    #     ChangeRule('турызм', 'name', {'memorial': None}),
+    #     ChangeRule('турызм', 'name', {'ruins': None}),
+    #     ChangeRule('турызм', 'name', {'information': None}),
+    #     ChangeRule('турызм', 'name', {'attraction': None}),
+    #     ChangeRule('турызм', 'name', {'artwork_type': None}),
+    # ],
+    # [
+    #     # sport
+    #     ChangeRule('спорт', 'name', {'leisure': None}),
+    #     ChangeRule('спорт', 'name', {'sport': None}),
+    #     ChangeRule('спорт', 'name', {'resort': None}),
+    # ],
     # office
     # amenity
     # building
-]
-DEPENDANT_RULES = [
-    DependantChangeRule('dep', 'addr:region'),
-    DependantChangeRule('dep', 'addr:district'),
-    DependantChangeRule('dep', 'addr:subdistrict'),
-    DependantChangeRule('dep', 'addr:city'),
-    DependantChangeRule('dep', 'addr:place'),
-    DependantChangeRule('dep', 'addr:street'),
-    DependantChangeRule('dep', 'addr2:street'),
-
-    DependantChangeRule('dep', 'from'),
-    DependantChangeRule('dep', 'to'),
-    DependantChangeRule('dep', 'via'),
-    DependantChangeRule('dep', 'destination'),
-    DependantChangeRule('dep', 'destination:backward'),
-    DependantChangeRule('dep', 'destination:forward'),
-
-    DependantChangeRule('dep', 'water_tank:city'),
 ]
 MANUAL = [
     # osm_type, osm_id, name:ru, name:be
@@ -267,8 +290,8 @@ class Engine:
 
     def tags_switch(
             self,
-            rules: Iterable[ChangeRule],
-            dependant_rules: Iterable[DependantChangeRule],
+            rules: List[ChangeRule],
+            dependant_rules: List[DependantChangeRule],
             manual: List[Tuple[Optional[str], Optional[int], Optional[str], str]],
             out_border_name_map: Dict[str, str],
     ) -> List[int]:
@@ -278,9 +301,11 @@ class Engine:
 
     def _rule_changes(
             self,
-            rules: Iterable[ChangeRule],
+            rules: List[ChangeRule],
             manual: List[Tuple[Optional[str], Optional[int], Optional[str], str]],
     ) -> Iterable[ElementRuleChange]:
+        if not rules:
+            return
         manual_by_id = {
             (osm_type, osm_id): ManualChange(osm_type, osm_id, value_from, value_to)
             for osm_type, osm_id, value_from, value_to in manual
@@ -297,7 +322,7 @@ class Engine:
         }
 
         for rule in rules:
-            print(f'search {rule}')
+            print(f'{datetime.datetime.utcnow()} search {rule}')
             tag_from = f'{rule.update_tag}:{self._suffix_from}'
             tag_to = f'{rule.update_tag}:{self._suffix_to}'
             found_elements = self._find_elements(
@@ -377,14 +402,16 @@ class Engine:
 
     def _dependant_rule_changes(
             self,
-            dependant_rules: Iterable[DependantChangeRule],
+            dependant_rules: List[DependantChangeRule],
             out_border_name_map: Dict[str, str],
     ) -> Iterable[ElementRuleChange]:
-        print('search dependants')
+        if not dependant_rules:
+            return
+        print(f'{datetime.datetime.utcnow()} search dependants')
         name_elements, name_index, name_elements_full, name_index_full = self.build_name_spatial_index()
 
         for dependant_rule in dependant_rules:
-            print(f'search dependant {dependant_rule}')
+            print(f'{datetime.datetime.utcnow()} search dependant {dependant_rule}')
             tag = dependant_rule.update_tag
             stat_el_ok = stat_el_part = stat_el_zero = stat_ok = stat_no_lang = stat_not_found = 0
             no_lang = defaultdict(list)
@@ -464,7 +491,7 @@ class Engine:
             tag_from = f'{element.update_tag}:{self._suffix_from}'
             tag_to = f'{element.update_tag}:{self._suffix_to}'
             # assert tags[element.update_tag] in (tags[tag_from], tags[tag_to])
-            if tags[element.update_tag] not in (element.value_from, element.value_to):
+            if element.update_tag in tags and tags[element.update_tag] not in (element.value_from, element.value_to):
                 self._issues_engine.report_issue(
                     Issue(message=Issue.ISSUE_TAG_VALUE_NOT_IN_LANGUAGE_TAGS, changes=[element], extra={
                         element.update_tag: tags[element.update_tag],
@@ -533,6 +560,7 @@ class Engine:
                 ))
 
         # fetch real latest data ready to update (this required to avoid optimistic lock)
+        print(f'{datetime.datetime.utcnow()} read osm {len(nodes) + len(ways) + len(relations)}')
         nodes_data = self._read_engine.read_nodes(nodes.keys() - skip_node)
         ways_data = self._read_engine.read_ways(ways.keys() - skip_way)
         relations_data = self._read_engine.read_relations(relations.keys() - skip_rel)
@@ -542,9 +570,11 @@ class Engine:
         upd_ways_data = [self._update_element(way, ways[osm_id]) for osm_id, way in ways_data.items()]
         upd_relations_data = [self._update_element(rel, relations[osm_id]) for osm_id, rel in relations_data.items()]
         upd_data = [change for change in chain(upd_nodes_data, upd_ways_data, upd_relations_data) if change.changes]
+        sorted_upd_data = sorted(upd_data, key=lambda change: change.geohash)
 
         # save changes
-        return self._write_engine.write(upd_data)
+        print(f'{datetime.datetime.utcnow()} write osm {len(sorted_upd_data)}')
+        return self._write_engine.write(sorted_upd_data)
 
 
 if __name__ == '__main__':
@@ -555,24 +585,58 @@ if __name__ == '__main__':
         user=POSTGRES_USER,
         password=POSTGRES_PASSWORD,
     )
-    osm_api_rw_engine = OsmApiReadWriteEngine(username=OSM_USER, password=OSM_PASSWORD, dry_run=DRY_RUN)
+    osm_api_rw_engine = OsmApiReadWriteEngine(
+        username=OSM_USER,
+        password=OSM_PASSWORD,
+        dry_run=DRY_RUN,
+        suffix=(
+            ': міграцыя на беларускую мову адпаведна з '
+            'https://wiki.openstreetmap.org/wiki/Be:Belarus_language_issues/Migration_proposal'
+        ),
+    )
+    osm_dump_r_engine = DumpSearchReadEngine()
     osm_change_w_engine = OsmChangeWriteEngine('belarus-result.osc')
     geojson_w_engine = GeoJsonWriteEngine(postgis_search_engine, 'results')
     print_issues_engine = PrintIssuesEngine()
 
-    Engine(
+    engine = Engine(
         search_engine=postgis_search_engine,
-        read_engine=postgis_search_engine,
-        # read_engine=osm_api_rw_engine,
-        # write_engine=osm_api_rw_engine,
-        write_engine=osm_change_w_engine,
-        # write_engine=geojson_w_engine,
+        read_engine=osm_api_rw_engine,
+        write_engine=osm_api_rw_engine,
+        # read_engine=osm_dump_r_engine,
+        # write_engine=osm_change_w_engine,
         issues_engine=print_issues_engine,
         suffix_from='ru',
         suffix_to='be',
-    ).tags_switch(
-        RULES,
-        DEPENDANT_RULES,
-        MANUAL,
-        {v: vv[2] if v == vv[2] else vv[0] for vv in OUT_OF_BORDER_NAMES for v in vv},
     )
+    for rules in CHANGE_RULES:
+        comment = rules[0].comment.split(':')[0]
+        cache = []
+        if os.path.exists('belarus_upd.json'):
+            with open('belarus_upd.json') as h:
+                cache = json.load(h)
+        if comment in cache:
+            continue
+        main_rules = [rule for rule in rules if isinstance(rule, ChangeRule)]
+        dep_rules = [rule for rule in rules if isinstance(rule, DependantChangeRule)]
+        start = time.time()
+        for i in range(3):
+            try:
+                print(f'{datetime.datetime.utcnow()} s', comment, len(main_rules), len(dep_rules))
+                engine.tags_switch(
+                    main_rules,
+                    dep_rules,
+                    MANUAL,
+                    {v: vv[2] if v == vv[2] else vv[0] for vv in OUT_OF_BORDER_NAMES for v in vv},
+                )
+                break
+            except Exception as err:
+                # raise err
+                if i == 2:
+                    raise err
+                print(f'{datetime.datetime.utcnow()} x', err)
+                print(traceback.format_exc())
+        print(f'{datetime.datetime.utcnow()} e', comment, len(main_rules), len(dep_rules), int(time.time() - start))
+        cache.append(comment)
+        with open('belarus_upd.json', 'w') as h:
+            json.dump(cache, h, indent=2, ensure_ascii=False)
