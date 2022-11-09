@@ -111,6 +111,7 @@ CHANGE_RULES = [
     [
         # highway
         ChangeRule('дарогі', 'name', {'highway': None}),
+        ChangeRule('дарогі', 'official_name', {'highway': None}),
         ChangeRule('дарогі', 'name', {'type': ['associatedStreet', 'street']}),
     ],
     [
