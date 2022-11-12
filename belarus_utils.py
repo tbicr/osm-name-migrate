@@ -896,9 +896,11 @@ class OsmApiReadWriteEngine(BaseSearchReadWriteEngine):
             if self._dry_run:
                 continue
             self._api.ChangesetCreate({'comment': f'{comment} {i}/{chunks}'})
-            self._api.ChangesetUpload(changes_data_chunk)
-            changeset = self._api.ChangesetClose()
-            changesets.append(changeset)
+            try:
+                self._api.ChangesetUpload(changes_data_chunk)
+            finally:
+                changeset = self._api.ChangesetClose()
+                changesets.append(changeset)
         return changesets
 
 

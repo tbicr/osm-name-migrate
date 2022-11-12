@@ -1243,6 +1243,7 @@ for name, group_dict in rss_groups.items():
                                 main=False,  # reuse dependant checks for update as main more restrictive
                                 use_osm_id=(nearest.osm_id,),
                                 use_osm_type=(nearest.osm_type,),
+                                geohash=nearest.tags[tag],
                             ))
 
 
