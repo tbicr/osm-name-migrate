@@ -1,6 +1,5 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
 relation,7576664,Bug,relation,1314266,Bug,Заходні Буг,Западный Буг
-relation,8536012,Bug,relation,1314266,Bug,Заходні Буг,Западный Буг
 relation,7154794,Dnieper,relation,2086905,Dnieper,Дняпро,Днепр
 relation,7190105,Dnieper,relation,2086905,Dnieper,Дняпро,Днепр
 relation,1314266,Narew,relation,2278710,Narew,Нараў,Нарев
