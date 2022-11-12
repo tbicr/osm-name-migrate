@@ -120,9 +120,10 @@ CATEGORIES_RULES = {
         ['public_transport', None],
         ['route', None],
         ['type', 'route'],
-        ['railway', None],
         ['type', 'route_master'],
         ['route_master', None],
+        ['railway', None],
+        ['aeroway', None],
     ],
     'infrastructure': [
         ['barrier', None],

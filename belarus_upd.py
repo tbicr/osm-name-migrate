@@ -107,6 +107,7 @@ CHANGE_RULES = [
         ChangeRule('грамадзкі транспарт', 'name', {'route': None}),
         ChangeRule('грамадзкі транспарт', 'name', {'route_master': None}),
         ChangeRule('грамадзкі транспарт', 'name', {'railway': None}),
+        ChangeRule('грамадзкі транспарт', 'name', {'aeroway': None}),
     ],
     [
         # highway
