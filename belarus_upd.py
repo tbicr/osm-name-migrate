@@ -355,6 +355,7 @@ class Engine:
                     True,
                     tuple([found_element.osm_id]),
                     tuple([found_element.osm_type]),
+                    found_element.geohash,
                 )
                 if self._valid_for_update(element_change, found_element.tags):
                     yield element_change
@@ -480,6 +481,7 @@ class Engine:
                         False,
                         tuple(osm_id for osm_type, osm_id in osm_type_id_change),
                         tuple(osm_type for osm_type, osm_id in osm_type_id_change),
+                        element.geohash,
                     )
                     yield element_change
 
@@ -624,12 +626,12 @@ if __name__ == '__main__':
         for i in range(3):
             try:
                 print(f'{datetime.datetime.utcnow()} s', comment, len(main_rules), len(dep_rules))
-                engine.tags_switch(
+                print(engine.tags_switch(
                     main_rules,
                     dep_rules,
                     MANUAL,
                     {v: vv[2] if v == vv[2] else vv[0] for vv in OUT_OF_BORDER_NAMES for v in vv},
-                )
+                ))
                 break
             except Exception as err:
                 # raise err

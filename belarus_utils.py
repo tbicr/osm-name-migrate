@@ -69,7 +69,7 @@ class ElementRuleChange:
     main: bool
     use_osm_id: Tuple[int, ...]
     use_osm_type: Tuple[str, ...]
-    geohash: str = ''
+    geohash: str
 
     @property
     def osm_tid(self) -> str:
