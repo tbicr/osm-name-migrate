@@ -32,7 +32,7 @@ AUTOFIX_OSM = bool(int(os.environ['AUTOFIX_OSM']))
 
 REPO_NAME = 'tbicr/osm-name-migrate'
 REPO = f'https://github.com/{REPO_NAME}'
-SKIP_CSV_COLUMNS = {'be=ru', 'be+ru', 'ru+be', 'be'}
+SKIP_CSV_COLUMNS = {'be=ru', 'be+ru', 'be'}
 FLOAT_FORMAT = '{:.3f}'.format
 TABLE_ATTRS = 'class="table table-sm table-hover caption-top"'
 pd.set_option('display.max_rows', None)
@@ -612,6 +612,10 @@ def should_create_csv(lang_tag, category, tag, column):
     if category in {'TOTAL', 'amenity', 'building'}:
         return False
     if column in SKIP_CSV_COLUMNS:
+        return False
+    if column == 'ru+be' and category in {
+        'office', 'sport', 'tourism', 'bank', 'government', 'healthcare', 'education', 'religion', 'infrastructure'
+    }:
         return False
     return True
 
