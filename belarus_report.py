@@ -121,6 +121,8 @@ CATEGORIES_RULES = {
         ['route', None],
         ['type', 'route'],
         ['type', 'route_master'],
+        ['type', 'disused:route'],
+        ['type', 'public_transport'],
         ['route_master', None],
         ['railway', None],
         ['aeroway', None],
@@ -378,6 +380,12 @@ postgis_api.insert_extra_relations(overpass_api.search({'type': ['route']}))
 
 print('type = route_master')
 postgis_api.insert_extra_relations(overpass_api.search({'type': ['route_master']}))
+
+print('type = disused:route')
+postgis_api.insert_extra_relations(overpass_api.search({'type': ['disused:route']}))
+
+print('type = public_transport')
+postgis_api.insert_extra_relations(overpass_api.search({'type': ['public_transport']}))
 
 print('type = waterway')
 postgis_api.insert_extra_relations(overpass_api.search({'type': ['waterway']}))
