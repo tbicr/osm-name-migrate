@@ -279,6 +279,15 @@ LANGUAGE_TAGS = [
 ]
 
 
+BE_EXCEPTIONS = {
+    'Памежная зона - Border line',
+    'Памежная зона - Border zone',
+    'Памежная паласа - Border line',
+    'Памежная паласа - Border zone',
+    'Памежная паласа - Border line: STOP!',
+}
+
+
 usage = defaultdict(set)
 CATEGORIES_RULES2 = {}
 for category, group in CATEGORIES_RULES.items():
@@ -485,7 +494,12 @@ def get_df(lang_tag, data_table):
                     elif value == value_ru:
                         progress = [0, 0, 0, 0, 1, 0, 0, 0, 0]  # ru
                     elif value_be is not None and value_ru is not None:
-                        progress = [0, 0, 0, 0, 0, 1, 0, 0, 0]  # other both
+                        if value in BE_EXCEPTIONS and value_be == value_ru:
+                            progress = [1, 0, 0, 0, 0, 0, 0, 0, 0]  # be=ru exception
+                        elif value in BE_EXCEPTIONS and value_be != value_ru:
+                            progress = [0, 1, 0, 0, 0, 0, 0, 0, 0]  # be+ru exception
+                        else:
+                            progress = [0, 0, 0, 0, 0, 1, 0, 0, 0]  # other both
                     elif value_be is not None:
                         progress = [0, 0, 0, 0, 0, 0, 1, 0, 0]  # other be
                     elif value_ru is not None:
