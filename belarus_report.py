@@ -1252,6 +1252,7 @@ for row in rss_data_new:
     del item['category']
 for name, group_dict in rss_groups.items():
     for item in group_dict.values():
+        item['autofix'] = None
         item['autofix:be'] = None
         item['autofix:ru'] = None
         if item['name'] and item['name'] in name_elements_full:
@@ -1291,6 +1292,7 @@ for name, group_dict in rss_groups.items():
                     item['dependant'] == (item['name:ru'] or item['autofix:ru']) and
                     name not in NAME_SKIP_AUTO_BE_FIX_CATEGORIES
                 ):
+                    item['autofix'] = item['name:be'] or item['autofix:be']
                     autofix_items.append(ElementRuleChange(
                         comment='autofix using name:be or similar object',
                         osm_id=osm_id,
@@ -1311,6 +1313,7 @@ for name, group_dict in rss_groups.items():
                     item['name'] == (item['name:ru'] or item['autofix:ru']) and
                     name not in NAME_SKIP_AUTO_BE_FIX_CATEGORIES
                 ):
+                    item['autofix'] = item['name:be'] or item['autofix:be']
                     autofix_items.append(ElementRuleChange(
                         comment='autofix using name:be or similar object',
                         osm_id=osm_id,
@@ -1328,13 +1331,26 @@ for name, group_dict in rss_groups.items():
 def render_style_template(item):
     if item['issue'] == 'other_both':
         return '<tr style="background-color:#fff2cc;">{}</tr>'
-    if item['autofix:be']:
-        return '<tr style="background-color:#d9ead3;">{}</tr>'
+    if 'dependant' in item:
+        if item['autofix']:
+            return '<tr style="background-color:#d9ead3;">{}</tr>'
+        return '<tr style="background-color:#fff2cc;">{}</tr>'
+    else:
+        if item['issue'] == 'ru+be':
+            if item['autofix']:
+                return '<tr style="background-color:#d9ead3;">{}</tr>'
+            return '<tr style="background-color:#fff2cc;">{}</tr>'
+        if item['autofix:be']:
+            return '<tr style="background-color:#d9ead3;">{}</tr>'
     return '<tr>{}</tr>'
 
 
 def render_value(field, item):
     value = item[field]
+    if field == 'dependant' if 'dependant' in item else field == 'name':
+        autofix = item['autofix']
+        if autofix:
+            return f'<b>{html.escape(autofix)}</b>'
     if field == 'name:be':
         if value:
             return html.escape(value)
@@ -1351,21 +1367,32 @@ def render_value(field, item):
 
 
 rss_groups_rendered = {}
+autofix_fields = {'autofix', 'autofix:be', 'autofix:ru'}
 for name, group_dict in rss_groups.items():
     group = list(group_dict.values())
-    non_fixed_group = [item for item in group if item['issue'] != 'other_both' and not item['autofix:be']]
+    non_fixed_group = [
+        item
+        for item in group
+        if item['issue'] != 'other_both'
+        and not item['autofix:be']
+        and not item['autofix']
+    ]
     rss_groups_rendered[name] = {
         'title': f'{name} +{len(non_fixed_group)} not fixed +{len(group)} total',
         'content': (
             '<table>' +
             '<tr>' +
-            ''.join(f'<th>{html.escape(k)}</th>' for k in group[0].keys() if k not in {'autofix:be', 'autofix:ru'}) +
+            ''.join(
+                f'<th>{html.escape(k)}</th>'
+                for k in group[0].keys()
+                if k not in autofix_fields
+            ) +
             '</tr>' +
             ''.join(render_style_template(item).format(
                 ''.join(
                     f'<td>{render_value(k, item) or "&nbsp;"}</td>'
                     for k in item.keys()
-                    if k not in {'autofix:be', 'autofix:ru'}
+                    if k not in autofix_fields
                 ))
                 for item in group
             ) +
