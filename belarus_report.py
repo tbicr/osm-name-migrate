@@ -33,6 +33,18 @@ AUTOFIX_OSM = bool(int(os.environ['AUTOFIX_OSM']))
 REPO_NAME = 'tbicr/osm-name-migrate'
 REPO = f'https://github.com/{REPO_NAME}'
 SKIP_CSV_COLUMNS = {'be=ru', 'be+ru', 'be'}
+NAME_SKIP_AUTO_BE_FIX_CATEGORIES = {
+    'infrastructure',
+    'religion',
+    'education',
+    'healthcare',
+    'government',
+    'bank',
+    'tourism',
+    'office',
+    'sport',
+    'other',
+}
 FLOAT_FORMAT = '{:.3f}'.format
 TABLE_ATTRS = 'class="table table-sm table-hover caption-top"'
 pd.set_option('display.max_rows', None)
@@ -60,6 +72,7 @@ CATEGORIES_RULES = {
     'allotments': [
         ['place', 'allotments'],
         ['landuse', 'allotments'],
+        ['allotments', None],
     ],
     'locality': [
         ['place', 'locality'],
@@ -635,9 +648,7 @@ def should_create_csv(lang_tag, category, tag, column):
         return False
     if column in SKIP_CSV_COLUMNS:
         return False
-    if column == 'ru+be' and category in {
-        'office', 'sport', 'tourism', 'bank', 'government', 'healthcare', 'education', 'religion', 'infrastructure'
-    }:
+    if column == 'ru+be' and category in NAME_SKIP_AUTO_BE_FIX_CATEGORIES:
         return False
     return True
 
@@ -1261,7 +1272,7 @@ for name, group_dict in rss_groups.items():
                     for tag in ['name:be', 'name:ru']:
                         if not item[tag] and 'dependant' not in item:
                             autofix_items.append(ElementRuleChange(
-                                comment='autofix using similar object',
+                                comment='autofix using name:be or similar object',
                                 osm_id=osm_id,
                                 osm_type=osm_type,
                                 update_tag=tag,
@@ -1272,6 +1283,46 @@ for name, group_dict in rss_groups.items():
                                 use_osm_type=(nearest.osm_type,),
                                 geohash=nearest.tags[tag],
                             ))
+            if 'dependant' in item:
+                if (
+                    (item['name:be'] or item['autofix:be']) and
+                    (item['name:ru'] or item['autofix:ru']) and
+                    item['dependant'] != (item['name:be'] or item['autofix:be']) and
+                    item['dependant'] == (item['name:ru'] or item['autofix:ru']) and
+                    name not in NAME_SKIP_AUTO_BE_FIX_CATEGORIES
+                ):
+                    autofix_items.append(ElementRuleChange(
+                        comment='autofix using name:be or similar object',
+                        osm_id=osm_id,
+                        osm_type=osm_type,
+                        update_tag=name,
+                        value_from=item['dependant'],
+                        value_to=item['name:be'] or item['autofix:be'],
+                        main=False,  # reuse dependant checks for update as main more restrictive
+                        use_osm_id=(item['osm_id'],),
+                        use_osm_type=(item['osm_type'],),
+                        geohash='',
+                    ))
+            else:
+                if (
+                    (item['name:be'] or item['autofix:be']) and
+                    (item['name:ru'] or item['autofix:ru']) and
+                    item['name'] != (item['name:be'] or item['autofix:be']) and
+                    item['name'] == (item['name:ru'] or item['autofix:ru']) and
+                    name not in NAME_SKIP_AUTO_BE_FIX_CATEGORIES
+                ):
+                    autofix_items.append(ElementRuleChange(
+                        comment='autofix using name:be or similar object',
+                        osm_id=osm_id,
+                        osm_type=osm_type,
+                        update_tag='name',
+                        value_from=item['name'],
+                        value_to=item['name:be'] or item['autofix:be'],
+                        main=False,  # reuse dependant checks for update as main more restrictive
+                        use_osm_id=(item['osm_id'],),
+                        use_osm_type=(item['osm_type'],),
+                        geohash='',
+                    ))
 
 
 def render_style_template(item):

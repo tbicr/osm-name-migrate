@@ -58,6 +58,7 @@ CHANGE_RULES = [
         ChangeRule('садовыя таварыствы', 'official_name', {'landuse': ['allotments']}),
         ChangeRule('садовыя таварыствы', 'official_status', {'place': ['allotments']}),
         ChangeRule('садовыя таварыствы', 'official_status', {'landuse': ['allotments']}),
+        ChangeRule('садовыя таварыствы', 'name', {'allotments': None}),
     ],
     [
         # locality
