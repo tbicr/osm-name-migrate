@@ -17,6 +17,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 #,allotments,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,place = allotments,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,landuse = allotments,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,allotments = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,locality,970,970,970,1.000,1.000,14,14,14,1.000,1.000
 ,place = locality,923,923,923,1.000,1.000,14,14,14,1.000,1.000
 ,abandoned:place = *,952,952,952,1.000,1.000,14,14,14,1.000,1.000
