@@ -75,7 +75,6 @@ CHANGE_RULES = [
         ChangeRule('раёны', 'name', {'place': None}),
         ChangeRule('раёны', 'name', {'landuse': None}),
         ChangeRule('раёны', 'name', {'residential': None}),
-        ChangeRule('раёны', 'name', {'industrial': None}),
     ],
     [
         DependantChangeRule('адрасы - адміністратыўны падзел', 'addr:region'),
@@ -131,13 +130,20 @@ CHANGE_RULES = [
         DependantChangeRule('пункты прызначэньня', 'destination:forward'),
     ],
     # [
+    #     ChangeRule('раёны', 'name', {'landuse': ['industrial']}),
+    #     ChangeRule('раёны', 'name', {'building': ['industrial']}),
+    #     ChangeRule('раёны', 'name', {'industrial': None}),
+    # ],
+    # [
     #     # infrastructure
     #     ChangeRule('інфраструктура', 'name', {'barrier': None}),
     #     ChangeRule('інфраструктура', 'name', {'power': None}),
     #     ChangeRule('інфраструктура', 'name', {'substation': None}),
+    #     ChangeRule('інфраструктура', 'name', {'pipeline': None}),
     #     ChangeRule('інфраструктура', 'name', {'man_made': None}),
     #     ChangeRule('інфраструктура', 'name', {'embankment': None}),
     #     ChangeRule('інфраструктура', 'name', {'amenity': ['fuel']}),
+    #     ChangeRule('інфраструктура', 'name', {'building': ['service']}),
     # ],
     # [
     #     # religion

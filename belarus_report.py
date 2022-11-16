@@ -84,12 +84,10 @@ CATEGORIES_RULES = {
         ['landuse', 'construction'],
         ['landuse', 'farmland'],
         ['landuse', 'farmyard'],
-        ['landuse', 'industrial'],
         ['landuse', 'residential'],
         ['landuse', 'retail'],
         ['place', None],
         ['residential', None],
-        ['industrial', None],
         ['landuse', None],
     ],
     'natural': [
@@ -140,13 +138,20 @@ CATEGORIES_RULES = {
         ['railway', None],
         ['aeroway', None],
     ],
+    'industrial': [
+        ['landuse', 'industrial'],
+        ['building', 'industrial'],
+        ['industrial', None],
+    ],
     'infrastructure': [
         ['barrier', None],
         ['power', None],
         ['substation', None],
+        ['pipeline', None],
         ['man_made', None],
         ['embankment', None],
         ['amenity', 'fuel'],
+        ['building', 'service'],
     ],
     'religion': [
         ['religion', None],
@@ -245,8 +250,6 @@ CATEGORIES_RULES = {
         ['clothes', None],
     ],
     'building': [
-        ['building', 'industrial'],
-        ['building', 'service'],
         ['building', 'retail'],
         ['building', 'commercial'],
         ['building', 'warehouse'],
