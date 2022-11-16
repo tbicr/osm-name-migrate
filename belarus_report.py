@@ -1284,28 +1284,7 @@ for name, group_dict in rss_groups.items():
                                 use_osm_type=(nearest.osm_type,),
                                 geohash=nearest.tags[tag],
                             ))
-            if 'dependant' in item:
-                if (
-                    (item['name:be'] or item['autofix:be']) and
-                    (item['name:ru'] or item['autofix:ru']) and
-                    item['dependant'] != (item['name:be'] or item['autofix:be']) and
-                    item['dependant'] == (item['name:ru'] or item['autofix:ru']) and
-                    name not in NAME_SKIP_AUTO_BE_FIX_CATEGORIES
-                ):
-                    item['autofix'] = item['name:be'] or item['autofix:be']
-                    autofix_items.append(ElementRuleChange(
-                        comment='autofix using name:be or similar object',
-                        osm_id=osm_id,
-                        osm_type=osm_type,
-                        update_tag=name,
-                        value_from=item['dependant'],
-                        value_to=item['name:be'] or item['autofix:be'],
-                        main=False,  # reuse dependant checks for update as main more restrictive
-                        use_osm_id=(item['osm_id'],),
-                        use_osm_type=(item['osm_type'],),
-                        geohash='',
-                    ))
-            else:
+            if 'dependant' not in item:
                 if (
                     (item['name:be'] or item['autofix:be']) and
                     (item['name:ru'] or item['autofix:ru']) and
@@ -1326,6 +1305,31 @@ for name, group_dict in rss_groups.items():
                         use_osm_type=(item['osm_type'],),
                         geohash='',
                     ))
+for name, group_dict in rss_groups.items():
+    for item in group_dict.values():
+        osm_type = item['osm_type']
+        osm_id = int(item['osm_id'])
+        if 'dependant' in item:
+            if (
+                (item['name:be'] or item['autofix:be']) and
+                (item['name:ru'] or item['autofix:ru']) and
+                item['dependant'] != (item['name:be'] or item['autofix:be']) and
+                item['dependant'] == (item['name:ru'] or item['autofix:ru']) and
+                name not in NAME_SKIP_AUTO_BE_FIX_CATEGORIES
+            ):
+                item['autofix'] = item['name:be'] or item['autofix:be']
+                autofix_items.append(ElementRuleChange(
+                    comment='autofix using name:be or similar object',
+                    osm_id=osm_id,
+                    osm_type=osm_type,
+                    update_tag=name,
+                    value_from=item['dependant'],
+                    value_to=item['name:be'] or item['autofix:be'],
+                    main=False,  # reuse dependant checks for update as main more restrictive
+                    use_osm_id=(item['osm_id'],),
+                    use_osm_type=(item['osm_type'],),
+                    geohash='',
+                ))
 
 
 def render_style_template(item):
