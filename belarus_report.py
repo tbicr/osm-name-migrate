@@ -137,6 +137,8 @@ CATEGORIES_RULES = {
         ['route_master', None],
         ['railway', None],
         ['aeroway', None],
+        ['building', 'train_station'],
+        ['building', 'transportation'],
     ],
     'industrial': [
         ['landuse', 'industrial'],
@@ -252,10 +254,17 @@ CATEGORIES_RULES = {
     'building': [
         ['building', 'retail'],
         ['building', 'commercial'],
-        ['building', 'warehouse'],
         ['building', 'public'],
         ['building', 'dormitory'],
         ['building', 'warehouse'],
+        ['building', 'office'],
+        ['building', 'house'],
+        ['building', 'apartments'],
+        ['building', 'residential'],
+        ['building', 'ruins'],
+        ['building', 'bunker'],
+        ['building', 'construction'],
+        ['building', 'kiosk'],
         ['building', None],
     ],
 }
