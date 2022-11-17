@@ -1320,7 +1320,9 @@ for name, group_dict in rss_groups.items():
     for item in group_dict.values():
         osm_type = item['osm_type']
         osm_id = int(item['osm_id'])
+        print(f'DEBUG: put deps to autofix {osm_type} {osm_id} {name} before dependant')
         if 'dependant' in item:
+            print(f'DEBUG: put deps to autofix {osm_type} {osm_id} {name} before value')
             if (
                 (item['name:be'] or item['autofix:be']) and
                 (item['name:ru'] or item['autofix:ru']) and
@@ -1328,14 +1330,15 @@ for name, group_dict in rss_groups.items():
                 item['dependant'] == (item['name:ru'] or item['autofix:ru']) and
                 name not in NAME_SKIP_AUTO_BE_FIX_CATEGORIES
             ):
-                item['autofix'] = item['name:be'] or item['autofix:be']
+                print(f'DEBUG: put deps to autofix {osm_type} {osm_id} {name} put {item["dependant"]} -> {item["autofix"] or item["name"]}')
+                item['autofix'] = item['autofix'] or item['name']
                 autofix_items.append(ElementRuleChange(
                     comment='autofix using name:be or similar object',
                     osm_id=osm_id,
                     osm_type=osm_type,
                     update_tag=name,
                     value_from=item['dependant'],
-                    value_to=item['name:be'] or item['autofix:be'],
+                    value_to=item['autofix'] or item['name'],
                     main=False,  # reuse dependant checks for update as main more restrictive
                     use_osm_id=(item['osm_id'],),
                     use_osm_type=(item['osm_type'],),
