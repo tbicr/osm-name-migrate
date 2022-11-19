@@ -1323,7 +1323,11 @@ for name, group_dict in rss_groups.items():
 for name, group_dict in rss_groups.items():
     for item in group_dict.values():
         osm_type = item['osm_type']
-        osm_id = int(item['osm_id'])
+        try:
+            osm_id = int(item['osm_id'])
+        except Exception as err:
+            print(item, err)
+            continue
         print(f'DEBUG: put deps to autofix {osm_type} {osm_id} {name} before dependant')
         if 'dependant' in item:
             print(f'DEBUG: put deps to autofix {osm_type} {osm_id} {name} before value')
