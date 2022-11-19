@@ -131,8 +131,9 @@ CHANGE_RULES = [
         DependantChangeRule('пункты прызначэньня', 'destination:forward'),
     ],
     # [
+    #     # industrial
     #     ChangeRule('раёны', 'name', {'landuse': ['industrial']}),
-    #     ChangeRule('раёны', 'name', {'building': ['industrial']}),
+    #     ChangeRule('раёны', 'name', {'building': ['industrial', 'warehouse']}),
     #     ChangeRule('раёны', 'name', {'industrial': None}),
     # ],
     # [
@@ -146,18 +147,18 @@ CHANGE_RULES = [
     #     ChangeRule('інфраструктура', 'name', {'amenity': ['fuel']}),
     #     ChangeRule('інфраструктура', 'name', {'building': ['service']}),
     # ],
-    # [
-    #     # religion
-    #     ChangeRule('рэлігійныя', 'name', {'amenity': ['place_of_worship', 'monastery']}),
-    #     ChangeRule('рэлігійныя', 'name', {'building': ['church', 'cathedral', 'chapel']}),
-    #     ChangeRule('рэлігійныя', 'name', {'religion': None}),
-    # ],
-    # [
-    #     # education
-    #     ChangeRule('адукацыя', 'name', {'landuse': ['education']}),
-    #     ChangeRule('адукацыя', 'name', {'amenity': ['university', 'college', 'school', 'kindergarten']}),
-    #     ChangeRule('адукацыя', 'name', {'building': ['university', 'college', 'school', 'kindergarten']}),
-    # ],
+    [
+        # religion
+        ChangeRule('рэлігійныя', 'name', {'amenity': ['place_of_worship', 'monastery']}),
+        ChangeRule('рэлігійныя', 'name', {'building': ['church', 'cathedral', 'chapel']}),
+        ChangeRule('рэлігійныя', 'name', {'religion': None}),
+    ],
+    [
+        # education
+        ChangeRule('адукацыя', 'name', {'landuse': ['education']}),
+        ChangeRule('адукацыя', 'name', {'amenity': ['university', 'college', 'school', 'kindergarten']}),
+        ChangeRule('адукацыя', 'name', {'building': ['university', 'college', 'school', 'kindergarten', 'dormitory']}),
+    ],
     # [
     #     # healthcare
     #     ChangeRule('ахова здароўя', 'name', {'amenity': ['hospital', 'pharmacy', 'clinic', 'doctors', 'dentist']}),
@@ -169,6 +170,7 @@ CHANGE_RULES = [
     #     # government
     #     ChangeRule('дзяржаўныя', 'name', {'amenity': ['post_office', 'police', 'library', 'theatre', 'cinema']}),
     #     ChangeRule('дзяржаўныя', 'name', {'office': ['government']}),
+    #     ChangeRule('дзяржаўныя', 'name', {'building': ['public']}),
     #     ChangeRule('дзяржаўныя', 'name', {'landuse': ['military']}),
     #     ChangeRule('дзяржаўныя', 'name', {'government': None}),
     #     ChangeRule('дзяржаўныя', 'name', {'military': None}),
@@ -186,6 +188,7 @@ CHANGE_RULES = [
     #     ChangeRule('турызм', 'name', {'information': None}),
     #     ChangeRule('турызм', 'name', {'attraction': None}),
     #     ChangeRule('турызм', 'name', {'artwork_type': None}),
+    #     ChangeRule('турызм', 'name', {'building': ['bunker', 'ruins']}),
     # ],
     # [
     #     # sport

@@ -142,6 +142,7 @@ CATEGORIES_RULES = {
     'industrial': [
         ['landuse', 'industrial'],
         ['building', 'industrial'],
+        ['building', 'warehouse'],
         ['industrial', None],
     ],
     'infrastructure': [
@@ -172,6 +173,7 @@ CATEGORIES_RULES = {
         ['building', 'college'],
         ['building', 'school'],
         ['building', 'kindergarten'],
+        ['building', 'dormitory'],
     ],
     'healthcare': [
         ['emergency', None],
@@ -191,6 +193,7 @@ CATEGORIES_RULES = {
         ['amenity', 'theatre'],
         ['amenity', 'cinema'],
         ['office', 'government'],
+        ['building', 'public'],
         ['government', None],
         ['landuse', 'military'],
         ['military', None],
@@ -207,6 +210,8 @@ CATEGORIES_RULES = {
         ['information', None],
         ['attraction', None],
         ['artwork_type', None],
+        ['building', 'bunker'],
+        ['building', 'ruins'],
     ],
     'sport': [
         ['leisure', None],
@@ -253,15 +258,10 @@ CATEGORIES_RULES = {
     'building': [
         ['building', 'retail'],
         ['building', 'commercial'],
-        ['building', 'public'],
-        ['building', 'dormitory'],
-        ['building', 'warehouse'],
         ['building', 'office'],
         ['building', 'house'],
         ['building', 'apartments'],
         ['building', 'residential'],
-        ['building', 'ruins'],
-        ['building', 'bunker'],
         ['building', 'construction'],
         ['building', 'kiosk'],
         ['building', None],
