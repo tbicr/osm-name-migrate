@@ -1271,7 +1271,8 @@ for name, group_dict in rss_groups.items():
             try:
                 osm_id = int(item['osm_id'])
             except Exception as err:
-                print(osm_type, item['osm_id'], err)
+                print(item, err)
+                continue
             if osm_type == 'node':
                 element = postgis_api.read_nodes([osm_id])[osm_id]
             elif osm_type == 'way':
