@@ -1266,13 +1266,9 @@ for name, group_dict in rss_groups.items():
         item['autofix'] = None
         item['autofix:be'] = None
         item['autofix:ru'] = None
-        if item['name'] and item['name'] in name_elements_full:
+        if item['name'] and item['name'] in name_elements_full and item['osm_id']:
             osm_type = item['osm_type']
-            try:
-                osm_id = int(item['osm_id'])
-            except Exception as err:
-                print(item, err)
-                continue
+            osm_id = int(item['osm_id'])
             if osm_type == 'node':
                 element = postgis_api.read_nodes([osm_id])[osm_id]
             elif osm_type == 'way':
@@ -1322,36 +1318,33 @@ for name, group_dict in rss_groups.items():
                     ))
 for name, group_dict in rss_groups.items():
     for item in group_dict.values():
-        osm_type = item['osm_type']
-        try:
+        if item['osm_id']:
+            osm_type = item['osm_type']
             osm_id = int(item['osm_id'])
-        except Exception as err:
-            print(item, err)
-            continue
-        print(f'DEBUG: put deps to autofix {osm_type} {osm_id} {name} before dependant')
-        if 'dependant' in item:
-            print(f'DEBUG: put deps to autofix {osm_type} {osm_id} {name} before value')
-            if (
-                (item['name:be'] or item['autofix:be']) and
-                (item['name:ru'] or item['autofix:ru']) and
-                item['dependant'] != (item['name:be'] or item['autofix:be']) and
-                item['dependant'] == (item['name:ru'] or item['autofix:ru']) and
-                name not in NAME_SKIP_AUTO_BE_FIX_CATEGORIES
-            ):
-                print(f'DEBUG: put deps to autofix {osm_type} {osm_id} {name} put {item["dependant"]} -> {item["autofix"] or item["name"]}')
-                item['autofix'] = item['autofix'] or item['name']
-                autofix_items.append(ElementRuleChange(
-                    comment='autofix using name:be or similar object',
-                    osm_id=osm_id,
-                    osm_type=osm_type,
-                    update_tag=name,
-                    value_from=item['dependant'],
-                    value_to=item['autofix'] or item['name'],
-                    main=False,  # reuse dependant checks for update as main more restrictive
-                    use_osm_id=(item['osm_id'],),
-                    use_osm_type=(item['osm_type'],),
-                    geohash='',
-                ))
+            print(f'DEBUG: put deps to autofix {osm_type} {osm_id} {name} before dependant')
+            if 'dependant' in item:
+                print(f'DEBUG: put deps to autofix {osm_type} {osm_id} {name} before value')
+                if (
+                    (item['name:be'] or item['autofix:be']) and
+                    (item['name:ru'] or item['autofix:ru']) and
+                    item['dependant'] != (item['name:be'] or item['autofix:be']) and
+                    item['dependant'] == (item['name:ru'] or item['autofix:ru']) and
+                    name not in NAME_SKIP_AUTO_BE_FIX_CATEGORIES
+                ):
+                    print(f'DEBUG: put deps to autofix {osm_type} {osm_id} {name} put {item["dependant"]} -> {item["autofix"] or item["name"]}')
+                    item['autofix'] = item['autofix:be'] or item['name:be']
+                    autofix_items.append(ElementRuleChange(
+                        comment='autofix using name:be or similar object',
+                        osm_id=osm_id,
+                        osm_type=osm_type,
+                        update_tag=name,
+                        value_from=item['dependant'],
+                        value_to=item['autofix:be'] or item['name:be'],
+                        main=False,  # reuse dependant checks for update as main more restrictive
+                        use_osm_id=(item['osm_id'],),
+                        use_osm_type=(item['osm_type'],),
+                        geohash='',
+                    ))
 
 
 def render_style_template(item):
