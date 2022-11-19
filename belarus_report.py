@@ -1268,7 +1268,10 @@ for name, group_dict in rss_groups.items():
         item['autofix:ru'] = None
         if item['name'] and item['name'] in name_elements_full:
             osm_type = item['osm_type']
-            osm_id = int(item['osm_id'])
+            try:
+                osm_id = int(item['osm_id'])
+            except Exception as err:
+                print(osm_type, item['osm_id'], err)
             if osm_type == 'node':
                 element = postgis_api.read_nodes([osm_id])[osm_id]
             elif osm_type == 'way':
