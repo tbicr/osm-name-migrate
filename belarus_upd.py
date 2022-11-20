@@ -195,6 +195,7 @@ CHANGE_RULES = [
     #     ChangeRule('спорт', 'name', {'leisure': None}),
     #     ChangeRule('спорт', 'name', {'sport': None}),
     #     ChangeRule('спорт', 'name', {'resort': None}),
+    #     ChangeRule('спорт', 'name', {'amenity': ['sanatorium']}),
     # ],
     # office
     # amenity

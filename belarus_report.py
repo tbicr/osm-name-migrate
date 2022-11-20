@@ -35,8 +35,6 @@ REPO = f'https://github.com/{REPO_NAME}'
 SKIP_CSV_COLUMNS = {'be=ru', 'be+ru', 'be'}
 NAME_SKIP_AUTO_BE_FIX_CATEGORIES = {
     'infrastructure',
-    'religion',
-    'education',
     'healthcare',
     'government',
     'bank',
@@ -217,6 +215,7 @@ CATEGORIES_RULES = {
         ['leisure', None],
         ['sport', None],
         ['resort', None],
+        ['amenity', 'sanatorium'],
     ],
     'office': [
         ['office', None],
