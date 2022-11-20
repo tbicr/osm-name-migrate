@@ -1,1 +1,3 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+way,1115407729,Капличи,relation,7549248,Капличи,Каплічы,Капличи
+node,10202044456,Погорельщина,relation,7528504,Погорельщина,Пагарэльшчына,Погорельщина

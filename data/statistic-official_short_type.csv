@@ -81,6 +81,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 #,industrial,67,0,0,0.000,0.000,5,0,0,0.000,0.000
 ,landuse = industrial,63,0,0,0.000,0.000,4,0,0,0.000,0.000
 ,building = industrial,3,0,0,0.000,0.000,2,0,0,0.000,0.000
+,building = warehouse,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,industrial = *,9,0,0,0.000,0.000,3,0,0,0.000,0.000
 #,infrastructure,4181,0,0,0.000,0.000,37,0,0,0.000,0.000
 ,amenity = fuel,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -98,7 +99,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = cathedral,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = chapel,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,religion = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,education,1,0,0,0.000,0.000,1,0,0,0.000,0.000
+#,education,2,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,landuse = education,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = university,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = college,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -108,6 +109,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = college,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = school,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = kindergarten,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,building = dormitory,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 #,healthcare,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,amenity = hospital,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = pharmacy,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -125,6 +127,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = theatre,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = cinema,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = government,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,building = public,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,landuse = military,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,government = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,military = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -132,6 +135,8 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = atm,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = bank,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,tourism,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,building = bunker,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,building = ruins,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,tourism = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,historic = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,memorial = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -178,20 +183,16 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,shop = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,clothes = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,building,49,0,0,0.000,0.000,10,0,0,0.000,0.000
+#,building,48,0,0,0.000,0.000,9,0,0,0.000,0.000
+,building = yes,15,0,0,0.000,0.000,8,0,0,0.000,0.000
 ,building = retail,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = commercial,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,building = public,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,building = dormitory,1,0,0,0.000,0.000,1,0,0,0.000,0.000
-,building = warehouse,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = office,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = house,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = apartments,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = residential,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,building = ruins,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,building = bunker,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = construction,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = kiosk,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,building = *,48,0,0,0.000,0.000,9,0,0,0.000,0.000
+,building = *,33,0,0,0.000,0.000,3,0,0,0.000,0.000
 #,other,2,0,0,0.000,0.000,1,0,0,0.000,0.000
 #,TOTAL,4193,0,0,0.000,0.000,41,0,0,0.000,0.000
