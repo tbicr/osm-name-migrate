@@ -75,6 +75,7 @@ CHANGE_RULES = [
         ChangeRule('раёны', 'name', {'place': None}),
         ChangeRule('раёны', 'name', {'landuse': None}),
         ChangeRule('раёны', 'name', {'residential': None}),
+        ChangeRule('раёны', 'name', {'leisure': ['park', 'garden']}),
     ],
     [
         DependantChangeRule('адрасы - адміністратыўны падзел', 'addr:region'),
@@ -90,6 +91,7 @@ CHANGE_RULES = [
         ChangeRule('прыродныя аб\'екты', 'name', {'boundary': None}),
         ChangeRule('прыродныя аб\'екты', 'name', {'natural': None}),
         ChangeRule('прыродныя аб\'екты', 'name', {'ele': None}),
+        ChangeRule('прыродныя аб\'екты', 'name', {'leisure': ['nature_reserve']}),
     ],
     [
         # water
@@ -158,6 +160,7 @@ CHANGE_RULES = [
         ChangeRule('адукацыя', 'name', {'landuse': ['education']}),
         ChangeRule('адукацыя', 'name', {'amenity': ['university', 'college', 'school', 'kindergarten']}),
         ChangeRule('адукацыя', 'name', {'building': ['university', 'college', 'school', 'kindergarten', 'dormitory']}),
+        ChangeRule('адукацыя', 'name', {'office': ['educational_institution']}),
     ],
     # [
     #     # healthcare
@@ -169,11 +172,13 @@ CHANGE_RULES = [
     # [
     #     # government
     #     ChangeRule('дзяржаўныя', 'name', {'amenity': ['post_office', 'police', 'library', 'theatre', 'cinema']}),
-    #     ChangeRule('дзяржаўныя', 'name', {'office': ['government']}),
+    #     ChangeRule('дзяржаўныя', 'name', {'office': ['government', 'diplomatic']}),
     #     ChangeRule('дзяржаўныя', 'name', {'building': ['public']}),
     #     ChangeRule('дзяржаўныя', 'name', {'landuse': ['military']}),
     #     ChangeRule('дзяржаўныя', 'name', {'government': None}),
     #     ChangeRule('дзяржаўныя', 'name', {'military': None}),
+    #     ChangeRule('дзяржаўныя', 'name', {'embassy': None}),
+    #     ChangeRule('дзяржаўныя', 'name', {'diplomatic': None}),
     # ],
     #     [
     #     # bank
