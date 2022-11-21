@@ -1321,7 +1321,6 @@ for name, group_dict in rss_groups.items():
         if 'dependant' in item and item['osm_id']:
             osm_type = item['dep_osm_type']
             osm_id = int(item['dep_osm_id'])
-            print(f'DEBUG: put deps to autofix {osm_type} {osm_id} {name} dependant')
             if (
                 (item['name:be'] or item['autofix:be']) and
                 (item['name:ru'] or item['autofix:ru']) and
@@ -1329,7 +1328,6 @@ for name, group_dict in rss_groups.items():
                 item['dependant'] == (item['name:ru'] or item['autofix:ru']) and
                 name not in NAME_SKIP_AUTO_BE_FIX_CATEGORIES
             ):
-                print(f'DEBUG: put deps to autofix {osm_type} {osm_id} {name} put {item["dependant"]} -> {item["autofix"] or item["name"]}')
                 item['autofix'] = item['autofix:be'] or item['name:be']
                 autofix_items.append(ElementRuleChange(
                     comment='autofix using name:be or similar object',

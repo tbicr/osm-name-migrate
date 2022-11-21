@@ -504,17 +504,6 @@ class Engine:
         return self._search_engine.search(search_tags)
 
     def _valid_for_update(self, element: ElementRuleChange, tags: Dict[str, str]) -> bool:
-        print(
-            f'DEBUG: put deps to autofix {element.osm_type} {element.osm_id} {element.update_tag} validate '
-            f'main={element.main} '
-            f'from_is_none={element.value_from is None} '
-            f'tag_in_tags={element.update_tag in tags} '
-            f'val_ne_from={tags.get(element.update_tag) == element.value_from} '
-            f'from_ne_to={element.value_from != element.value_to} '
-            f'val={tags.get(element.update_tag)} '
-            f'from={element.value_from} '
-            f'to={element.value_to} '
-        )
         if element.main:
             # main element should have language suffix tags
             tag_from = f'{element.update_tag}:{self._suffix_from}'
