@@ -105,7 +105,7 @@ def get_ids_file_name(stack: contextlib.ExitStack, ids: Iterable[str]) -> str:
 
 
 @log_time
-def osmium_fileinfo(input_file: str, json: bool = False, check: bool = False):
+def osmium_fileinfo(input_file: str, json: bool = False, check: bool = True):
     params = ['osmium', 'fileinfo']
     if json:
         params.append('-j')
@@ -117,7 +117,7 @@ def osmium_fileinfo(input_file: str, json: bool = False, check: bool = False):
 
 
 @log_time
-def osmium_fileformat(input_file: str, check: bool = False):
+def osmium_fileformat(input_file: str, check: bool = True):
     info = json.loads(osmium_fileinfo(input_file, json=True, check=check))
     mapping = {
         ('XML', 'none'): TYPE_OSM,
@@ -138,7 +138,7 @@ def osmium_getid(
         remove_tags: bool = False,
         input_format: str = TYPE_OSM_PBF,
         output_format: str = TYPE_OSM_PBF,
-        check: bool = False,
+        check: bool = True,
 ) -> bytes:
     with contextlib.ExitStack() as stack:
         ids = chain(
@@ -154,8 +154,12 @@ def osmium_getid(
             params.append('-t')
         result = subprocess.run(
             params + [get_input_file_name(stack, file, input_format)],
-            capture_output=True, check=check,
+            capture_output=True, check=False,
         )
+        if check and result.returncode not in {0, 1}:
+            raise subprocess.CalledProcessError(
+                result.returncode, result.args, output=result.stdout, stderr=result.stderr,
+            )
         return result.stdout
 
 
@@ -168,7 +172,7 @@ def osmium_removeid(
         mixed: Iterable[str] = (),
         input_format: str = TYPE_OSM_PBF,
         output_format: str = TYPE_OSM_PBF,
-        check: bool = False,
+        check: bool = True,
 ) -> bytes:
     with contextlib.ExitStack() as stack:
         ids = chain(
@@ -193,7 +197,7 @@ def osmium_tags_filter(
         remove_tags: bool = False,
         input_format: str = TYPE_OSM_PBF,
         output_format: str = TYPE_OSM_PBF,
-        check: bool = False,
+        check: bool = True,
 ) -> bytes:
     with contextlib.ExitStack() as stack:
         params = ['osmium', 'tags-filter', '-f', output_format]
@@ -210,10 +214,10 @@ def osmium_tags_filter(
 
 @log_time
 def osmium_merge(
-        *files: bytes,
+        *files: [str, bytes],
         input_format: str = TYPE_OSM_PBF,
         output_format: str = TYPE_OSM_PBF,
-        check: bool = False,
+        check: bool = True,
 ) -> bytes:
     with contextlib.ExitStack() as stack:
         input_files = [get_input_file_name(stack, file, input_format) for file in files]
@@ -229,7 +233,7 @@ def osmium_cat(
         file: [str, bytes],
         input_format: str = TYPE_OSM_PBF,
         output_format: str = TYPE_OSM_PBF,
-        check: bool = False,
+        check: bool = True,
 ) -> bytes:
     with contextlib.ExitStack() as stack:
         result = subprocess.run(
