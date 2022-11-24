@@ -537,8 +537,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         prog='osm_back.py',
         description='Update dependant tag to parent on specified language.')
-    parser.add_argument('-t', '--tag', dest='tags', required=True, nargs='+',
-                        help='Tag for update. Can be "addr:street" and etc. or "*".')
+    parser.add_argument('-t', '--tag', dest='tags', nargs='+', default=DEFAULT_TAGS,
+                        help='Tag for update. Can be "addr:street" and etc.')
     parser.add_argument('-l', '--lang', required=True, help='Language to update to. Can be "be" or "ru".')
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('-O', '--overwrite', action='store_true',
@@ -552,9 +552,6 @@ if __name__ == '__main__':
     output_file = input_file if args.overwrite else args.output_file
     output_format = args.output_format if args.output_format else None
     tags = args.tags
-    if '*' in tags:
-        tags.remove('*')
-        tags.extend(tag for tag in DEFAULT_TAGS if tag not in tags)
     lang = args.lang
 
     main(tags, lang, input_file, output_file, output_format)
