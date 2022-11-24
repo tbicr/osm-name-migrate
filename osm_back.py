@@ -548,10 +548,10 @@ if __name__ == '__main__':
     parser.add_argument('OSM_FILE')
     args = parser.parse_args()
 
-    input_file = args.OSM_FILE
-    output_file = input_file if args.overwrite else args.output_file
-    output_format = args.output_format if args.output_format else None
-    tags = args.tags
-    lang = args.lang
-
-    main(tags, lang, input_file, output_file, output_format)
+    main(
+        tags=args.tags,
+        lang=args.lang,
+        input_file=args.OSM_FILE,
+        output_file=args.OSM_FILE if args.overwrite else args.output_file,
+        output_format=args.output_format,
+    )
