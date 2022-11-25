@@ -2,13 +2,14 @@
 this script allows to replace dependant tags as addr:street or other with appropriate
 language form the nearest parent object
 
-this script use pyosmium and shapely libraries
-
-    pip install pyosmium shapely
-
-this script also use osmium command
+this script use "pyosmium" and "shapely" python libraries and also "osmium" command from "osmium-tool":
 
     apt-get install osmium-tool
+    pip install osmium shapely
+
+as alternative all packages can be installed using system packages:
+
+    apt-get install osmium-tool python3-pyosmium python3-shapely
 
 """
 import argparse
