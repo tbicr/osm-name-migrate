@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 this script allows to replace dependant tags as addr:street or other with appropriate
 language form the nearest parent object
