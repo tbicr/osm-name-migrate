@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-this script allows to replace dependant tags as addr:street or other with appropriate
-language form the nearest parent object
+this script allows to replace main and dependant tags as name and addr:street or other with appropriate
+language form the language tag or nearest parent object
 
 this script use "pyosmium" and "shapely" python libraries and also "osmium" command from "osmium-tool":
 
@@ -43,7 +43,21 @@ TYPE_OSM = 'osm'
 TYPE_OSM_BZ2 = 'osm.bz2'
 TYPE_OSM_PBF = 'osm.pbf'
 
-DEFAULT_TAGS = [
+DEFAULT_MAIN_TAGS = [
+    'name',
+    'name:prefix',
+    'was:name:prefix',
+    'short_name',
+    'official_name',
+    'official_status',
+    'official_short_type',
+    'operator',
+    'brand',
+    'network',
+    'description',
+]
+
+DEFAULT_DEPENDANT_TAGS = [
     'addr:region',
     'addr:district',
     'addr:subdistrict',
@@ -246,8 +260,9 @@ def osmium_cat(
 
 
 class Container:
-    def __init__(self, tags: FrozenSet[str], lang: str):
-        self.tags = tags
+    def __init__(self, main_tags: FrozenSet[str], dependency_tags: FrozenSet[str], lang: str):
+        self.main_tags = main_tags
+        self.dependency_tags = dependency_tags
         self.lang = lang
         self.objects = {
             NODE: defaultdict(dict),
@@ -279,6 +294,29 @@ class Container:
         }
 
 
+class MainHandler(osmium.SimpleHandler):
+    def __init__(self, container: Container):
+        super().__init__()
+        self.container = container
+
+    def process(self, osm_type: str, obj: Union[osmium.osm.Node, osmium.osm.Way, osmium.osm.Relation]):
+        if not obj.tags:
+            return
+        for key in self.container.main_tags:
+            key_lang = f'{key}:{self.container.lang}'
+            if key_lang in obj.tags:
+                self.container.updates[osm_type][obj.id][key] = obj.tags[key_lang]
+
+    def node(self, n: osmium.osm.Node):
+        self.process(NODE, n)
+
+    def way(self, w: osmium.osm.Way):
+        self.process(WAY, w)
+
+    def relation(self, r: osmium.osm.Relation):
+        self.process(REL, r)
+
+
 class DependenciesHandler(osmium.SimpleHandler):
     def __init__(self, container: Container):
         super().__init__()
@@ -287,7 +325,7 @@ class DependenciesHandler(osmium.SimpleHandler):
     def process(self, osm_type: str, obj: Union[osmium.osm.Node, osmium.osm.Way, osmium.osm.Relation]):
         if not obj.tags:
             return
-        for key in self.container.tags:
+        for key in self.container.dependency_tags:
             if key in obj.tags:
                 value = obj.tags[key]
                 self.container.dep_objects[osm_type][obj.id][key] = value
@@ -423,7 +461,7 @@ class UpdateHandler(osmium.SimpleHandler):
 @log_time
 def collect_dependencies(container: Container, input_file: str):
     handler = DependenciesHandler(container)
-    deps_pbf = osmium_tags_filter(input_file, container.tags, omit_referenced=True)
+    deps_pbf = osmium_tags_filter(input_file, container.dependency_tags, omit_referenced=True)
     handler.apply_buffer(deps_pbf, TYPE_OSM_PBF)
     log('STAT:', 'total unique names', len(container.dep_names))
     log('STAT:', 'total objects count', sum(len(objs) for objs in container.dep_objects.values()))
@@ -468,7 +506,7 @@ def build_index(container: Container):
 def find_dependency_parent_updates(container: Container):
     for osm_type, obj_tags in container.dep_objects.items():
         for osm_id, tags in obj_tags.items():
-            for tag in container.tags:
+            for tag in container.dependency_tags:
                 if tag in tags:
                     name = tags[tag]
                     if not container.type_geoms[osm_type][osm_id] or name not in container.name_obj:
@@ -497,6 +535,13 @@ def find_dependency_parent_updates(container: Container):
 
 
 @log_time
+def find_main_updates(container: Container, input_file: str):
+    handler = MainHandler(container)
+    main_pbf = osmium_tags_filter(input_file, container.main_tags)
+    handler.apply_buffer(main_pbf, TYPE_OSM_PBF)
+
+
+@log_time
 def update(container: Container, input_file: str, output_format: str):
     keep_pbf = osmium_removeid(
         input_file,
@@ -520,16 +565,24 @@ def update(container: Container, input_file: str, output_format: str):
 
 
 @log_time
-def main(tags: Iterable[str], lang: str, input_file: str, output_file: str, output_format: Optional[str]):
+def main(
+        main_tags: Iterable[str],
+        dep_tags: Iterable[str],
+        lang: str,
+        input_file: str,
+        output_file: str,
+        output_format: Optional[str],
+):
     if output_format is None:
         output_format = osmium_fileformat(input_file)
 
-    container = Container(frozenset(tags), lang)
+    container = Container(frozenset(main_tags), frozenset(dep_tags), lang)
     collect_dependencies(container, input_file)
     collect_parent(container, input_file)
     build_geoms(container, input_file)
     build_index(container)
     find_dependency_parent_updates(container)
+    find_main_updates(container, input_file)
     result = update(container, input_file, output_format)
     with open(output_file, 'wb') as h:
         h.write(result)
@@ -539,8 +592,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(
         prog='osm_back.py',
         description='Update dependant tag to parent on specified language.')
-    parser.add_argument('-t', '--tag', dest='tags', nargs='+', default=DEFAULT_TAGS,
-                        help='Tag for update. Can be "addr:street" and etc.')
+    parser.add_argument('-T', '--main-tag', dest='main_tags', nargs='+', default=DEFAULT_MAIN_TAGS,
+                        help='Main tags for update. Can be "name" and etc.')
+    parser.add_argument('-t', '--dep-tag', dest='dep_tags', nargs='+', default=DEFAULT_DEPENDANT_TAGS,
+                        help='Dependency tags for update. Can be "addr:street" and etc.')
     parser.add_argument('-l', '--lang', required=True, help='Language to update to. Can be "be" or "ru".')
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument('-O', '--overwrite', action='store_true',
@@ -551,7 +606,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     main(
-        tags=args.tags,
+        main_tags=args.main_tags,
+        dep_tags=args.dep_tags,
         lang=args.lang,
         input_file=args.OSM_FILE,
         output_file=args.OSM_FILE if args.overwrite else args.output_file,
