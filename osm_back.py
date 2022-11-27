@@ -12,6 +12,12 @@ as alternative all packages can be installed using system packages:
 
     apt-get install osmium-tool python3-pyosmium python3-shapely
 
+as alternative use docker:
+
+    docker build -t osm_back -f osm_back.dockerfile .
+    docker run -it --rm -v $(pwd):/app/ osm_back \
+        python3 osm_back.py -l ru -o belarus-latest-ru.osm.pbf belarus-latest.osm.pbf
+
 """
 import argparse
 import contextlib
