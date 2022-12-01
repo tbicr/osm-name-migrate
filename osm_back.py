@@ -112,8 +112,8 @@ def log_time(func: Callable[..., T]) -> Callable[..., T]:
 def get_input_file_name(stack: contextlib.ExitStack, file: [str, bytes], input_format: str) -> str:
     if isinstance(file, bytes):
         tmp = stack.enter_context(tempfile.NamedTemporaryFile(suffix=f'.{input_format}'))
-        with open(tmp.name, 'wb') as h:
-            h.write(file)
+        tmp.write(file)
+        tmp.flush()
         return tmp.name
     else:
         return file
@@ -121,8 +121,8 @@ def get_input_file_name(stack: contextlib.ExitStack, file: [str, bytes], input_f
 
 def get_ids_file_name(stack: contextlib.ExitStack, ids: Iterable[str]) -> str:
     tmp = stack.enter_context(tempfile.NamedTemporaryFile(suffix='.txt'))
-    with open(tmp.name, 'w') as h:
-        h.write('\n'.join(ids))
+    tmp.write('\n'.join(ids).encode('utf8'))
+    tmp.flush()
     return tmp.name
 
 
