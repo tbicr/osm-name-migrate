@@ -625,6 +625,7 @@ def main(
             h.write(result)
     except subprocess.CalledProcessError as err:
         print(err.args, err.returncode, err.stderr.decode('utf8'))
+        raise
 
 
 if __name__ == '__main__':
