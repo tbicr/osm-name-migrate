@@ -25,6 +25,7 @@ import datetime
 import json
 import os
 import subprocess
+import sys
 import tempfile
 from collections import defaultdict, Counter
 from functools import wraps
@@ -37,7 +38,7 @@ import shapely.strtree
 import shapely.validation
 import shapely.wkb
 
-import osmium
+import osmium.version
 
 
 NODE = 'node'
@@ -132,7 +133,14 @@ def get_ids_file_name(stack: contextlib.ExitStack, ids: Iterable[str]) -> str:
     return stack.enter_context(temp_file(content='\n'.join(ids).encode('utf8'), suffix='.txt'))
 
 
-@log_time
+def osmium_version(check: bool = True):
+    result = subprocess.run(
+        ['osmium', '--version'],
+        capture_output=True, check=check,
+    )
+    return result.stdout
+
+
 def osmium_fileinfo(input_file: str, json: bool = False, check: bool = True):
     params = ['osmium', 'fileinfo']
     if json:
@@ -144,7 +152,6 @@ def osmium_fileinfo(input_file: str, json: bool = False, check: bool = True):
     return result.stdout
 
 
-@log_time
 def osmium_fileformat(input_file: str, check: bool = True):
     info = json.loads(osmium_fileinfo(input_file, json=True, check=check))
     mapping = {
@@ -398,61 +405,72 @@ class GeometriesBuilderHandler(osmium.SimpleHandler):
         )
 
     def node(self, n: osmium.osm.Node):
-        if n.id in self.nodes:
-            point = shapely.wkb.loads(self.wkbfab.create_point(n), hex=True)
-            self.container.type_geoms[NODE][n.id].append(point)
+        try:
+            if n.id in self.nodes:
+                point = shapely.wkb.loads(self.wkbfab.create_point(n), hex=True)
+                self.container.type_geoms[NODE][n.id].append(point)
+        except ValueError:
+            print(f'n{n.id}')
+            raise
 
     def way(self, w: osmium.osm.Way):
-        if len(w.nodes) < 2:
-            for node_ref in w.nodes:
-                point = shapely.wkb.loads(self.wkbfab.create_point(node_ref), hex=True)
-                self.container.type_geoms[WAY][w.id].append(point)
-        else:
-            line = shapely.wkb.loads(self.wkbfab.create_linestring(w), hex=True)
-            polys = list(shapely.ops.polygonize(line))
-            if len(polys) == 0:
-                self.container.type_geoms[WAY][w.id].append(line)
+        try:
+            if len(w.nodes) < 2:
+                for node_ref in w.nodes:
+                    point = shapely.wkb.loads(self.wkbfab.create_point(node_ref), hex=True)
+                    self.container.type_geoms[WAY][w.id].append(point)
             else:
-                self.container.type_geoms[WAY][w.id].extend(polys)
+                line = shapely.wkb.loads(self.wkbfab.create_linestring(w), hex=True)
+                polys = list(shapely.ops.polygonize(line))
+                if len(polys) == 0:
+                    self.container.type_geoms[WAY][w.id].append(line)
+                else:
+                    self.container.type_geoms[WAY][w.id].extend(polys)
+        except ValueError:
+            print(f'w{w.id}')
+            raise
 
     def relation(self, r: osmium.osm.Relation):
-        points = []
-        lines = []
-        polygons = []
-        biggest_area = None
-        biggest_geom = None
-        for member in r.members:
-            if member.type == 'n':
-                points.extend(self.container.type_geoms[NODE][member.ref])
-            elif member.type == 'w':
-                for geom in self.container.type_geoms[WAY][member.ref]:
-                    if geom.geom_type == 'LineString':
-                        lines.append(geom)
-                    else:
-                        if biggest_area is None or geom.area > biggest_area:
-                            biggest_geom = geom
-                        polygons.append(geom)
-        for polygon in shapely.ops.polygonize(lines):
-            if biggest_area is None or polygon.area > biggest_area:
-                biggest_geom = polygon
-            polygons.append(polygon)
-        result = []
-        if biggest_geom is not None:
-            for point in points:
-                if not biggest_geom.covers(point):
-                    result.append(point)
-            for line in lines:
-                if not biggest_geom.covers(line):
-                    result.append(line)
-            for polygon in polygons:
-                if polygon is biggest_geom or not biggest_geom.covers(polygon):
-                    result.append(polygon)
-        else:
-            result.extend(points)
-            result.extend(lines)
-            result.extend(polygons)
-        self.container.type_geoms[REL][r.id].append(shapely.ops.unary_union(result))
-
+        try:
+            points = []
+            lines = []
+            polygons = []
+            biggest_area = None
+            biggest_geom = None
+            for member in r.members:
+                if member.type == 'n':
+                    points.extend(self.container.type_geoms[NODE][member.ref])
+                elif member.type == 'w':
+                    for geom in self.container.type_geoms[WAY][member.ref]:
+                        if geom.geom_type == 'LineString':
+                            lines.append(geom)
+                        else:
+                            if biggest_area is None or geom.area > biggest_area:
+                                biggest_geom = geom
+                            polygons.append(geom)
+            for polygon in shapely.ops.polygonize(lines):
+                if biggest_area is None or polygon.area > biggest_area:
+                    biggest_geom = polygon
+                polygons.append(polygon)
+            result = []
+            if biggest_geom is not None:
+                for point in points:
+                    if not biggest_geom.covers(point):
+                        result.append(point)
+                for line in lines:
+                    if not biggest_geom.covers(line):
+                        result.append(line)
+                for polygon in polygons:
+                    if polygon is biggest_geom or not biggest_geom.covers(polygon):
+                        result.append(polygon)
+            else:
+                result.extend(points)
+                result.extend(lines)
+                result.extend(polygons)
+            self.container.type_geoms[REL][r.id].append(shapely.ops.unary_union(result))
+        except ValueError:
+            print(f'r{r.id}')
+            raise
 
 class UpdateHandler(osmium.SimpleHandler):
     def __init__(self, container: Container, writer: osmium.SimpleWriter):
@@ -585,6 +603,12 @@ def main(
         output_file: str,
         output_format: Optional[str],
 ):
+    log('platform:', sys.platform)
+    log('python version:', sys.version)
+    log('shapely version:', shapely.__version__)
+    log('pyosmium version:', osmium.version.pyosmium_release)
+    log('osmium version:', osmium_version().decode('utf8'))
+
     try:
         if output_format is None:
             output_format = osmium_fileformat(input_file)
@@ -600,7 +624,7 @@ def main(
         with open(output_file, 'wb') as h:
             h.write(result)
     except subprocess.CalledProcessError as err:
-        print(err.args, err.returncode, err.stderr)
+        print(err.args, err.returncode, err.stderr.decode('utf8'))
 
 
 if __name__ == '__main__':
