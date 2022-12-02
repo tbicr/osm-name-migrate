@@ -109,21 +109,27 @@ def log_time(func: Callable[..., T]) -> Callable[..., T]:
     return wrapper
 
 
+@contextlib.contextmanager
+def temp_file(content: bytes = b'', suffix: str = ''):
+    tmp = None
+    try:
+        with tempfile.NamedTemporaryFile(suffix=suffix, delete=False) as tmp:
+            tmp.write(content)
+        yield tmp.name
+    finally:
+        if tmp is not None and os.path.exists(tmp.name):
+            os.unlink(tmp.name)
+
+
 def get_input_file_name(stack: contextlib.ExitStack, file: [str, bytes], input_format: str) -> str:
     if isinstance(file, bytes):
-        tmp = stack.enter_context(tempfile.NamedTemporaryFile(suffix=f'.{input_format}'))
-        tmp.write(file)
-        tmp.flush()
-        return tmp.name
+        return stack.enter_context(temp_file(content=file, suffix=f'.{input_format}'))
     else:
         return file
 
 
 def get_ids_file_name(stack: contextlib.ExitStack, ids: Iterable[str]) -> str:
-    tmp = stack.enter_context(tempfile.NamedTemporaryFile(suffix='.txt'))
-    tmp.write('\n'.join(ids).encode('utf8'))
-    tmp.flush()
-    return tmp.name
+    return stack.enter_context(temp_file(content='\n'.join(ids).encode('utf8'), suffix='.txt'))
 
 
 @log_time
@@ -579,19 +585,22 @@ def main(
         output_file: str,
         output_format: Optional[str],
 ):
-    if output_format is None:
-        output_format = osmium_fileformat(input_file)
+    try:
+        if output_format is None:
+            output_format = osmium_fileformat(input_file)
 
-    container = Container(frozenset(main_tags), frozenset(dep_tags), lang)
-    collect_dependencies(container, input_file)
-    collect_parent(container, input_file)
-    build_geoms(container, input_file)
-    build_index(container)
-    find_dependency_parent_updates(container)
-    find_main_updates(container, input_file)
-    result = update(container, input_file, output_format)
-    with open(output_file, 'wb') as h:
-        h.write(result)
+        container = Container(frozenset(main_tags), frozenset(dep_tags), lang)
+        collect_dependencies(container, input_file)
+        collect_parent(container, input_file)
+        build_geoms(container, input_file)
+        build_index(container)
+        find_dependency_parent_updates(container)
+        find_main_updates(container, input_file)
+        result = update(container, input_file, output_format)
+        with open(output_file, 'wb') as h:
+            h.write(result)
+    except subprocess.CalledProcessError as err:
+        print(err.args, err.returncode, err.stderr)
 
 
 if __name__ == '__main__':
