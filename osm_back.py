@@ -585,7 +585,7 @@ def update(container: Container, input_file: str, output_format: str):
         ways=container.updates[WAY].keys(),
         rels=container.updates[REL].keys(),
     )
-    with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as tmp:
+    with tempfile.TemporaryDirectory() as tmp:
         name = os.path.join(tmp, f'updated.{TYPE_OSM_PBF}')
         writer = osmium.SimpleWriter(name)
         UpdateHandler(container, writer).apply_buffer(update_pbf, TYPE_OSM_PBF)
