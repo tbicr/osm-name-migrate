@@ -448,12 +448,11 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                     result.extend(polygons)
 
                 geom = shapely.ops.unary_union(result)
-                centroid = geom.centroid
                 self.result.append(FoundElement(
                     osm_id=r.id,
                     osm_type='relation',
-                    lon=centroid.x,
-                    lat=centroid.y,
+                    lon=None,
+                    lat=None,
                     geohash='',
                     way=geom,
                     tags=dict(r.tags),
