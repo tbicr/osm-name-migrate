@@ -296,10 +296,10 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
             remove_tags: bool = False,
     ) -> bytes:
         ids = [f'n{n}' for n in node_ids] + [f'w{w}' for w in way_ids] + [f'r{r}' for r in rel_ids]
-        with tempfile.NamedTemporaryFile() as tmp:
+        with tempfile.NamedTemporaryFile() as tmp, tempfile.NamedTemporaryFile() as out:
             tmp.write('\n'.join(ids).encode('utf8'))
             tmp.flush()
-            params = ['osmium', 'getid', '-i', tmp.name]
+            params = ['osmium', 'getid', '-i', tmp.name, '-o', out.name, '-O']
             if add_referenced:
                 params.append('-r')
             if remove_tags:
@@ -309,7 +309,7 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                 raise subprocess.CalledProcessError(
                     result.returncode, result.args, output=result.stdout, stderr=result.stderr,
                 )
-            return result.stdout
+            return out.read()
 
     def _osmium_tags_filter(
             self,
@@ -317,13 +317,14 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
             omit_referenced: bool = False,
             remove_tags: bool = False,
     ) -> bytes:
-            params = ['osmium', 'tags-filter']
+        with tempfile.NamedTemporaryFile() as out:
+            params = ['osmium', 'tags-filter', '-o', out.name, '-O']
             if omit_referenced:
                 params.append('-R')
             if remove_tags:
                 params.append('-t')
-            result = subprocess.run(params + [self._origin_filename, *tags], stdout=subprocess.PIPE, check=True)
-            return result.stdout
+            subprocess.run(params + [self._origin_filename, *tags], stdout=subprocess.PIPE, check=True)
+            return out.read()
 
     def get_relations(
             self,
@@ -363,10 +364,11 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
 
         PrepHandler(rel_ids, rel_node_ids, ignore_ids, ignore_roles).apply_file(self._origin_filename)
 
+        print(len(rel_ids), len(rel_node_ids))
         try:
             data = self._osmium_getid(rel_ids=rel_ids, add_referenced=True, remove_tags=True)
         except subprocess.SubprocessError as err:
-            print(err.stderr)
+            print(err.stderr.decode('utf8'))
             raise
 
         class Handler(osmium.SimpleHandler):
