@@ -446,8 +446,8 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                 if not geom:
                     print(f'empty geom for relation {r.id}')
                     return
-                if geom.geom_type == 'GeometryCollection':
-                    geom = sorted(geom, key=lambda g: -g.lenght)[0]
+                # if geom.geom_type == 'GeometryCollection':
+                #     geom = sorted(geom, key=lambda g: -g.length)[0]
                 self.result.append(FoundElement(
                     osm_id=r.id,
                     osm_type='relation',
