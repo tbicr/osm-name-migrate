@@ -296,7 +296,7 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
             remove_tags: bool = False,
     ) -> bytes:
         ids = [f'n{n}' for n in node_ids] + [f'w{w}' for w in way_ids] + [f'r{r}' for r in rel_ids]
-        with tempfile.NamedTemporaryFile() as tmp, tempfile.NamedTemporaryFile() as out:
+        with tempfile.NamedTemporaryFile() as tmp, tempfile.NamedTemporaryFile(suffix=self._suffix) as out:
             tmp.write('\n'.join(ids).encode('utf8'))
             tmp.flush()
             params = ['osmium', 'getid', '-i', tmp.name, '-o', out.name, '-O']
@@ -317,7 +317,7 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
             omit_referenced: bool = False,
             remove_tags: bool = False,
     ) -> bytes:
-        with tempfile.NamedTemporaryFile() as out:
+        with tempfile.NamedTemporaryFile(suffix=self._suffix) as out:
             params = ['osmium', 'tags-filter', '-o', out.name, '-O']
             if omit_referenced:
                 params.append('-R')
@@ -364,12 +364,7 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
 
         PrepHandler(rel_ids, rel_node_ids, ignore_ids, ignore_roles).apply_file(self._origin_filename)
 
-        print(len(rel_ids), len(rel_node_ids))
-        try:
-            data = self._osmium_getid(rel_ids=rel_ids, add_referenced=True, remove_tags=True)
-        except subprocess.SubprocessError as err:
-            print(err.stderr.decode('utf8'))
-            raise
+        data = self._osmium_getid(rel_ids=rel_ids, add_referenced=True, remove_tags=True)
 
         class Handler(osmium.SimpleHandler):
             def __init__(
