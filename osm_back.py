@@ -472,6 +472,7 @@ class GeometriesBuilderHandler(osmium.SimpleHandler):
             print(f'r{r.id}')
             raise
 
+
 class UpdateHandler(osmium.SimpleHandler):
     def __init__(self, container: Container, writer: osmium.SimpleWriter):
         super().__init__()

@@ -4,11 +4,13 @@ import functools
 import json
 import math
 import os
+import subprocess
+import tempfile
 import time
 import urllib.parse
 from collections import defaultdict
 from itertools import chain
-from typing import Sequence, Dict, Optional, Tuple, List, Iterable
+from typing import Sequence, Dict, Optional, Tuple, List, Iterable, FrozenSet
 from xml.sax.saxutils import quoteattr
 
 import shapely.geometry
@@ -279,6 +281,170 @@ class DumpSearchReadEngine(BaseSearchReadWriteEngine):
         return results
 
 
+class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
+    def __init__(self, filename: str = 'belarus-latest.osm.pbf'):
+        super().__init__(filename)
+        self._origin_filename = filename
+        self._suffix = '.osm.pbf'
+
+    def _osmium_getid(
+            self,
+            node_ids: Iterable[int] = (),
+            way_ids: Iterable[int] = (),
+            rel_ids: Iterable[int] = (),
+            add_referenced: bool = False,
+            remove_tags: bool = False,
+    ) -> bytes:
+        ids = [f'n{n}' for n in node_ids] + [f'w{w}' for w in way_ids] + [f'r{r}' for r in rel_ids]
+        with tempfile.NamedTemporaryFile() as tmp:
+            tmp.write('\n'.join(ids).encode('utf8'))
+            tmp.flush()
+            params = ['osmium', 'getid', '-i', tmp.name]
+            if add_referenced:
+                params.append('-r')
+            if remove_tags:
+                params.append('-t')
+            result = subprocess.run(params + [self._origin_filename], capture_output=True)
+            if result.returncode not in {0, 1}:
+                raise subprocess.CalledProcessError(
+                    result.returncode, result.args, output=result.stdout, stderr=result.stderr,
+                )
+            return result.stdout
+
+    def _osmium_tags_filter(
+            self,
+            tags: Iterable[str] = (),
+            omit_referenced: bool = False,
+            remove_tags: bool = False,
+    ) -> bytes:
+            params = ['osmium', 'tags-filter']
+            if omit_referenced:
+                params.append('-R')
+            if remove_tags:
+                params.append('-t')
+            result = subprocess.run(params + [self._origin_filename, *tags], stdout=subprocess.PIPE, check=True)
+            return result.stdout
+
+    def get_relations(
+            self,
+            ignore_ids: Iterable[int] = (),
+            ignore_roles: Iterable[str] = frozenset({'spring', 'tributary', 'riverbank', 'waterbody'}),
+    ) -> List[FoundElement]:
+        import osmium
+        import shapely.wkb
+
+        data = self._osmium_tags_filter(tags=['r/*'], remove_tags=True)
+        result = []
+
+        class Handler(osmium.SimpleHandler):
+            def __init__(self, result: List[FoundElement], ignore_ids: FrozenSet[int], ignore_roles: FrozenSet[str]):
+                super().__init__()
+                self.wkbfab = osmium.geom.WKBFactory()
+                self.nodes = defaultdict(list)
+                self.ways = defaultdict(list)
+                self.result = result
+                self.ignore_ids = ignore_ids
+                self.ignore_roles = ignore_roles
+
+            def node(self, n: osmium.osm.Node):
+                point = shapely.wkb.loads(self.wkbfab.create_point(n), hex=True)
+                self.nodes[n.id].append(point)
+
+            def way(self, w: osmium.osm.Way):
+                if len(w.nodes) < 2:
+                    for node_ref in w.nodes:
+                        point = shapely.wkb.loads(self.wkbfab.create_point(node_ref), hex=True)
+                        self.ways[w.id].append(point)
+                else:
+                    line = shapely.wkb.loads(self.wkbfab.create_linestring(w), hex=True)
+                    polys = list(shapely.ops.polygonize(line))
+                    if len(polys) == 0:
+                        self.ways[w.id].append(line)
+                    else:
+                        self.ways[w.id].extend(polys)
+
+            def relation(self, r: osmium.osm.Relation):
+                if r.id in self.ignore_ids:
+                    return
+                points = []
+                lines = []
+                polygons = []
+                biggest_area = None
+                biggest_geom = None
+                for member in r.members:
+                    if member.role in self.ignore_roles:
+                        continue
+                    if member.type == 'n':
+                        points.extend(self.nodes[member.ref])
+                    elif member.type == 'w':
+                        for geom in self.ways[member.ref]:
+                            if geom.geom_type == 'LineString':
+                                lines.append(geom)
+                            else:
+                                if biggest_area is None or geom.area > biggest_area:
+                                    biggest_geom = geom
+                                polygons.append(geom)
+                for polygon in shapely.ops.polygonize(lines):
+                    if biggest_area is None or polygon.area > biggest_area:
+                        biggest_geom = polygon
+                    polygons.append(polygon)
+                result = []
+                if biggest_geom is not None:
+                    for point in points:
+                        if not biggest_geom.covers(point):
+                            result.append(point)
+                    for line in lines:
+                        if not biggest_geom.covers(line):
+                            result.append(line)
+                    for polygon in polygons:
+                        if polygon is biggest_geom or not biggest_geom.covers(polygon):
+                            result.append(polygon)
+                else:
+                    result.extend(points)
+                    result.extend(lines)
+                    result.extend(polygons)
+
+                geom = shapely.ops.unary_union(result)
+                centroid = geom.centroid
+                self.result.append(FoundElement(
+                    osm_id=r.id,
+                    osm_type='relation',
+                    lon=centroid.x,
+                    lat=centroid.y,
+                    geohash='',
+                    way=geom,
+                    tags=dict(r.tags),
+                ))
+
+        Handler(result, frozenset(ignore_ids), frozenset(ignore_roles)).apply_buffer(data, 'osm.pbf', locations=True)
+
+        return result
+
+    def read_nodes(self, osm_ids: Iterable[int]) -> Dict[int, dict]:
+        osm_ids = frozenset(osm_ids)
+        with tempfile.NamedTemporaryFile(suffix=self._suffix) as tmp:
+            tmp.write(self._osmium_getid(node_ids=osm_ids))
+            tmp.flush()
+            self._filename = tmp.name
+            return super().read_nodes(osm_ids)
+
+    def read_ways(self, osm_ids: Iterable[int]) -> Dict[int, dict]:
+        osm_ids = frozenset(osm_ids)
+        with tempfile.NamedTemporaryFile(suffix=self._suffix) as tmp:
+            tmp.write(self._osmium_getid(way_ids=osm_ids))
+            tmp.flush()
+            self._filename = tmp.name
+            return super().read_ways(osm_ids)
+
+    def read_relations(self, osm_ids: Iterable[int]) -> Dict[int, dict]:
+        osm_ids = frozenset(osm_ids)
+        with tempfile.NamedTemporaryFile(suffix=self._suffix) as tmp:
+            tmp.write(self._osmium_getid(rel_ids=osm_ids))
+            tmp.flush()
+            self._filename = tmp.name
+            return super().read_relations(osm_ids)
+
+
 class PostgisSearchReadEngine(BaseSearchReadWriteEngine):
     REGION_VIEW_SQL = """
         CREATE MATERIALIZED VIEW IF NOT EXISTS planet_osm_region AS
@@ -406,6 +572,21 @@ class PostgisSearchReadEngine(BaseSearchReadWriteEngine):
 
     def _values_str(self, values):
         return ', '.join("'" + value.replace("'", "''") + "'" for value in values)
+
+    def get_existing_relations(self) -> List[int]:
+        import psycopg2
+        with psycopg2.connect(**self._params) as conn:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    SELECT -osm_id FROM planet_osm_point WHERE osm_id < 0
+                    UNION ALL
+                    SELECT -osm_id FROM planet_osm_line WHERE osm_id < 0
+                    UNION ALL
+                    SELECT -osm_id FROM planet_osm_roads WHERE osm_id < 0
+                    UNION ALL
+                    SELECT -osm_id FROM planet_osm_polygon WHERE osm_id < 0
+                """)
+                return [osm_id for osm_id, in cur.fetchall()]
 
     def insert_extra_relations(self, items: List[FoundElement]):
         import psycopg2

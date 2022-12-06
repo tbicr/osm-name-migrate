@@ -17,7 +17,7 @@ from jinja2 import Template
 from belarus_upd import Engine
 from belarus_utils import (
     PostgisSearchReadEngine, OverpassApiSearchEnigne, OsmApiReadWriteEngine, PrintIssuesEngine,
-    CYRILIC_REGEXP, ElementRuleChange,
+    CYRILIC_REGEXP, ElementRuleChange, DumpOsmiumSearchReadEngine,
 )
 
 POSTGRES_HOST = os.environ['POSTGRES_HOST']
@@ -408,28 +408,31 @@ postgres_params = {
 
 print('add complex relations that was not loaded to postgis')
 postgis_api = PostgisSearchReadEngine(**postgres_params)
-overpass_api = OverpassApiSearchEnigne(cache=False)
+dump_api = DumpOsmiumSearchReadEngine('belarus-latest.osm.pbf')
+postgis_api.insert_extra_relations(dump_api.get_relations(postgis_api.get_existing_relations()))
 
-print('type = street')
-postgis_api.insert_extra_relations(overpass_api.search({'type': ['street']}))
-
-print('type = associatedStreet')
-postgis_api.insert_extra_relations(overpass_api.search({'type': ['associatedStreet']}))
-
-print('type = route')
-postgis_api.insert_extra_relations(overpass_api.search({'type': ['route']}))
-
-print('type = route_master')
-postgis_api.insert_extra_relations(overpass_api.search({'type': ['route_master']}))
-
-print('type = disused:route')
-postgis_api.insert_extra_relations(overpass_api.search({'type': ['disused:route']}))
-
-print('type = public_transport')
-postgis_api.insert_extra_relations(overpass_api.search({'type': ['public_transport']}))
-
-print('type = waterway')
-postgis_api.insert_extra_relations(overpass_api.search({'type': ['waterway']}))
+# overpass_api = OverpassApiSearchEnigne(cache=False)
+#
+# print('type = street')
+# postgis_api.insert_extra_relations(overpass_api.search({'type': ['street']}))
+#
+# print('type = associatedStreet')
+# postgis_api.insert_extra_relations(overpass_api.search({'type': ['associatedStreet']}))
+#
+# print('type = route')
+# postgis_api.insert_extra_relations(overpass_api.search({'type': ['route']}))
+#
+# print('type = route_master')
+# postgis_api.insert_extra_relations(overpass_api.search({'type': ['route_master']}))
+#
+# print('type = disused:route')
+# postgis_api.insert_extra_relations(overpass_api.search({'type': ['disused:route']}))
+#
+# print('type = public_transport')
+# postgis_api.insert_extra_relations(overpass_api.search({'type': ['public_transport']}))
+#
+# print('type = waterway')
+# postgis_api.insert_extra_relations(overpass_api.search({'type': ['waterway']}))
 
 postgis_api.create_materialized_views()
 
