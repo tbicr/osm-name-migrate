@@ -108,6 +108,7 @@ CATEGORIES_RULES = {
         ['waterway', 'canal'],
         ['waterway', None],
         ['type', 'waterway'],
+        ['type', 'watershed'],
         ['water', None],
         ['natural', 'water'],
         ['natural', 'spring'],
@@ -1463,3 +1464,4 @@ else:
             os.makedirs(os.path.dirname(name), exist_ok=True)
         with open(name, 'w') as h:
             h.write(content)
+print('done')

@@ -96,7 +96,7 @@ CHANGE_RULES = [
     [
         # water
         ChangeRule('рэкі і азёры', 'name', {'waterway': None}),
-        ChangeRule('рэкі і азёры', 'name', {'type': ['waterway']}),
+        ChangeRule('рэкі і азёры', 'name', {'type': ['waterway', 'watershed']}),
         ChangeRule('рэкі і азёры', 'name', {'natural': ['water', 'spring']}),
         ChangeRule('рэкі і азёры', 'name', {'tunnel': None}),
         ChangeRule('рэкі і азёры', 'name', {'water': None}),
@@ -132,23 +132,23 @@ CHANGE_RULES = [
         DependantChangeRule('пункты прызначэньня', 'destination:backward'),
         DependantChangeRule('пункты прызначэньня', 'destination:forward'),
     ],
-    # [
-    #     # industrial
-    #     ChangeRule('раёны', 'name', {'landuse': ['industrial']}),
-    #     ChangeRule('раёны', 'name', {'building': ['industrial', 'warehouse']}),
-    #     ChangeRule('раёны', 'name', {'industrial': None}),
-    # ],
-    # [
-    #     # infrastructure
-    #     ChangeRule('інфраструктура', 'name', {'barrier': None}),
-    #     ChangeRule('інфраструктура', 'name', {'power': None}),
-    #     ChangeRule('інфраструктура', 'name', {'substation': None}),
-    #     ChangeRule('інфраструктура', 'name', {'pipeline': None}),
-    #     ChangeRule('інфраструктура', 'name', {'man_made': None}),
-    #     ChangeRule('інфраструктура', 'name', {'embankment': None}),
-    #     ChangeRule('інфраструктура', 'name', {'amenity': ['fuel']}),
-    #     ChangeRule('інфраструктура', 'name', {'building': ['service']}),
-    # ],
+    [
+        # industrial
+        ChangeRule('індустрыяльныя', 'name', {'landuse': ['industrial']}),
+        ChangeRule('індустрыяльныя', 'name', {'building': ['industrial', 'warehouse']}),
+        ChangeRule('індустрыяльныя', 'name', {'industrial': None}),
+    ],
+    [
+        # infrastructure
+        ChangeRule('інфраструктура', 'name', {'barrier': None}),
+        ChangeRule('інфраструктура', 'name', {'power': None}),
+        ChangeRule('інфраструктура', 'name', {'substation': None}),
+        ChangeRule('інфраструктура', 'name', {'pipeline': None}),
+        ChangeRule('інфраструктура', 'name', {'man_made': None}),
+        ChangeRule('інфраструктура', 'name', {'embankment': None}),
+        # ChangeRule('інфраструктура', 'name', {'amenity': ['fuel']}),
+        ChangeRule('інфраструктура', 'name', {'building': ['service']}),
+    ],
     [
         # religion
         ChangeRule('рэлігійныя', 'name', {'amenity': ['place_of_worship', 'monastery']}),

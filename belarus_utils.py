@@ -377,7 +377,6 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                     self,
                     result: Dict[int, FoundElement],
                     rel_node_ids: Set[int],
-                    ignore_ids: FrozenSet[int],
                     ignore_roles: FrozenSet[str],
             ):
                 super().__init__()
@@ -386,7 +385,6 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                 self.ways = defaultdict(list)
                 self.rel_node_ids = rel_node_ids
                 self.result = result
-                self.ignore_ids = ignore_ids
                 self.ignore_roles = ignore_roles
 
             def node(self, n: osmium.osm.Node):
@@ -408,8 +406,6 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                         self.ways[w.id].extend(polys)
 
             def relation(self, r: osmium.osm.Relation):
-                if r.id in self.ignore_ids:
-                    return
                 points = []
                 lines = []
                 polygons = []
@@ -459,7 +455,7 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                     tags=dict(r.tags),
                 )
 
-        Handler(result, rel_node_ids, ignore_ids, ignore_roles).apply_buffer(data, 'osm.pbf', locations=True)
+        Handler(result, rel_node_ids, ignore_roles).apply_buffer(data, 'osm.pbf', locations=True)
 
         for osm_id, rel_ids in rel_rel_ids.items():
             element = result[osm_id]
@@ -477,17 +473,7 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                 tags=element.tags,
             )
 
-        # skip_geoms = set()
-        # for osm_id, element in result.items():
-            # if not element.way:
-            #     print(f'empty geom for relation {osm_id}')
-            #     skip_geoms.add(osm_id)
-            # if element.way.geom_type == 'GeometryCollection':
-            #     geom = sorted(element.way, key=lambda g: -g.length)[0]
-            # if element.way.geom_type == 'MultiLineString':
-            #     geom = sorted(element.way, key=lambda g: -g.length)[0]
-
-        return list(result.values())
+        return [element for osm_id, element in result.items() if osm_id not in ignore_ids]
 
     def read_nodes(self, osm_ids: Iterable[int]) -> Dict[int, dict]:
         osm_ids = frozenset(osm_ids)
