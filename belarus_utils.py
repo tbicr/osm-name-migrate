@@ -363,7 +363,11 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
 
         PrepHandler(rel_ids, rel_node_ids, ignore_ids, ignore_roles).apply_file(self._origin_filename)
 
-        data = self._osmium_getid(rel_ids=rel_ids, add_referenced=True, remove_tags=True)
+        try:
+            data = self._osmium_getid(rel_ids=rel_ids, add_referenced=True, remove_tags=True)
+        except subprocess.SubprocessError as err:
+            print(err.stderr)
+            raise
 
         class Handler(osmium.SimpleHandler):
             def __init__(
