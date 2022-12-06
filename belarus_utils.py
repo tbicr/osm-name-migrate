@@ -10,7 +10,7 @@ import time
 import urllib.parse
 from collections import defaultdict
 from itertools import chain
-from typing import Sequence, Dict, Optional, Tuple, List, Iterable, FrozenSet
+from typing import Sequence, Dict, Optional, Tuple, List, Iterable, FrozenSet, Set
 from xml.sax.saxutils import quoteattr
 
 import shapely.geometry
@@ -333,22 +333,59 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
         import osmium
         import shapely.wkb
 
-        data = self._osmium_tags_filter(tags=['r/*'], remove_tags=True)
+        ignore_ids = frozenset(ignore_ids)
+        ignore_roles = frozenset(ignore_roles)
+        rel_node_ids = set()
+        rel_ids = set()
         result = []
 
+        class PrepHandler(osmium.SimpleHandler):
+            def __init__(
+                    self,
+                    rel_ids: Set[int],
+                    rel_node_ids: Set[int],
+                    ignore_ids: FrozenSet[int],
+                    ignore_roles: FrozenSet[str],
+            ):
+                super().__init__()
+                self.rel_ids = rel_ids
+                self.rel_node_ids = rel_node_ids
+                self.ignore_ids = ignore_ids
+                self.ignore_roles = ignore_roles
+
+            def relation(self, r: osmium.osm.Relation):
+                if r.id in self.ignore_ids:
+                    return
+                self.rel_ids.add(r.id)
+                for member in r.members:
+                    if member.type == 'n' and member.role not in self.ignore_roles:
+                        self.rel_node_ids.add(member.ref)
+
+        PrepHandler(rel_ids, rel_node_ids, ignore_ids, ignore_roles).apply_file(self._origin_filename)
+
+        data = self._osmium_getid(rel_ids=rel_ids, add_referenced=True, remove_tags=True)
+
         class Handler(osmium.SimpleHandler):
-            def __init__(self, result: List[FoundElement], ignore_ids: FrozenSet[int], ignore_roles: FrozenSet[str]):
+            def __init__(
+                    self,
+                    result: List[FoundElement],
+                    rel_node_ids: Set[int],
+                    ignore_ids: FrozenSet[int],
+                    ignore_roles: FrozenSet[str],
+            ):
                 super().__init__()
                 self.wkbfab = osmium.geom.WKBFactory()
                 self.nodes = defaultdict(list)
                 self.ways = defaultdict(list)
+                self.rel_node_ids = rel_node_ids
                 self.result = result
                 self.ignore_ids = ignore_ids
                 self.ignore_roles = ignore_roles
 
             def node(self, n: osmium.osm.Node):
-                point = shapely.wkb.loads(self.wkbfab.create_point(n), hex=True)
-                self.nodes[n.id].append(point)
+                if n.id in self.rel_node_ids:
+                    point = shapely.wkb.loads(self.wkbfab.create_point(n), hex=True)
+                    self.nodes[n.id].append(point)
 
             def way(self, w: osmium.osm.Way):
                 if len(w.nodes) < 2:
@@ -416,7 +453,7 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                     tags=dict(r.tags),
                 ))
 
-        Handler(result, frozenset(ignore_ids), frozenset(ignore_roles)).apply_buffer(data, 'osm.pbf', locations=True)
+        Handler(result, rel_node_ids, ignore_ids, ignore_roles).apply_buffer(data, 'osm.pbf', locations=True)
 
         return result
 
