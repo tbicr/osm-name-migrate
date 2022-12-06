@@ -443,6 +443,9 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                     result.extend(polygons)
 
                 geom = shapely.ops.unary_union(result)
+                if not geom:
+                    print(f'empty geom for relation {r.id}')
+                    return
                 if geom.geom_type == 'GeometryCollection':
                     geom = sorted(geom, key=lambda g: -g.lenght)[0]
                 self.result.append(FoundElement(
