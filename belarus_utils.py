@@ -455,7 +455,7 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                     lon=None,
                     lat=None,
                     geohash='',
-                    way=geom,
+                    way=geom.wkt,
                     tags=dict(r.tags),
                 )
 
@@ -463,24 +463,29 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
 
         for osm_id, rel_ids in rel_rel_ids.items():
             element = result[osm_id]
-            geom = shapely.ops.unary_union([element.way] + [result[rel_id].way for rel_id in rel_ids])
+            geom = shapely.ops.unary_union(
+                [shapely.wkt.loads(element.way)] +
+                [shapely.wkt.loads(result[rel_id].way) for rel_id in rel_ids if rel_id in result]
+            )
             result[osm_id] = FoundElement(
                 osm_id=element.osm_id,
                 osm_type=element.osm_type,
                 lon=element.lon,
                 lat=element.lat,
                 geohash=element.geohash,
-                way=geom,
+                way=geom.wkt,
                 tags=element.tags,
             )
-        # if not geom:
-        #     print(f'empty geom for relation {r.id}')
-        #     skip_geoms.add()
-        #     return
-        # # if geom.geom_type == 'GeometryCollection':
-        # #     geom = sorted(geom, key=lambda g: -g.length)[0]
-        # if geom.geom_type == 'MultiLineString':
-        #     geom = sorted(geom, key=lambda g: -g.length)[0]
+
+        # skip_geoms = set()
+        # for osm_id, element in result.items():
+            # if not element.way:
+            #     print(f'empty geom for relation {osm_id}')
+            #     skip_geoms.add(osm_id)
+            # if element.way.geom_type == 'GeometryCollection':
+            #     geom = sorted(element.way, key=lambda g: -g.length)[0]
+            # if element.way.geom_type == 'MultiLineString':
+            #     geom = sorted(element.way, key=lambda g: -g.length)[0]
 
         return list(result.values())
 
