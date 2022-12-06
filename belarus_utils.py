@@ -337,20 +337,23 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
         ignore_ids = frozenset(ignore_ids)
         ignore_roles = frozenset(ignore_roles)
         rel_node_ids = set()
+        rel_rel_ids = defaultdict(list)
         rel_ids = set()
-        result = []
+        result = {}
 
         class PrepHandler(osmium.SimpleHandler):
             def __init__(
                     self,
                     rel_ids: Set[int],
                     rel_node_ids: Set[int],
+                    rel_rel_ids: Dict[int, List[int]],
                     ignore_ids: FrozenSet[int],
                     ignore_roles: FrozenSet[str],
             ):
                 super().__init__()
                 self.rel_ids = rel_ids
                 self.rel_node_ids = rel_node_ids
+                self.rel_rel_ids = rel_rel_ids
                 self.ignore_ids = ignore_ids
                 self.ignore_roles = ignore_roles
 
@@ -361,15 +364,18 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                 for member in r.members:
                     if member.type == 'n' and member.role not in self.ignore_roles:
                         self.rel_node_ids.add(member.ref)
+                    if member.type == 'r' and member.role not in self.ignore_roles:
+                        self.rel_ids.add(member.ref)
+                        self.rel_rel_ids[r.id].append(member.ref)
 
-        PrepHandler(rel_ids, rel_node_ids, ignore_ids, ignore_roles).apply_file(self._origin_filename)
+        PrepHandler(rel_ids, rel_node_ids, rel_rel_ids, ignore_ids, ignore_roles).apply_file(self._origin_filename)
 
         data = self._osmium_getid(rel_ids=rel_ids, add_referenced=True, remove_tags=True)
 
         class Handler(osmium.SimpleHandler):
             def __init__(
                     self,
-                    result: List[FoundElement],
+                    result: Dict[int, FoundElement],
                     rel_node_ids: Set[int],
                     ignore_ids: FrozenSet[int],
                     ignore_roles: FrozenSet[str],
@@ -443,12 +449,7 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                     result.extend(polygons)
 
                 geom = shapely.ops.unary_union(result)
-                if not geom:
-                    print(f'empty geom for relation {r.id}')
-                    return
-                # if geom.geom_type == 'GeometryCollection':
-                #     geom = sorted(geom, key=lambda g: -g.length)[0]
-                self.result.append(FoundElement(
+                self.result[r.id] = FoundElement(
                     osm_id=r.id,
                     osm_type='relation',
                     lon=None,
@@ -456,11 +457,32 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                     geohash='',
                     way=geom,
                     tags=dict(r.tags),
-                ))
+                )
 
         Handler(result, rel_node_ids, ignore_ids, ignore_roles).apply_buffer(data, 'osm.pbf', locations=True)
 
-        return result
+        for osm_id, rel_ids in rel_rel_ids.items():
+            element = result[osm_id]
+            geom = shapely.ops.unary_union([element.way] + [result[rel_id].way for rel_id in rel_ids])
+            result[osm_id] = FoundElement(
+                osm_id=element.osm_id,
+                osm_type=element.osm_type,
+                lon=element.lon,
+                lat=element.lat,
+                geohash=element.geohash,
+                way=geom,
+                tags=element.tags,
+            )
+        # if not geom:
+        #     print(f'empty geom for relation {r.id}')
+        #     skip_geoms.add()
+        #     return
+        # # if geom.geom_type == 'GeometryCollection':
+        # #     geom = sorted(geom, key=lambda g: -g.length)[0]
+        # if geom.geom_type == 'MultiLineString':
+        #     geom = sorted(geom, key=lambda g: -g.length)[0]
+
+        return list(result.values())
 
     def read_nodes(self, osm_ids: Iterable[int]) -> Dict[int, dict]:
         osm_ids = frozenset(osm_ids)
