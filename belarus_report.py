@@ -34,13 +34,16 @@ REPO_NAME = 'tbicr/osm-name-migrate'
 REPO = f'https://github.com/{REPO_NAME}'
 SKIP_CSV_COLUMNS = {'be=ru', 'be+ru', 'be'}
 NAME_SKIP_AUTO_BE_FIX_CATEGORIES = {
+    'industrial',
     'infrastructure',
+    'religion',
+    'education',
     'healthcare',
     'government',
     'bank',
     'tourism',
-    'office',
     'sport',
+    'office',
 }
 FLOAT_FORMAT = '{:.3f}'.format
 TABLE_ATTRS = 'class="table table-sm table-hover caption-top"'
