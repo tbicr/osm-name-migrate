@@ -1,8 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
-relation,12004859,Могилёв,relation,12097775,Могилёв,,
-relation,12004862,Могилёв,relation,12097775,Могилёв,,
-relation,12004866,Могилёв,relation,12097775,Могилёв,,
-relation,12004861,Москва,relation,12097776,Москва,,
 way,25225283,Нарач,relation,12097803,Нарач,,
 way,25225283,Нарач,relation,12097803,Нарач,,
 way,25226593,Нарач,relation,12097777,Нарач,,

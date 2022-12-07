@@ -50,6 +50,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,waterway = river,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,waterway = canal,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,type = waterway,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,type = watershed,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,natural = water,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,natural = spring,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,tunnel = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
