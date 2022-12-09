@@ -106,13 +106,14 @@ CHANGE_RULES = [
         ChangeRule('грамадзкі транспарт', 'name', {'highway': ['bus_stop']}),
         ChangeRule('грамадзкі транспарт', 'name', {'public_transport': None}),
         ChangeRule('грамадзкі транспарт', 'name', {'type': [
-            'route', 'route_master', 'disused:route', 'public_transport'
+            'route', 'route_master', 'disused:route', 'public_transport',
         ]}),
         ChangeRule('грамадзкі транспарт', 'name', {'route': None}),
         ChangeRule('грамадзкі транспарт', 'name', {'route_master': None}),
         ChangeRule('грамадзкі транспарт', 'name', {'railway': None}),
         ChangeRule('грамадзкі транспарт', 'name', {'aeroway': None}),
         ChangeRule('грамадзкі транспарт', 'name', {'building': ['train_station', 'transportation']}),
+        ChangeRule('грамадзкі транспарт', 'name', {'building': ['bus_station', 'ferry_terminal']}),
     ],
     [
         # highway
@@ -151,27 +152,35 @@ CHANGE_RULES = [
     ],
     [
         # religion
-        ChangeRule('рэлігійныя', 'name', {'amenity': ['place_of_worship', 'monastery']}),
+        ChangeRule('рэлігійныя', 'name', {'amenity': ['place_of_worship', 'monastery', 'grave_yard']}),
         ChangeRule('рэлігійныя', 'name', {'building': ['church', 'cathedral', 'chapel']}),
         ChangeRule('рэлігійныя', 'name', {'religion': None}),
     ],
     [
         # education
         ChangeRule('адукацыя', 'name', {'landuse': ['education']}),
-        ChangeRule('адукацыя', 'name', {'amenity': ['university', 'college', 'school', 'kindergarten']}),
+        ChangeRule('адукацыя', 'name', {'amenity': [
+            'university', 'college', 'school', 'kindergarten', 'arts_centre', 'music_school',
+        ]}),
         ChangeRule('адукацыя', 'name', {'building': ['university', 'college', 'school', 'kindergarten', 'dormitory']}),
         ChangeRule('адукацыя', 'name', {'office': ['educational_institution']}),
     ],
     # [
     #     # healthcare
-    #     ChangeRule('ахова здароўя', 'name', {'amenity': ['hospital', 'pharmacy', 'clinic', 'doctors', 'dentist']}),
+    #     ChangeRule('ахова здароўя', 'name', {'amenity': [
+    #         'hospital', 'pharmacy', 'clinic', 'doctors', 'dentist', 'veterinary',
+    #     ]}),
     #     ChangeRule('ахова здароўя', 'name', {'building': ['hospital', 'clinic']}),
     #     ChangeRule('ахова здароўя', 'name', {'emergency': None}),
     #     ChangeRule('ахова здароўя', 'name', {'healthcare': None}),
     # ],
     # [
     #     # government
-    #     ChangeRule('дзяржаўныя', 'name', {'amenity': ['post_office', 'police', 'library', 'theatre', 'cinema']}),
+    #     ChangeRule('дзяржаўныя', 'name', {'amenity': [
+    #         'post_office', 'post_box', 'police', 'library', 'theatre', 'cinema', 'community_centre', 'townhall',
+    #         'fire_station', 'public_bath', 'social_facility', 'public_building', 'courthouse', 'ranger_station',
+    #         'vehicle_inspection', 'customs', 'mortuary', 'prison',
+    #     ]}),
     #     ChangeRule('дзяржаўныя', 'name', {'office': ['government', 'diplomatic']}),
     #     ChangeRule('дзяржаўныя', 'name', {'building': ['public']}),
     #     ChangeRule('дзяржаўныя', 'name', {'landuse': ['military']}),
@@ -182,19 +191,20 @@ CHANGE_RULES = [
     # ],
     #     [
     #     # bank
-    #     ChangeRule('банкі', 'name', {'amenity': ['atm', 'bank']}),
+    #     ChangeRule('банкі', 'name', {'amenity': ['atm', 'bank', 'bureau_de_change']}),
     # ],
-    # [
-    #     # tourism
-    #     ChangeRule('турызм', 'name', {'tourism': None}),
-    #     ChangeRule('турызм', 'name', {'historic': None}),
-    #     ChangeRule('турызм', 'name', {'memorial': None}),
-    #     ChangeRule('турызм', 'name', {'ruins': None}),
-    #     ChangeRule('турызм', 'name', {'information': None}),
-    #     ChangeRule('турызм', 'name', {'attraction': None}),
-    #     ChangeRule('турызм', 'name', {'artwork_type': None}),
-    #     ChangeRule('турызм', 'name', {'building': ['bunker', 'ruins']}),
-    # ],
+    [
+        # tourism
+        ChangeRule('турызм', 'name', {'tourism': None}),
+        ChangeRule('турызм', 'name', {'historic': None}),
+        ChangeRule('турызм', 'name', {'memorial': None}),
+        ChangeRule('турызм', 'name', {'ruins': None}),
+        ChangeRule('турызм', 'name', {'information': None}),
+        ChangeRule('турызм', 'name', {'attraction': None}),
+        ChangeRule('турызм', 'name', {'artwork_type': None}),
+        ChangeRule('турызм', 'name', {'building': ['bunker', 'ruins']}),
+        ChangeRule('турызм', 'name', {'amenity': ['fountain']}),
+    ],
     # [
     #     # sport
     #     ChangeRule('спорт', 'name', {'leisure': None}),
