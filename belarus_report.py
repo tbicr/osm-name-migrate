@@ -58,6 +58,7 @@ CATEGORIES_RULES = {
         ['admin_level', '6'],
         ['admin_level', '8'],
         ['admin_level', '9'],
+        ['::label', None],
     ],
     'place': [
         ['place', 'city'],
@@ -446,6 +447,7 @@ print('add complex relations that was not loaded to postgis')
 postgis_api = PostgisSearchReadEngine(**postgres_params)
 dump_api = DumpOsmiumSearchReadEngine('belarus-latest.osm.pbf')
 postgis_api.insert_extra_relations(dump_api.get_relations(postgis_api.get_existing_relations()))
+postgis_api.insert_extra_relations(dump_api.get_roles(['label'], ignore={'place': None}))
 
 # overpass_api = OverpassApiSearchEnigne(cache=False)
 #

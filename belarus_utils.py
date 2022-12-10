@@ -326,6 +326,64 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
             subprocess.run(params + [self._origin_filename, *tags], stdout=subprocess.PIPE, check=True)
             return out.read()
 
+    def get_roles(self, roles: Iterable[str], ignore: Dict[str, Optional[Sequence[str]]]) -> List[FoundElement]:
+        import osmium
+
+        roles = frozenset(roles)
+        preprocessed = {
+            'n': defaultdict(lambda: defaultdict(list)),
+            'w': defaultdict(lambda: defaultdict(list)),
+            'r': defaultdict(lambda: defaultdict(list)),
+        }
+        result = []
+        match_tags = self._match_tags
+
+        class PrepHandler(osmium.SimpleHandler):
+            def __init__(self, preprocessed: Dict[str, Dict[int, Dict[str, List[int]]]], roles: FrozenSet[str]):
+                super().__init__()
+                self.roles = roles
+                self.preprocessed = preprocessed
+
+            def relation(self, r: osmium.osm.Relation):
+                for member in r.members:
+                    if member.role in self.roles:
+                        self.preprocessed[member.type][member.ref][member.role].append(r.id)
+
+        class Handler(osmium.SimpleHandler):
+            def __init__(
+                    self,
+                    preprocessed: Dict[str, Dict[int, Dict[str, List[int]]]],
+                    ignore: Dict[str, Optional[Sequence[str]]],
+                    result: List[FoundElement],
+            ):
+                super().__init__()
+                self.ignore = ignore
+                self.preprocessed = preprocessed
+                self.result = result
+
+            def node(self, n: osmium.osm.Node):
+                if n.id in self.preprocessed['n']:
+                    tags = dict(n.tags)
+                    if match_tags(ignore, tags):
+                        return
+                    for role, rels in self.preprocessed['n'][n.id].items():
+                        tags[f'::{role}'] = ';'.join(str(r) for r in rels)
+                        self.result.append(FoundElement(
+                            osm_id=n.id,
+                            osm_type='node',
+                            lon=n.location.lon,
+                            lat=n.location.lat,
+                            geohash='',
+                            way=f'Point ({n.location.lon}, {n.location.lat})',
+                            tags=tags,
+                        ))
+
+        PrepHandler(preprocessed, roles).apply_file(self._origin_filename)
+        data = self._osmium_getid(node_ids=preprocessed['n'].keys())
+        Handler(preprocessed, ignore, result).apply_buffer(data, 'osm.pbf')
+
+        return result
+
     def get_relations(
             self,
             ignore_ids: Iterable[int] = (),
