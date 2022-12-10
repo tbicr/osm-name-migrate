@@ -130,6 +130,8 @@ CATEGORIES_RULES = {
         ['type', 'associatedStreet'],
         ['type', 'street'],
         ['bridge', None],
+        ['planned:highway', None],
+        ['was:highway', None],
     ],
     'public_transport': [
         ['highway', 'bus_stop'],
@@ -142,10 +144,14 @@ CATEGORIES_RULES = {
         ['route_master', None],
         ['railway', None],
         ['aeroway', None],
+        ['was:aeroway', None],
         ['building', 'train_station'],
         ['building', 'transportation'],
         ['amenity', 'bus_station'],
         ['amenity', 'ferry_terminal'],
+        ['disused:railway', None],
+        ['abandoned:railway', None],
+        ['abandoned:public_transport', None],
     ],
     'industrial': [
         ['landuse', 'industrial'],
@@ -159,6 +165,7 @@ CATEGORIES_RULES = {
         ['substation', None],
         ['pipeline', None],
         ['man_made', None],
+        ['abandoned:man_made', None],
         ['embankment', None],
         ['amenity', 'fuel'],
         ['building', 'service'],
@@ -186,6 +193,7 @@ CATEGORIES_RULES = {
         ['building', 'kindergarten'],
         ['building', 'dormitory'],
         ['office', 'educational_institution'],
+        ['faculty', None],
     ],
     'healthcare': [
         ['emergency', None],
@@ -283,8 +291,10 @@ CATEGORIES_RULES = {
         ['shop', 'butcher'],
         ['shop', 'cosmetics'],
         ['shop', None],
+        ['was:shop', None],
         ['craft', 'shoemaker'],
         ['clothes', None],
+        ['club', None],
     ],
     'building': [
         ['building', 'yes'],
@@ -297,6 +307,7 @@ CATEGORIES_RULES = {
         ['building', 'construction'],
         ['building', 'kiosk'],
         ['building', None],
+        ['entrance', None],
     ],
 }
 

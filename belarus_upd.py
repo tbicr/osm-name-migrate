@@ -112,14 +112,19 @@ CHANGE_RULES = [
         ChangeRule('грамадзкі транспарт', 'name', {'route_master': None}),
         ChangeRule('грамадзкі транспарт', 'name', {'railway': None}),
         ChangeRule('грамадзкі транспарт', 'name', {'aeroway': None}),
+        ChangeRule('грамадзкі транспарт', 'name', {'was:aeroway': None}),
         ChangeRule('грамадзкі транспарт', 'name', {'building': ['train_station', 'transportation']}),
         ChangeRule('грамадзкі транспарт', 'name', {'building': ['bus_station', 'ferry_terminal']}),
+        ChangeRule('грамадзкі транспарт', 'name', {'abandoned:railway': None}),
+        ChangeRule('грамадзкі транспарт', 'name', {'abandoned:public_transport': None}),
     ],
     [
         # highway
         ChangeRule('дарогі', 'name', {'highway': None}),
         ChangeRule('дарогі', 'official_name', {'highway': None}),
         ChangeRule('дарогі', 'name', {'type': ['associatedStreet', 'street']}),
+        ChangeRule('дарогі', 'name', {'planned:highway': None}),
+        ChangeRule('дарогі', 'name', {'was:highway': None}),
     ],
     [
         DependantChangeRule('адрасы - дарогі', 'addr:street'),
@@ -146,6 +151,7 @@ CHANGE_RULES = [
         ChangeRule('інфраструктура', 'name', {'substation': None}),
         ChangeRule('інфраструктура', 'name', {'pipeline': None}),
         ChangeRule('інфраструктура', 'name', {'man_made': None}),
+        ChangeRule('інфраструктура', 'name', {'abandoned:man_made': None}),
         ChangeRule('інфраструктура', 'name', {'embankment': None}),
         # ChangeRule('інфраструктура', 'name', {'amenity': ['fuel']}),
         ChangeRule('інфраструктура', 'name', {'building': ['service']}),
@@ -164,6 +170,7 @@ CHANGE_RULES = [
         ]}),
         ChangeRule('адукацыя', 'name', {'building': ['university', 'college', 'school', 'kindergarten', 'dormitory']}),
         ChangeRule('адукацыя', 'name', {'office': ['educational_institution']}),
+        ChangeRule('адукацыя', 'name', {'faculty': None}),
     ],
     # [
     #     # healthcare
