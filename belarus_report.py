@@ -292,6 +292,7 @@ CATEGORIES_RULES = {
         ['shop', 'cosmetics'],
         ['shop', None],
         ['was:shop', None],
+        ['disused:shop', None],
         ['craft', 'shoemaker'],
         ['clothes', None],
         ['club', None],
