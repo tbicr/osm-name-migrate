@@ -374,7 +374,7 @@ class DumpOsmiumSearchReadEngine(DumpSearchReadEngine):
                             lon=n.location.lon,
                             lat=n.location.lat,
                             geohash='',
-                            way=f'Point ({n.location.lon}, {n.location.lat})',
+                            way=shapely.geometry.Point(n.location.lon, n.location.lat).wkt,
                             tags=tags,
                         ))
 
