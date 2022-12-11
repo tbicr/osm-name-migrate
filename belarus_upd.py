@@ -76,6 +76,7 @@ CHANGE_RULES = [
         ChangeRule('раёны', 'name', {'landuse': None}),
         ChangeRule('раёны', 'name', {'residential': None}),
         ChangeRule('раёны', 'name', {'leisure': ['park', 'garden']}),
+        ChangeRule('раёны', 'name', {'was:landuse': None}),
     ],
     [
         DependantChangeRule('адрасы - адміністратыўны падзел', 'addr:region'),

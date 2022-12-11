@@ -93,6 +93,7 @@ CATEGORIES_RULES = {
         ['place', None],
         ['residential', None],
         ['landuse', None],
+        ['was:landuse', None],
     ],
     'natural': [
         ['boundary', None],
@@ -309,6 +310,7 @@ CATEGORIES_RULES = {
         ['building', 'construction'],
         ['building', 'kiosk'],
         ['building', None],
+        ['building:part', None],
         ['entrance', None],
     ],
 }
