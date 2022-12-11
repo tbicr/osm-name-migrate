@@ -93,7 +93,6 @@ CATEGORIES_RULES = {
         ['place', None],
         ['residential', None],
         ['landuse', None],
-        ['was:landuse', None],
     ],
     'natural': [
         ['boundary', None],
@@ -132,8 +131,6 @@ CATEGORIES_RULES = {
         ['type', 'associatedStreet'],
         ['type', 'street'],
         ['bridge', None],
-        ['planned:highway', None],
-        ['was:highway', None],
     ],
     'public_transport': [
         ['highway', 'bus_stop'],
@@ -146,14 +143,10 @@ CATEGORIES_RULES = {
         ['route_master', None],
         ['railway', None],
         ['aeroway', None],
-        ['was:aeroway', None],
         ['building', 'train_station'],
         ['building', 'transportation'],
         ['amenity', 'bus_station'],
         ['amenity', 'ferry_terminal'],
-        ['disused:railway', None],
-        ['abandoned:railway', None],
-        ['abandoned:public_transport', None],
     ],
     'industrial': [
         ['landuse', 'industrial'],
@@ -167,7 +160,6 @@ CATEGORIES_RULES = {
         ['substation', None],
         ['pipeline', None],
         ['man_made', None],
-        ['abandoned:man_made', None],
         ['embankment', None],
         ['amenity', 'fuel'],
         ['building', 'service'],
@@ -293,8 +285,6 @@ CATEGORIES_RULES = {
         ['shop', 'butcher'],
         ['shop', 'cosmetics'],
         ['shop', None],
-        ['was:shop', None],
-        ['disused:shop', None],
         ['craft', 'shoemaker'],
         ['clothes', None],
         ['club', None],
@@ -349,6 +339,26 @@ LANGUAGE_TAGS = [
     'description',
 ]
 
+LIFECYCLE_PREFIXES = [
+    'proposed:',
+    'planned:',
+    'construction:',
+    '',
+    'abandoned:',
+    'closed:',
+    'demolished:',
+    'destroyed:',
+    'disused:',
+    'emergency:',
+    'former:',
+    'historic:',
+    'razed:',
+    'removed:',
+    'ruins:',
+    'ruined:',
+    'was:',
+]
+
 
 BE_EXCEPTIONS = {
     'Памежная зона - Border line',
@@ -361,6 +371,7 @@ BE_EXCEPTIONS = {
 
 usage = defaultdict(set)
 CATEGORIES_RULES2 = {}
+PLAIN_KEYS = frozenset(tag for group in CATEGORIES_RULES.values() for tag, _ in group)
 for category, group in CATEGORIES_RULES.items():
     if category not in CATEGORIES_RULES2:
         CATEGORIES_RULES2[category] = []
@@ -520,16 +531,22 @@ def get_stat_query(lang_tag, data_table):
     for category, group in CATEGORIES_RULES2.items():
         conditions = []
         for i, (k, eq, vv) in enumerate(group):
-            if vv:
-                eq_str = 'IN' if eq else 'NOT IN'
-                vv_str = ','.join(f"'{v}'" for v in vv)
-                condition = f"tags->'{k}' {eq_str} ({vv_str})"
-            elif not eq:
-                condition = f"tags->'{k}' IS NOT NULL"
-            else:
-                raise ValueError()
-            conditions.append(condition)
-            exclude[k][eq].append(condition)
+            lifecycle_conditions = []
+            for prefix in LIFECYCLE_PREFIXES:
+                if prefix and f'{prefix}{k}' in PLAIN_KEYS:
+                    continue
+                if vv:
+                    eq_str = 'IN' if eq else 'NOT IN'
+                    vv_str = ','.join(f"'{v}'" for v in vv)
+                    condition = f"tags->'{prefix}{k}' {eq_str} ({vv_str})"
+                elif not eq:
+                    condition = f"tags->'{prefix}{k}' IS NOT NULL"
+                else:
+                    raise ValueError()
+                lifecycle_conditions.append(condition)
+                conditions.append(condition)
+                exclude[k][eq].append(condition)
+            condition = ' OR '.join(f'({c})' for c in lifecycle_conditions)
             query = query_template.format(
                 data_table=data_table, field=lang_tag, category=category, num=i,
                 condition=condition, cyrilic_regexp=CYRILIC_REGEXP)
