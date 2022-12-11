@@ -533,19 +533,20 @@ def get_stat_query(lang_tag, data_table):
         for i, (k, eq, vv) in enumerate(group):
             lifecycle_conditions = []
             for prefix in LIFECYCLE_PREFIXES:
-                if prefix and f'{prefix}{k}' in PLAIN_KEYS:
+                prefix_k = f'{prefix}{k}'
+                if prefix and prefix_k in PLAIN_KEYS:
                     continue
                 if vv:
                     eq_str = 'IN' if eq else 'NOT IN'
                     vv_str = ','.join(f"'{v}'" for v in vv)
-                    condition = f"tags->'{prefix}{k}' {eq_str} ({vv_str})"
+                    condition = f"tags->'{prefix_k}' {eq_str} ({vv_str})"
                 elif not eq:
-                    condition = f"tags->'{prefix}{k}' IS NOT NULL"
+                    condition = f"tags->'{prefix_k}' IS NOT NULL"
                 else:
                     raise ValueError()
                 lifecycle_conditions.append(condition)
                 conditions.append(condition)
-                exclude[k][eq].append(condition)
+                exclude[prefix_k][eq].append(condition)
             condition = ' OR '.join(f'({c})' for c in lifecycle_conditions)
             query = query_template.format(
                 data_table=data_table, field=lang_tag, category=category, num=i,
