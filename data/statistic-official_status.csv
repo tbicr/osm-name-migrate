@@ -15,9 +15,9 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,boundary = administrative,1,1,1,1.000,1.000,1,1,1,1.000,1.000
 ,traffic_sign = city_limit,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,admin_level = *,1,1,1,1.000,1.000,1,1,1,1.000,1.000
-#,allotments,2981,2978,2977,0.999,0.999,6,5,5,0.833,0.833
-,place = allotments,1838,1835,1834,0.998,0.998,5,4,4,0.800,0.800
-,landuse = allotments,2804,2801,2800,0.999,0.999,6,5,5,0.833,0.833
+#,allotments,2981,2979,2978,0.999,0.999,6,5,5,0.833,0.833
+,place = allotments,1838,1836,1835,0.999,0.998,5,4,4,0.800,0.800
+,landuse = allotments,2804,2802,2801,0.999,0.999,6,5,5,0.833,0.833
 ,allotments = *,37,37,37,1.000,1.000,1,1,1,1.000,1.000
 #,locality,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,place = locality,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -90,6 +90,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,landuse = industrial,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = industrial,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = warehouse,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = construction_company,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,industrial = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,infrastructure,24,24,24,1.000,1.000,1,1,1,1.000,1.000
 ,amenity = fuel,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -155,6 +156,13 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = vehicle_inspection,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = government,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = diplomatic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = newspaper,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = research,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = forestry,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = energy_supplier,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = utility,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = foundation,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = notary,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = public,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,landuse = military,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,government = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -230,4 +238,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,entrance = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,other,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,TOTAL,2982,2979,2978,0.999,0.999,6,5,5,0.833,0.833
+#,TOTAL,2982,2980,2979,0.999,0.999,6,5,5,0.833,0.833

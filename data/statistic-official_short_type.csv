@@ -90,6 +90,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,landuse = industrial,68,0,0,0.000,0.000,4,0,0,0.000,0.000
 ,building = industrial,5,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,building = warehouse,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = construction_company,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,industrial = *,9,0,0,0.000,0.000,3,0,0,0.000,0.000
 #,infrastructure,4282,0,0,0.000,0.000,38,0,0,0.000,0.000
 ,amenity = fuel,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -134,7 +135,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = clinic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,emergency = *,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,healthcare = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,government,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+#,government,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,amenity = fire_station,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = ranger_station,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = townhall,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -155,6 +156,13 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = vehicle_inspection,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = government,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = diplomatic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = newspaper,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = research,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = forestry,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = energy_supplier,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = utility,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = foundation,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = notary,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,building = public,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,landuse = military,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,government = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -181,8 +189,8 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,leisure = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,sport = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,resort = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,office,1,0,0,0.000,0.000,1,0,0,0.000,0.000
-,office = *,1,0,0,0.000,0.000,1,0,0,0.000,0.000
+#,office,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,office = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,amenity,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = cafe,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = fast_food,0,0,0,0.000,0.000,0,0,0,0.000,0.000
