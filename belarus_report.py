@@ -227,6 +227,7 @@ CATEGORIES_RULES = {
         ['office', 'research'],
         ['office', 'forestry'],
         ['office', 'energy_supplier'],
+        ['office', 'utility'],
         ['office', 'foundation'],
         ['office', 'notary'],
         ['building', 'public'],

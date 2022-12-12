@@ -138,6 +138,7 @@ CHANGE_RULES = [
         ChangeRule('індустрыяльныя', 'name', {'landuse': ['industrial']}),
         ChangeRule('індустрыяльныя', 'name', {'building': ['industrial', 'warehouse']}),
         ChangeRule('індустрыяльныя', 'name', {'industrial': None}),
+        ChangeRule('індустрыяльныя', 'name', {'office': ['construction_company']}),
     ],
     [
         # infrastructure
@@ -182,7 +183,10 @@ CHANGE_RULES = [
     #         'fire_station', 'public_bath', 'social_facility', 'public_building', 'courthouse', 'ranger_station',
     #         'vehicle_inspection', 'customs', 'mortuary', 'prison',
     #     ]}),
-    #     ChangeRule('дзяржаўныя', 'name', {'office': ['government', 'diplomatic']}),
+    #     ChangeRule('дзяржаўныя', 'name', {'office': [
+    #         'government', 'diplomatic', 'newspaper', 'research', 'forestry', 'energy_supplier', 'utility',
+    #         'foundation', 'notary',
+    #     ]}),
     #     ChangeRule('дзяржаўныя', 'name', {'building': ['public']}),
     #     ChangeRule('дзяржаўныя', 'name', {'landuse': ['military']}),
     #     ChangeRule('дзяржаўныя', 'name', {'government': None}),
