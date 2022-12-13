@@ -1,1 +1,3 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+node,10257810077,Минск,relation,59195,Минск,Мінск,Минск
+node,10257832145,Минск,relation,59195,Минск,Мінск,Минск
