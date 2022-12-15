@@ -113,7 +113,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,landuse = education,40,1,1,0.025,0.025,39,1,1,0.026,0.026
 ,amenity = university,14,0,0,0.000,0.000,14,0,0,0.000,0.000
 ,amenity = college,66,5,5,0.076,0.076,62,5,5,0.081,0.081
-,amenity = school,409,18,19,0.044,0.046,409,18,19,0.044,0.046
+,amenity = school,407,18,19,0.044,0.047,407,18,19,0.044,0.047
 ,amenity = kindergarten,213,7,6,0.033,0.028,212,7,6,0.033,0.028
 ,amenity = arts_centre,11,0,0,0.000,0.000,11,0,0,0.000,0.000
 ,amenity = music_school,12,0,1,0.000,0.083,12,0,1,0.000,0.083
