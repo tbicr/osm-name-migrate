@@ -44,6 +44,8 @@ NAME_SKIP_AUTO_BE_FIX_CATEGORIES = {
     'tourism',
     'sport',
     'office',
+    'amenity',
+    'building',
 }
 FLOAT_FORMAT = '{:.3f}'.format
 TABLE_ATTRS = 'class="table table-sm table-hover caption-top"'
@@ -173,6 +175,7 @@ CATEGORIES_RULES = {
         ['building', 'church'],
         ['building', 'cathedral'],
         ['building', 'chapel'],
+        ['cemetery', None],
     ],
     'education': [
         ['landuse', 'education'],
@@ -735,8 +738,6 @@ def should_create_csv(lang_tag, category, tag, column):
     if category in {'TOTAL', 'amenity', 'building'}:
         return False
     if category != 'other' and column in SKIP_CSV_COLUMNS:
-        return False
-    if column == 'ru+be' and category in NAME_SKIP_AUTO_BE_FIX_CATEGORIES:
         return False
     return True
 

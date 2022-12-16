@@ -156,6 +156,7 @@ CHANGE_RULES = [
         ChangeRule('рэлігійныя', 'name', {'amenity': ['place_of_worship', 'monastery', 'grave_yard']}),
         ChangeRule('рэлігійныя', 'name', {'building': ['church', 'cathedral', 'chapel']}),
         ChangeRule('рэлігійныя', 'name', {'religion': None}),
+        ChangeRule('рэлігійныя', 'name', {'cemetery': None}),
     ],
     [
         # education
@@ -167,37 +168,38 @@ CHANGE_RULES = [
         ChangeRule('адукацыя', 'name', {'office': ['educational_institution']}),
         ChangeRule('адукацыя', 'name', {'faculty': None}),
     ],
-    # [
-    #     # healthcare
-    #     ChangeRule('ахова здароўя', 'name', {'amenity': [
-    #         'hospital', 'pharmacy', 'clinic', 'doctors', 'dentist', 'veterinary',
-    #     ]}),
-    #     ChangeRule('ахова здароўя', 'name', {'building': ['hospital', 'clinic']}),
-    #     ChangeRule('ахова здароўя', 'name', {'emergency': None}),
-    #     ChangeRule('ахова здароўя', 'name', {'healthcare': None}),
-    # ],
-    # [
-    #     # government
-    #     ChangeRule('дзяржаўныя', 'name', {'amenity': [
-    #         'post_office', 'post_box', 'police', 'library', 'theatre', 'cinema', 'community_centre', 'townhall',
-    #         'fire_station', 'public_bath', 'social_facility', 'public_building', 'courthouse', 'ranger_station',
-    #         'vehicle_inspection', 'customs', 'mortuary', 'prison',
-    #     ]}),
-    #     ChangeRule('дзяржаўныя', 'name', {'office': [
-    #         'government', 'diplomatic', 'newspaper', 'research', 'forestry', 'energy_supplier', 'utility',
-    #         'foundation', 'notary',
-    #     ]}),
-    #     ChangeRule('дзяржаўныя', 'name', {'building': ['public']}),
-    #     ChangeRule('дзяржаўныя', 'name', {'landuse': ['military']}),
-    #     ChangeRule('дзяржаўныя', 'name', {'government': None}),
-    #     ChangeRule('дзяржаўныя', 'name', {'military': None}),
-    #     ChangeRule('дзяржаўныя', 'name', {'embassy': None}),
-    #     ChangeRule('дзяржаўныя', 'name', {'diplomatic': None}),
-    # ],
-    #     [
-    #     # bank
-    #     ChangeRule('банкі', 'name', {'amenity': ['atm', 'bank', 'bureau_de_change']}),
-    # ],
+    [
+        # healthcare
+        ChangeRule('ахова здароўя', 'name', {'amenity': [
+            'hospital', 'clinic', 'doctors', 'dentist', 'veterinary',
+            # 'pharmacy',
+        ]}),
+        ChangeRule('ахова здароўя', 'name', {'building': ['hospital', 'clinic']}),
+        ChangeRule('ахова здароўя', 'name', {'emergency': None}),
+        ChangeRule('ахова здароўя', 'name', {'healthcare': None}),
+    ],
+    [
+        # government
+        ChangeRule('дзяржаўныя', 'name', {'amenity': [
+            'post_office', 'post_box', 'police', 'library', 'theatre', 'cinema', 'community_centre', 'townhall',
+            'fire_station', 'public_bath', 'social_facility', 'public_building', 'courthouse', 'ranger_station',
+            'vehicle_inspection', 'customs', 'mortuary', 'prison',
+        ]}),
+        ChangeRule('дзяржаўныя', 'name', {'office': [
+            'government', 'diplomatic', 'newspaper', 'research', 'forestry', 'energy_supplier', 'utility',
+            'foundation', 'notary',
+        ]}),
+        ChangeRule('дзяржаўныя', 'name', {'building': ['public']}),
+        ChangeRule('дзяржаўныя', 'name', {'landuse': ['military']}),
+        ChangeRule('дзяржаўныя', 'name', {'government': None}),
+        ChangeRule('дзяржаўныя', 'name', {'military': None}),
+        ChangeRule('дзяржаўныя', 'name', {'embassy': None}),
+        ChangeRule('дзяржаўныя', 'name', {'diplomatic': None}),
+    ],
+    [
+        # bank
+        # ChangeRule('банкі', 'name', {'amenity': ['atm', 'bank', 'bureau_de_change']}),
+    ],
     [
         # tourism
         ChangeRule('турызм', 'name', {'tourism': None}),
@@ -210,13 +212,13 @@ CHANGE_RULES = [
         ChangeRule('турызм', 'name', {'building': ['bunker', 'ruins']}),
         ChangeRule('турызм', 'name', {'amenity': ['fountain']}),
     ],
-    # [
-    #     # sport
-    #     ChangeRule('спорт', 'name', {'leisure': None}),
-    #     ChangeRule('спорт', 'name', {'sport': None}),
-    #     ChangeRule('спорт', 'name', {'resort': None}),
-    #     ChangeRule('спорт', 'name', {'amenity': ['sanatorium']}),
-    # ],
+    [
+        # sport
+        ChangeRule('спорт', 'name', {'leisure': None}),
+        ChangeRule('спорт', 'name', {'sport': None}),
+        ChangeRule('спорт', 'name', {'resort': None}),
+        ChangeRule('спорт', 'name', {'amenity': ['sanatorium']}),
+    ],
     # office
     # amenity
     # building
@@ -648,6 +650,8 @@ if __name__ == '__main__':
         suffix_to='be',
     )
     for rules in CHANGE_RULES:
+        if not rules:
+            continue
         comment = rules[0].comment.split(':')[0]
         cache = []
         if os.path.exists('belarus_upd.json'):
