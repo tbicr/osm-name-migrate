@@ -109,6 +109,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = cathedral,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = chapel,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,religion = *,1,0,0,0.000,0.000,1,0,0,0.000,0.000
+,cemetery = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,education,151,15,18,0.099,0.119,134,15,18,0.112,0.134
 ,landuse = education,34,7,7,0.206,0.206,32,7,7,0.219,0.219
 ,amenity = university,22,6,6,0.273,0.273,22,6,6,0.273,0.273
