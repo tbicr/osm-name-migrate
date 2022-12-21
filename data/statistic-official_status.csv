@@ -22,7 +22,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 #,locality,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,place = locality,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,abandoned:place = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,suburb,15,15,15,1.000,1.000,1,1,1,1.000,1.000
+#,suburb,16,16,16,1.000,1.000,1,1,1,1.000,1.000
 ,landuse = cemetery,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,landuse = commercial,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,landuse = construction,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -34,7 +34,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,leisure = garden,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = marketplace,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,place = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,residential = *,15,15,15,1.000,1.000,1,1,1,1.000,1.000
+,residential = *,16,16,16,1.000,1.000,1,1,1,1.000,1.000
 ,landuse = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,natural,1,1,1,1.000,1.000,1,1,1,1.000,1.000
 ,place = island,0,0,0,0.000,0.000,0,0,0,0.000,0.000
