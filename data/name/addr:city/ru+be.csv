@@ -1,1 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+node,10284491359,Слоним,relation,6722458,Слоним,Слонім,Слоним
+node,10284491361,Слоним,relation,6722458,Слоним,Слонім,Слоним
+way,690303191,Слоним,relation,6722458,Слоним,Слонім,Слоним
