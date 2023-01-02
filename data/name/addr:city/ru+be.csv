@@ -1,4 +1,1 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
-node,10297412901,Брест,relation,72615,Брест,Брэст,Брест
-node,10296896978,Кобрин,relation,6722171,Кобрин,Кобрын,Кобрин
-way,870798022,Кобрин,relation,6722171,Кобрин,Кобрын,Кобрин
