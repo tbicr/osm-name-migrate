@@ -32,10 +32,8 @@ from functools import wraps
 from itertools import chain
 from typing import Union, Iterable, FrozenSet, Optional, Any, TypeVar, Callable
 
-import shapely.geometry
 import shapely.ops
 import shapely.strtree
-import shapely.validation
 import shapely.wkb
 
 import osmium.version
@@ -83,6 +81,14 @@ DEFAULT_DEPENDANT_TAGS = [
 
 T = TypeVar('T')
 _log_stack = 0
+
+
+if shapely.__version__ >= '2.0.0':
+    STRtree = shapely.strtree.STRtree
+else:
+    class STRtree(shapely.strtree.STRtree):
+        def nearest(self, geom):
+            return self.nearest_item(geom)
 
 
 def log(*params: Any):
@@ -467,7 +473,8 @@ class GeometriesBuilderHandler(osmium.SimpleHandler):
                 result.extend(points)
                 result.extend(lines)
                 result.extend(polygons)
-            self.container.type_geoms[REL][r.id].append(shapely.ops.unary_union(result))
+            if result:
+                self.container.type_geoms[REL][r.id].append(shapely.ops.unary_union(result))
         except ValueError:
             print(f'r{r.id}')
             raise
@@ -530,7 +537,7 @@ def build_index(container: Container):
                     container.name_obj[tags['name']].append((osm_type, osm_id))
                     container.name_geoms[tags['name']].append(geom)
     for name, geoms in container.name_geoms.items():
-        container.name_strtree[name] = shapely.strtree.STRtree(geoms)
+        container.name_strtree[name] = STRtree(geoms)
 
 
 @log_time
@@ -549,7 +556,7 @@ def find_dependency_parent_updates(container: Container):
                         closest_distance = None
                         closets_idx = None
                         for geom in container.type_geoms[osm_type][osm_id]:
-                            idx = tree.nearest_item(geom)
+                            idx = tree.nearest(geom)
                             distance = geom.distance(container.name_geoms[name][idx])
                             if closest_distance is None or closest_distance > distance:
                                 closets_idx = idx
