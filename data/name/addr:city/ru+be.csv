@@ -1,1 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+node,4381832089,Островец,relation,6722443,Островец,Астравец,Островец
+way,1019559067,Островец,relation,6722443,Островец,Астравец,Островец
+way,696011586,Чернавчицы,relation,7461798,Чернавчицы,Чарнаўчыцы,Чернавчицы
