@@ -432,6 +432,9 @@ class GeometriesBuilderHandler(osmium.SimpleHandler):
                     self.container.type_geoms[WAY][w.id].append(line)
                 else:
                     self.container.type_geoms[WAY][w.id].extend(polys)
+        except (RuntimeError, osmium.InvalidLocationError):
+            # ignore geometries with bad references
+            pass
         except ValueError:
             print(f'w{w.id}')
             raise
