@@ -306,7 +306,7 @@ class Engine:
         if len(elements[value]) == 1:
             return elements[value][0]
         geom = shapely.wkt.loads(way)
-        i = indexes[value].nearest_item(geom)
+        i = indexes[value].nearest(geom)
         return elements[value][i]
 
     @staticmethod

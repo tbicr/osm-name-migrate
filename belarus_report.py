@@ -1060,7 +1060,7 @@ def get_dependant_df():
                         if name_part not in geom_idx:
                             v_osm_type, v_osm_id, value, value_be, value_ru = empty
                         else:
-                            idx = geom_idx[name_part].nearest_item(geom)
+                            idx = geom_idx[name_part].nearest(geom)
                             v_osm_type, v_osm_id, value, value_be, value_ru = name_idx[name_part][idx]
 
                         if value and value_be and value_ru and name_part == value_be == value_ru:
