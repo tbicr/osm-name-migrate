@@ -1,1 +1,5 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+relation,15480323,Вокзал,node,10580956048,Вокзал,Вакзал,Вокзал
+relation,15480323,Вокзал,node,10580956048,Вокзал,Вакзал,Вокзал
+relation,15480409,Вокзал,node,10580956049,Вокзал,Вакзал,Вокзал
+relation,15480409,Вокзал,node,10580956048,Вокзал,Вакзал,Вокзал

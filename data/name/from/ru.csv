@@ -1,1 +1,3 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+relation,15480323,Больница,node,10660791376,Больница,,Больница
+relation,15480323,Больница,node,10660791376,Больница,,Больница

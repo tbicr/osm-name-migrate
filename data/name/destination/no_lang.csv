@@ -1,5 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
-relation,15469663,Жигалка,relation,15467821,Жигалка,,
 way,25226593,Нарач,relation,12097777,Нарач,,
 way,25226593,Нарач,relation,12097777,Нарач,,
 way,38235605,Нарач,relation,12097777,Нарач,,
