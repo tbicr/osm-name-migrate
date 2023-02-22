@@ -1,1 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+node,8850831655,Кобрин,relation,6722171,Кобрин,Кобрын,Кобрин
+node,10683864322,Кобрин,relation,6722171,Кобрин,Кобрын,Кобрин
+way,280436377,Кобрин,relation,6722171,Кобрин,Кобрын,Кобрин
