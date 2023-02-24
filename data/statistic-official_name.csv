@@ -110,7 +110,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = chapel,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,religion = *,11,3,3,0.273,0.273,11,3,3,0.273,0.273
 ,cemetery = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,education,869,62,130,0.071,0.150,864,62,130,0.072,0.150
+#,education,868,62,130,0.071,0.150,863,62,130,0.072,0.151
 ,landuse = education,41,2,2,0.049,0.049,40,2,2,0.050,0.050
 ,amenity = university,14,0,0,0.000,0.000,14,0,0,0.000,0.000
 ,amenity = college,67,7,7,0.104,0.104,63,7,7,0.111,0.111
@@ -122,7 +122,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = college,9,1,1,0.111,0.111,9,1,1,0.111,0.111
 ,building = school,68,7,40,0.103,0.588,68,7,40,0.103,0.588
 ,building = kindergarten,63,10,44,0.159,0.698,63,10,44,0.159,0.698
-,building = dormitory,14,0,0,0.000,0.000,14,0,0,0.000,0.000
+,building = dormitory,13,0,0,0.000,0.000,13,0,0,0.000,0.000
 ,office = educational_institution,2,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,faculty = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,healthcare,259,12,13,0.046,0.050,247,11,12,0.045,0.049
@@ -239,4 +239,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,3,0,0,0.000,0.000,3,0,0,0.000,0.000
 ,entrance = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,other,8,1,0,0.125,0.000,8,1,0,0.125,0.000
-#,TOTAL,27757,25416,25468,0.916,0.918,9207,6982,7088,0.758,0.770
+#,TOTAL,27756,25416,25468,0.916,0.918,9206,6982,7088,0.758,0.770
