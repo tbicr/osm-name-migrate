@@ -1,4 +1,2 @@
 osm_type,osm_id,name,name:be,name:ru
 node,10244538277,"""Ул. Подольская""",,
-node,10731136191,Школа,,
-relation,15592771,Школа,,
