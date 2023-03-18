@@ -71,7 +71,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,type = street,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,highway = *,70,70,70,1.000,1.000,29,29,29,1.000,1.000
 ,bridge = *,276,276,275,1.000,0.996,82,82,81,1.000,0.988
-#,public_transport,25,8,8,0.320,0.320,20,6,6,0.300,0.300
+#,public_transport,24,8,8,0.333,0.333,19,6,6,0.316,0.316
 ,highway = bus_stop,5,5,5,1.000,1.000,3,3,3,1.000,1.000
 ,type = route,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,type = route_master,1,0,0,0.000,0.000,1,0,0,0.000,0.000
@@ -82,7 +82,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = bus_station,2,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,amenity = ferry_terminal,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,public_transport = *,8,5,5,0.625,0.625,4,3,3,0.750,0.750
-,route = *,12,3,3,0.250,0.250,12,3,3,0.250,0.250
+,route = *,11,3,3,0.273,0.273,11,3,3,0.273,0.273
 ,route_master = *,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,railway = *,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,aeroway = *,2,0,0,0.000,0.000,2,0,0,0.000,0.000
@@ -110,7 +110,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = chapel,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,religion = *,11,3,3,0.273,0.273,11,3,3,0.273,0.273
 ,cemetery = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,education,868,62,130,0.071,0.150,863,62,130,0.072,0.151
+#,education,869,62,130,0.071,0.150,864,62,130,0.072,0.150
 ,landuse = education,41,2,2,0.049,0.049,40,2,2,0.050,0.050
 ,amenity = university,14,0,0,0.000,0.000,14,0,0,0.000,0.000
 ,amenity = college,67,7,7,0.104,0.104,63,7,7,0.111,0.111
@@ -123,7 +123,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = school,68,7,40,0.103,0.588,68,7,40,0.103,0.588
 ,building = kindergarten,63,10,44,0.159,0.698,63,10,44,0.159,0.698
 ,building = dormitory,13,0,0,0.000,0.000,13,0,0,0.000,0.000
-,office = educational_institution,2,0,0,0.000,0.000,2,0,0,0.000,0.000
+,office = educational_institution,3,0,0,0.000,0.000,3,0,0,0.000,0.000
 ,faculty = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,healthcare,259,12,14,0.046,0.054,247,11,13,0.045,0.053
 ,amenity = hospital,60,1,2,0.017,0.033,60,1,2,0.017,0.033
@@ -225,7 +225,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,shop = *,53,9,11,0.170,0.208,46,9,10,0.196,0.217
 ,clothes = *,2,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,club = *,1,0,0,0.000,0.000,1,0,0,0.000,0.000
-#,building,374,31,32,0.083,0.086,371,30,31,0.081,0.084
+#,building,375,31,32,0.083,0.085,372,30,31,0.081,0.083
 ,building = yes,269,23,23,0.086,0.086,268,22,22,0.082,0.082
 ,building = retail,36,3,3,0.083,0.083,35,3,3,0.086,0.086
 ,building = commercial,15,1,1,0.067,0.067,15,1,1,0.067,0.067
@@ -235,7 +235,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = residential,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = construction,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = kiosk,18,0,0,0.000,0.000,18,0,0,0.000,0.000
-,building = *,16,0,1,0.000,0.062,16,0,1,0.000,0.062
+,building = *,17,0,1,0.000,0.059,17,0,1,0.000,0.059
 ,building:part = *,3,0,0,0.000,0.000,3,0,0,0.000,0.000
 ,entrance = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,other,9,1,0,0.111,0.000,9,1,0,0.111,0.000
