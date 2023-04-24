@@ -1,1 +1,3 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+relation,15736363,Вокзал,node,10580956048,Вокзал,Вакзал,Вокзал
+relation,15736364,Вокзал,node,10580956048,Вокзал,Вакзал,Вокзал
