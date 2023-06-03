@@ -1,1 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+relation,15913057,Понятичи,node,10934049405,Понятичи,Паняцічы,Понятичи
+relation,15913057,Понятичи,relation,7467542,Понятичи,Паняцічы,Понятичи
+relation,15913057,Понятичи,relation,7467542,Понятичи,Паняцічы,Понятичи
