@@ -1,2 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
 way,734758439,Войциелюны,node,7739189816,Войциелюны,,Войциелюны
+relation,7466571,Лахва,way,25132030,Лахва,,Лахва
+relation,7466571,Лахва,way,25132030,Лахва,,Лахва

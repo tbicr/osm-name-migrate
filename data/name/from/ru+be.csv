@@ -1,6 +1,1 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
-relation,15913057,Пинск,relation,1749248,Пинск,Пінск,Пинск
-relation,15913057,Пинск,node,460411021,Пинск,Пінск,Пинск
-relation,15913057,Пинск,relation,1749248,Пинск,Пінск,Пинск
-relation,15913057,Пинск,relation,1749248,Пинск,Пінск,Пинск
-relation,15913520,Пинскрайгаз,node,497154142,Пинскрайгаз,Пінскрайгаз,Пинскрайгаз

@@ -1,4 +1,1 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
-way,204117294,Бобруйск,relation,167857,Бобруйск,Бабруйск,Бобруйск
-node,10944586822,Минск,relation,59195,Минск,Мінск,Минск
-node,10908630205,Смолевичи,relation,6722598,Смолевичи,Смалявічы,Смолевичи
