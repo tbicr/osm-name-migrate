@@ -219,7 +219,10 @@ CHANGE_RULES = [
         ChangeRule('спорт', 'name', {'resort': None}),
         ChangeRule('спорт', 'name', {'amenity': ['sanatorium']}),
     ],
-    # office
+    [
+        # office
+        ChangeRule('офісы', 'name', {'office': None}),
+    ],
     # amenity
     # building
 ]
@@ -619,7 +622,7 @@ class Engine:
 
 if __name__ == '__main__':
     postgis_search_engine = PostgisSearchReadEngine(
-        host=POSTGRES_HOST2,
+        host=POSTGRES_HOST,
         port=POSTGRES_PORT,
         dbname=POSTGRES_DB,
         user=POSTGRES_USER,
