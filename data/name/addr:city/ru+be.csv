@@ -1,1 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+node,11399801590,Витебск,relation,6825777,Витебск,Віцебск,Витебск
+way,27896628,Витебск,relation,6825777,Витебск,Віцебск,Витебск
+way,27903313,Витебск,relation,6825777,Витебск,Віцебск,Витебск
