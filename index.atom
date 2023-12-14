@@ -10,38 +10,31 @@
   </author>
   <icon>https://openstreetmap.by/favicon.ico</icon>
   <generator>daily report</generator><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">sport +1 not fixed +2 total</title>
-    <id>sport#2023-12-13T07:18:25Z</id>
-    <updated>2023-12-13T07:18:25Z</updated>
-    <published>2023-12-13T07:18:25Z</published>
+    <title type="text">addr:city +1 not fixed +1 total</title>
+    <id>addr:city#2023-12-14T07:17:50Z</id>
+    <updated>2023-12-14T07:17:50Z</updated>
+    <published>2023-12-14T07:17:50Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#d9ead3;"><td>way</td><td>1230675759</td><td>Место выгула собак</td><td><b>Месца выгулу сабак</b></td><td>Место выгула собак</td><td>ru</td><td>leisure = *</td></tr><tr><td>way</td><td>1230688216</td><td>Площадка для петанка</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>leisure = * | sport = *</td></tr></table></content>
+    <content type="html"><table><tr><th>dep_osm_type</th><th>dep_osm_id</th><th>dependant</th><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>way</td><td>1230931058</td><td>68-2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>addr:city</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
     <title type="text">industrial +0 not fixed +1 total</title>
-    <id>industrial#2023-12-13T07:18:25Z</id>
-    <updated>2023-12-13T07:18:25Z</updated>
-    <published>2023-12-13T07:18:25Z</published>
+    <id>industrial#2023-12-14T07:17:50Z</id>
+    <updated>2023-12-14T07:17:50Z</updated>
+    <published>2023-12-14T07:17:50Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>way</td><td>1230603670</td><td>ДРСУ-141</td><td>ДРБУ-141</td><td>ДРСУ-141</td><td>ru+be</td><td>landuse = industrial</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>way</td><td>559188678</td><td>Лакаматыўнае дэпо</td><td>Лакаматыўнае дэпо Лунинец</td><td>Локомотивное депо Лунинец</td><td>other_both</td><td>landuse = industrial</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">tourism +1 not fixed +1 total</title>
-    <id>tourism#2023-12-13T07:18:25Z</id>
-    <updated>2023-12-13T07:18:25Z</updated>
-    <published>2023-12-13T07:18:25Z</published>
+    <title type="text">tourism +2 not fixed +2 total</title>
+    <id>tourism#2023-12-14T07:17:50Z</id>
+    <updated>2023-12-14T07:17:50Z</updated>
+    <published>2023-12-14T07:17:50Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>775612342</td><td>Усадьба &quot;Райский хутор&quot;</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>tourism = *</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>9802648133</td><td>Паэтка  Сафія Тшешковска (з Манькоўскіх) (псеўданім Adam M-ski)</td><td>Паэтка Сафія Тшешковска (з Манькоўскіх) (псеўданім Adam M-ski)</td><td>&nbsp;</td><td>other_be</td><td>historic = *</td></tr><tr><td>node</td><td>11414137669</td><td>К.Д.Ушинский</td><td>К.Д.Ушынскі</td><td>&nbsp;</td><td>other_be</td><td>tourism = *</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">infrastructure +2 not fixed +2 total</title>
-    <id>infrastructure#2023-12-13T07:18:25Z</id>
-    <updated>2023-12-13T07:18:25Z</updated>
-    <published>2023-12-13T07:18:25Z</published>
+    <title type="text">sport +0 not fixed +1 total</title>
+    <id>sport#2023-12-14T07:17:50Z</id>
+    <updated>2023-12-14T07:17:50Z</updated>
+    <published>2023-12-14T07:17:50Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>991670958</td><td>РП-269</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>building = service</td></tr><tr><td>way</td><td>431002890</td><td>РП-170</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>building = service</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">suburb +1 not fixed +1 total</title>
-    <id>suburb#2023-12-13T07:18:25Z</id>
-    <updated>2023-12-13T07:18:25Z</updated>
-    <published>2023-12-13T07:18:25Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>1230659207</td><td>Полигон ТБО</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>landuse = *</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>way</td><td>1230675759</td><td>Место выгула собак</td><td>Месца выгулу сабак</td><td>Место выгула собак</td><td>ru+be</td><td>leisure = *</td></tr></table></content>
   </entry></feed>
