@@ -1,1 +1,3 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+relation,2916093,СП «Теста»,node,5028930031,СП «Теста»,СП «Тэста»,СП «Теста»
+relation,7529090,ТД «Барановичский»,relation,11700182,ТД «Барановичский»,ГД «Баранавіцкі»,ТД «Барановичский»
