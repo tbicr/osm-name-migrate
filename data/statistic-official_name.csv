@@ -40,7 +40,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,place = island,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,place = islet,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,landuse = forest,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,leisure = nature_reserve,16,3,2,0.188,0.125,16,3,2,0.188,0.125
+,leisure = nature_reserve,17,4,2,0.235,0.118,17,4,2,0.235,0.118
 ,boundary = *,19,4,2,0.211,0.105,19,4,2,0.211,0.105
 ,natural = *,4,0,0,0.000,0.000,4,0,0,0.000,0.000
 ,ele = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
