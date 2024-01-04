@@ -10,24 +10,45 @@
   </author>
   <icon>https://openstreetmap.by/favicon.ico</icon>
   <generator>daily report</generator><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">infrastructure +1 not fixed +1 total</title>
-    <id>infrastructure#2024-01-03T07:17:53Z</id>
-    <updated>2024-01-03T07:17:53Z</updated>
-    <published>2024-01-03T07:17:53Z</published>
+    <title type="text">public_transport +0 not fixed +1 total</title>
+    <id>public_transport#2024-01-04T07:17:59Z</id>
+    <updated>2024-01-04T07:17:59Z</updated>
+    <published>2024-01-04T07:17:59Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>102279396</td><td>ЦТП-2-24 / ТП-521</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>building = service | power = * | substation = *</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>relation</td><td>16925994</td><td>Падʼезд да вёскі Аляксандраўка ад аўтамабільнай дарогі Р-37 Міхалкі – Нароўля – мяжа Украіны (Аляксандраўка)</td><td>Падʼезд да вёскі Медзвядзёва ад аўтамабільнай дарогі Р-38 Буда-Кашалёва (ад аўтамабільнай дарогі М-5/Е 271) – Чачэрск – Краснаполле</td><td>Подъезд к деревне Медведево от автомобильной дороги Р-38 Буда-Кошелево (от автомобильной дороги М-5/Е 271) – Чечерск – Краснополье</td><td>other_both</td><td>route = *</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">government +1 not fixed +1 total</title>
-    <id>government#2024-01-03T07:17:53Z</id>
-    <updated>2024-01-03T07:17:53Z</updated>
-    <published>2024-01-03T07:17:53Z</published>
+    <title type="text">sport +0 not fixed +1 total</title>
+    <id>sport#2024-01-04T07:17:59Z</id>
+    <updated>2024-01-04T07:17:59Z</updated>
+    <published>2024-01-04T07:17:59Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>132986853</td><td>Отделение дневного пребывания для граждан пожилого возраста</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>amenity = community_centre</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>way</td><td>277508757</td><td>Кайман</td><td>ан</td><td>Кайман</td><td>ru+be</td><td>leisure = *</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">infrastructure +0 not fixed +1 total</title>
+    <id>infrastructure#2024-01-04T07:17:59Z</id>
+    <updated>2024-01-04T07:17:59Z</updated>
+    <published>2024-01-04T07:17:59Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#d9ead3;"><td>way</td><td>1186970964</td><td>ЦТП</td><td><b>ЦЦП</b></td><td><b>ЦТП</b></td><td>no_lang</td><td>building = service</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">industrial +1 not fixed +1 total</title>
+    <id>industrial#2024-01-04T07:17:59Z</id>
+    <updated>2024-01-04T07:17:59Z</updated>
+    <published>2024-01-04T07:17:59Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>1236457331</td><td>ВитебскОоблТоп</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>landuse = industrial</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">suburb +1 not fixed +1 total</title>
+    <id>suburb#2024-01-04T07:17:59Z</id>
+    <updated>2024-01-04T07:17:59Z</updated>
+    <published>2024-01-04T07:17:59Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>504972863</td><td>Купаловский-2008</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>landuse = *</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
     <title type="text">office +1 not fixed +1 total</title>
-    <id>office#2024-01-03T07:17:53Z</id>
-    <updated>2024-01-03T07:17:53Z</updated>
-    <published>2024-01-03T07:17:53Z</published>
+    <id>office#2024-01-04T07:17:59Z</id>
+    <updated>2024-01-04T07:17:59Z</updated>
+    <published>2024-01-04T07:17:59Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>11478489258</td><td>МилкТехСервис</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = *</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>11481521731</td><td>Альфа Кул</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = *</td></tr></table></content>
   </entry></feed>
