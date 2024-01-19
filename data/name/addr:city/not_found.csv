@@ -1,10 +1,12 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
 way,1230931058,68-2,,,,,
+node,11526464534,Minsk,,,,,
 way,25327519,Minsk,,,,,
 way,25327531,Minsk,,,,,
 way,536141671,Minsk,,,,,
 way,536141672,Minsk,,,,,
 node,2788683153,Mogilev,,,,,
+way,496330293,Stan'kava,,,,,
 way,334062336,Д. Кошевичи,,,,,
 way,1234856204,Д. Кошевичи,,,,,
 way,1238899567,Д. Кошевичи,,,,,
