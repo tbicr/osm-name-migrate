@@ -86,8 +86,8 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,route_master = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,railway = *,29,0,0,0.000,0.000,20,0,0,0.000,0.000
 ,aeroway = *,12,0,0,0.000,0.000,11,0,0,0.000,0.000
-#,industrial,240,9,10,0.037,0.042,145,8,9,0.055,0.062
-,landuse = industrial,70,5,5,0.071,0.071,65,5,5,0.077,0.077
+#,industrial,241,9,10,0.037,0.041,146,8,9,0.055,0.062
+,landuse = industrial,71,5,5,0.070,0.070,66,5,5,0.076,0.076
 ,building = industrial,81,3,4,0.037,0.049,59,2,3,0.034,0.051
 ,building = warehouse,17,1,1,0.059,0.059,15,1,1,0.067,0.067
 ,office = construction_company,1,0,0,0.000,0.000,1,0,0,0.000,0.000
@@ -125,7 +125,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = dormitory,18,0,0,0.000,0.000,15,0,0,0.000,0.000
 ,office = educational_institution,4,0,0,0.000,0.000,4,0,0,0.000,0.000
 ,faculty = *,2,0,0,0.000,0.000,2,0,0,0.000,0.000
-#,healthcare,1533,2,0,0.001,0.000,501,2,0,0.004,0.000
+#,healthcare,1534,2,0,0.001,0.000,502,2,0,0.004,0.000
 ,amenity = hospital,13,1,0,0.077,0.000,13,1,0,0.077,0.000
 ,amenity = pharmacy,156,1,0,0.006,0.000,63,1,0,0.016,0.000
 ,amenity = clinic,18,0,0,0.000,0.000,18,0,0,0.000,0.000
@@ -135,7 +135,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = hospital,8,1,0,0.125,0.000,7,1,0,0.143,0.000
 ,building = clinic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,emergency = *,1296,0,0,0.000,0.000,364,0,0,0.000,0.000
-,healthcare = *,220,1,0,0.005,0.000,123,1,0,0.008,0.000
+,healthcare = *,222,1,0,0.005,0.000,125,1,0,0.008,0.000
 #,government,732,495,503,0.676,0.687,218,3,11,0.014,0.050
 ,amenity = fire_station,3,0,0,0.000,0.000,3,0,0,0.000,0.000
 ,amenity = ranger_station,1,0,0,0.000,0.000,1,0,0,0.000,0.000
@@ -239,4 +239,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,19,0,0,0.000,0.000,18,0,0,0.000,0.000
 ,entrance = *,39,0,0,0.000,0.000,30,0,0,0.000,0.000
 #,other,86,0,0,0.000,0.000,82,0,0,0.000,0.000
-#,TOTAL,10665,1846,2310,0.173,0.217,5954,144,489,0.024,0.082
+#,TOTAL,10667,1846,2310,0.173,0.217,5956,144,489,0.024,0.082
