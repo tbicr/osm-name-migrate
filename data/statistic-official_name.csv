@@ -136,7 +136,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = clinic,9,1,0,0.111,0.000,9,1,0,0.111,0.000
 ,emergency = *,36,1,1,0.028,0.028,36,1,1,0.028,0.028
 ,healthcare = *,208,10,11,0.048,0.053,172,9,10,0.052,0.058
-#,government,395,80,82,0.203,0.208,386,71,73,0.184,0.189
+#,government,396,80,82,0.202,0.207,387,71,73,0.183,0.189
 ,amenity = fire_station,16,2,2,0.125,0.125,16,2,2,0.125,0.125
 ,amenity = ranger_station,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = townhall,14,1,1,0.071,0.071,14,1,1,0.071,0.071
@@ -150,7 +150,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = library,15,4,4,0.267,0.267,15,4,4,0.267,0.267
 ,amenity = theatre,5,1,1,0.200,0.200,5,1,1,0.200,0.200
 ,amenity = cinema,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,amenity = community_centre,18,2,2,0.111,0.111,18,2,2,0.111,0.111
+,amenity = community_centre,19,2,2,0.105,0.105,19,2,2,0.105,0.105
 ,amenity = social_facility,16,2,2,0.125,0.125,16,2,2,0.125,0.125
 ,amenity = public_building,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,amenity = public_bath,1,0,0,0.000,0.000,1,0,0,0.000,0.000
@@ -164,7 +164,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,office = utility,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = foundation,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,office = notary,3,0,0,0.000,0.000,3,0,0,0.000,0.000
-,building = public,14,1,2,0.071,0.143,14,1,2,0.071,0.143
+,building = public,15,1,2,0.067,0.133,15,1,2,0.067,0.133
 ,landuse = military,7,2,0,0.286,0.000,7,2,0,0.286,0.000
 ,government = *,64,5,7,0.078,0.109,64,5,7,0.078,0.109
 ,military = *,4,1,0,0.250,0.000,4,1,0,0.250,0.000
@@ -239,4 +239,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,3,0,0,0.000,0.000,3,0,0,0.000,0.000
 ,entrance = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,other,7,1,0,0.143,0.000,7,1,0,0.143,0.000
-#,TOTAL,6083,3706,3786,0.609,0.622,4937,2704,2677,0.548,0.542
+#,TOTAL,6084,3706,3786,0.609,0.622,4938,2704,2677,0.548,0.542
