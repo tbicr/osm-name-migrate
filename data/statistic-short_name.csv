@@ -135,7 +135,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = hospital,3,0,0,0.000,0.000,3,0,0,0.000,0.000
 ,building = clinic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,emergency = *,33,0,0,0.000,0.000,32,0,0,0.000,0.000
-,healthcare = *,40,3,3,0.075,0.075,39,3,3,0.077,0.077
+,healthcare = *,41,3,3,0.073,0.073,39,3,3,0.077,0.077
 #,government,161,21,23,0.130,0.143,157,21,22,0.134,0.140
 ,amenity = fire_station,19,6,8,0.316,0.421,19,6,8,0.316,0.421
 ,amenity = ranger_station,0,0,0,0.000,0.000,0,0,0,0.000,0.000
