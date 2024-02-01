@@ -1,1 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+way,488932455,Заозерье,relation,7495981,Заозерье,Завозерʼе,Заозерье
+relation,6830027,Новополоцк,relation,6825778,Новополоцк,Наваполацк,Новополоцк
+way,1042134728,Речица,relation,5598659,Речица,Рэчыца,Речица
