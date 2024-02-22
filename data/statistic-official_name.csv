@@ -86,8 +86,8 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,route_master = *,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,railway = *,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,aeroway = *,2,0,0,0.000,0.000,2,0,0,0.000,0.000
-#,industrial,159,12,10,0.075,0.063,155,12,10,0.077,0.065
-,landuse = industrial,143,10,8,0.070,0.056,140,10,8,0.071,0.057
+#,industrial,160,12,10,0.075,0.062,156,12,10,0.077,0.064
+,landuse = industrial,144,10,8,0.069,0.056,141,10,8,0.071,0.057
 ,building = industrial,15,2,2,0.133,0.133,15,2,2,0.133,0.133
 ,building = warehouse,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = construction_company,1,0,0,0.000,0.000,1,0,0,0.000,0.000
@@ -125,8 +125,8 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = dormitory,13,0,0,0.000,0.000,13,0,0,0.000,0.000
 ,office = educational_institution,5,0,0,0.000,0.000,4,0,0,0.000,0.000
 ,faculty = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,healthcare,291,14,16,0.048,0.055,251,13,15,0.052,0.060
-,amenity = hospital,59,2,3,0.034,0.051,59,2,3,0.034,0.051
+#,healthcare,290,14,16,0.048,0.055,250,13,15,0.052,0.060
+,amenity = hospital,58,2,3,0.034,0.052,58,2,3,0.034,0.052
 ,amenity = pharmacy,106,0,0,0.000,0.000,97,0,0,0.000,0.000
 ,amenity = clinic,78,4,4,0.051,0.051,50,4,4,0.080,0.080
 ,amenity = doctors,19,7,8,0.368,0.421,18,6,7,0.333,0.389
