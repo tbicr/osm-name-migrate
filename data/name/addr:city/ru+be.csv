@@ -1,1 +1,6 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+node,11690207601,Минск,relation,59195,Минск,Мінск,Минск
+node,11690237865,Минск,relation,59195,Минск,Мінск,Минск
+way,385668890,Минск,relation,59195,Минск,Мінск,Минск
+way,385668895,Минск,relation,59195,Минск,Мінск,Минск
+way,1152621846,Минск,relation,59195,Минск,Мінск,Минск
