@@ -1,2 +1,3 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
-way,1157201867,Семково,relation,7546646,Семково,Сямкова,Семково
+node,11724284685,Вяжути,relation,7549618,Вяжути,Вяжуці,Вяжути
+way,29143809,Гродно,relation,130921,Гродно,Гродна,Гродно
