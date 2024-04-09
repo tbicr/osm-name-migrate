@@ -71,7 +71,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,type = street,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,highway = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,bridge = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,public_transport,23,14,14,0.609,0.609,10,4,4,0.400,0.400
+#,public_transport,24,15,14,0.625,0.583,11,5,4,0.455,0.364
 ,highway = bus_stop,12,4,4,0.333,0.333,7,2,2,0.286,0.286
 ,type = route,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,type = route_master,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -82,7 +82,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = bus_station,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = ferry_terminal,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,public_transport = *,20,12,12,0.600,0.600,7,2,2,0.286,0.286
-,route = *,2,2,2,1.000,1.000,2,2,2,1.000,1.000
+,route = *,3,3,2,1.000,0.667,3,3,2,1.000,0.667
 ,route_master = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,railway = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,aeroway = *,1,0,0,0.000,0.000,1,0,0,0.000,0.000
@@ -136,7 +136,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = clinic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,emergency = *,33,0,0,0.000,0.000,32,0,0,0.000,0.000
 ,healthcare = *,41,3,3,0.073,0.073,39,3,3,0.077,0.077
-#,government,164,20,22,0.122,0.134,160,20,21,0.125,0.131
+#,government,165,20,22,0.121,0.133,161,20,21,0.124,0.130
 ,amenity = fire_station,20,6,8,0.300,0.400,20,6,8,0.300,0.400
 ,amenity = ranger_station,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = townhall,4,2,1,0.500,0.250,3,2,1,0.667,0.333
@@ -155,7 +155,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = public_building,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = public_bath,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = vehicle_inspection,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,office = government,46,5,5,0.109,0.109,45,5,4,0.111,0.089
+,office = government,47,5,5,0.106,0.106,46,5,4,0.109,0.087
 ,office = diplomatic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = newspaper,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = research,5,0,0,0.000,0.000,5,0,0,0.000,0.000
@@ -166,7 +166,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,office = notary,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = public,7,1,1,0.143,0.143,7,1,1,0.143,0.143
 ,landuse = military,5,0,0,0.000,0.000,5,0,0,0.000,0.000
-,government = *,36,4,5,0.111,0.139,35,4,4,0.114,0.114
+,government = *,37,4,5,0.108,0.135,36,4,4,0.111,0.111
 ,military = *,2,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,embassy = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,diplomatic = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -225,11 +225,11 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,shop = *,2,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,clothes = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,club = *,2,0,0,0.000,0.000,2,0,0,0.000,0.000
-#,building,84,9,9,0.107,0.107,82,9,9,0.110,0.110
+#,building,85,9,9,0.106,0.106,83,9,9,0.108,0.108
 ,building = yes,68,8,7,0.118,0.103,66,8,7,0.121,0.106
 ,building = retail,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,building = commercial,5,0,0,0.000,0.000,5,0,0,0.000,0.000
-,building = office,5,0,0,0.000,0.000,5,0,0,0.000,0.000
+,building = office,6,0,0,0.000,0.000,6,0,0,0.000,0.000
 ,building = house,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = apartments,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = residential,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -239,4 +239,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,entrance = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,other,1,0,0,0.000,0.000,1,0,0,0.000,0.000
-#,TOTAL,4602,3539,3550,0.769,0.771,3372,2445,2494,0.725,0.740
+#,TOTAL,4604,3540,3550,0.769,0.771,3374,2446,2494,0.725,0.739
