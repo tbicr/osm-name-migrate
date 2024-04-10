@@ -71,7 +71,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,type = street,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,highway = *,5,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,bridge = *,242,0,0,0.000,0.000,5,0,0,0.000,0.000
-#,public_transport,1676,34,45,0.020,0.027,67,2,3,0.030,0.045
+#,public_transport,1674,34,45,0.020,0.027,67,2,3,0.030,0.045
 ,highway = bus_stop,390,0,0,0.000,0.000,46,0,0,0.000,0.000
 ,type = route,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,type = route_master,9,3,0,0.333,0.000,4,1,0,0.250,0.000
@@ -81,7 +81,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = transportation,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = bus_station,13,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,amenity = ferry_terminal,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,public_transport = *,446,0,0,0.000,0.000,51,0,0,0.000,0.000
+,public_transport = *,444,0,0,0.000,0.000,51,0,0,0.000,0.000
 ,route = *,85,27,41,0.318,0.482,11,2,2,0.182,0.182
 ,route_master = *,9,3,0,0.333,0.000,4,1,0,0.250,0.000
 ,railway = *,1100,4,4,0.004,0.004,12,1,1,0.083,0.083
@@ -239,4 +239,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,entrance = *,1,1,1,1.000,1.000,1,1,1,1.000,1.000
 #,other,1,0,0,0.000,0.000,1,0,0,0.000,0.000
-#,TOTAL,1729,34,45,0.020,0.026,88,2,3,0.023,0.034
+#,TOTAL,1727,34,45,0.020,0.026,88,2,3,0.023,0.034

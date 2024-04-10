@@ -1,2 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
-way,260880799,Хойники,relation,5598992,Хойники,Хойнікі,Хойники
+way,1271182135,Корма,relation,5598624,Корма,Карма,Корма
+way,1271098161,Лельчицы,relation,5598625,Лельчицы,Лельчыцы,Лельчицы
+node,5658014823,Минск,relation,59195,Минск,Мінск,Минск
