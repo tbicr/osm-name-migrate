@@ -22,9 +22,9 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 #,locality,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,place = locality,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,abandoned:place = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,suburb,45,6,7,0.133,0.156,7,4,5,0.571,0.714
+#,suburb,44,6,7,0.136,0.159,7,4,5,0.571,0.714
 ,landuse = cemetery,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,landuse = commercial,37,4,5,0.108,0.135,5,3,4,0.600,0.800
+,landuse = commercial,36,4,5,0.111,0.139,5,3,4,0.600,0.800
 ,landuse = construction,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,landuse = farmland,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,landuse = farmyard,0,0,0,0.000,0.000,0,0,0,0.000,0.000
