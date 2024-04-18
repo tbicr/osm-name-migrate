@@ -1,1 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+way,1273272085,Борисов,relation,1749244,Борисов,Барысаў,Борисов
+node,5145076138,Жабинка,relation,5602690,Жабинка,Жабінка,Жабинка
+way,128752998,Жабинка,relation,5602690,Жабинка,Жабінка,Жабинка
