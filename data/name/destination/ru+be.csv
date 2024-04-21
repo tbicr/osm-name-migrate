@@ -1,1 +1,5 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+relation,17493937,Кривичи,relation,7467285,Кривичи,Крывічы,Кривичи
+relation,17493936,Кудричи,relation,7467277,Кудричи,Кудрычы,Кудричи
+relation,17493636,Лунинец,way,710988366,Лунинец,Лунінец,Лунинец
+relation,17493935,Площево,relation,7467245,Площево,Плошчава,Площево
