@@ -1,1 +1,3 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+way,223645857,Лесная,node,832615043,Лесная,Лясная,Лесная
+node,6776650286,площадь Фимина,way,1283711032,площадь Фимина,плошча Фiмiна,площадь Фимина
