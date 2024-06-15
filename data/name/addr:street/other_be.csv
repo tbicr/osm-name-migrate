@@ -1,1 +1,3 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+node,11980681797,Лесная 11,way,103757054,Лесная 11,Лясная 11,
+node,11980680252,Лесная 12,way,103757058,Лесная 12,Лясная 12,
