@@ -1,1 +1,7 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+relation,11783991,City,node,1729355191,City,,
+relation,16156278,City,node,1729355191,City,,
+relation,11783991,Leeds Dock,relation,245188,Leeds Dock,,
+relation,16156278,Leeds Dock,relation,245188,Leeds Dock,,
+relation,11651068,York Road,way,169497784,York Road,,
+relation,11955135,York Road,way,210429448,York Road,,
