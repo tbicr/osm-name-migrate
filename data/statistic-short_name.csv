@@ -125,11 +125,11 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = dormitory,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,office = educational_institution,1,1,1,1.000,1.000,1,1,1,1.000,1.000
 ,faculty = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,healthcare,66,3,3,0.045,0.045,63,3,3,0.048,0.048
+#,healthcare,67,3,3,0.045,0.045,64,3,3,0.047,0.047
 ,amenity = hospital,48,2,2,0.042,0.042,47,2,2,0.043,0.043
 ,amenity = pharmacy,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = clinic,7,1,1,0.143,0.143,7,1,1,0.143,0.143
-,amenity = doctors,4,0,0,0.000,0.000,2,0,0,0.000,0.000
+,amenity = doctors,5,0,0,0.000,0.000,3,0,0,0.000,0.000
 ,amenity = dentist,2,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,amenity = veterinary,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = hospital,3,0,0,0.000,0.000,3,0,0,0.000,0.000
@@ -239,4 +239,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,entrance = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,other,1,0,0,0.000,0.000,1,0,0,0.000,0.000
-#,TOTAL,4604,3538,3549,0.768,0.771,3375,2445,2494,0.724,0.739
+#,TOTAL,4605,3538,3549,0.768,0.771,3376,2445,2494,0.724,0.739
