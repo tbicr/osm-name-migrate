@@ -14,13 +14,15 @@ import requests
 import shapely.geometry
 import shapely.wkt
 from lxml import etree
+from requests_oauthlib.oauth2_session import OAuth2Session
 
 
 DATE_FROM = sys.argv[1]
 DATE_TO = sys.argv[2]
 DUMP_FILE = os.path.expanduser(sys.argv[3])
-API_USER = sys.argv[4]
-API_PASS = sys.argv[5]
+OSM_CLIENT_ID = sys.argv[4]
+OSM_TOKEN = sys.argv[5]
+OSM_CREATED_AT = int(sys.argv[6])
 BBOX = [51.2626864, 32.7627809, 56.17218, 23.1783313]
 B_MIN_LAT, B_MAX_LON, B_MAX_LAT, B_MIN_LON = BBOX
 with open('belarus.wkt') as h:
@@ -32,7 +34,17 @@ IGNORE_USERS = {'SomeoneElse_Revert'}
 CHANGESETS_IN_BOUNDARY_CACHE_FILE = 'belarus_changeset_cache.json'
 with open(CHANGESETS_IN_BOUNDARY_CACHE_FILE) as h:
     CHANGESETS_IN_BOUNDARY_CACHE = {int(cid): isin for cid, isin in json.load(h).items()}
-api = osmapi.OsmApi(username=API_USER, password=API_PASS)
+# api = osmapi.OsmApi(username=API_USER, password=API_PASS,
+api = osmapi.OsmApi(session=OAuth2Session(
+    client_id=OSM_CLIENT_ID,
+    scope=['write_api', 'write_redactions'],
+    token= {
+        'access_token': OSM_TOKEN,
+        'token_type': 'Bearer',
+        'scope': ['write_api', 'write_redactions'],
+        'created_at': OSM_CREATED_AT,
+    },
+))
 
 
 def iter_changes_replication(top_dir, sub_dir, file_num):

@@ -1143,10 +1143,20 @@ class OverpassApiSearchEnigne(BaseSearchReadWriteEngine):
 
 class OsmApiReadWriteEngine(BaseSearchReadWriteEngine):
     MAX_READ_CHUNK = 700
-    def __init__(self, username, password, dry_run=True, prefix='', suffix=''):
+    def __init__(self, client_id, token, create_at, dry_run=True, prefix='', suffix=''):
         import osmapi
+        from requests_oauthlib.oauth2_session import OAuth2Session
 
-        self._api = osmapi.OsmApi(username=username, password=password)
+        self._api = osmapi.OsmApi(session=OAuth2Session(
+            client_id=client_id,
+            scope=['write_api', 'write_redactions'],
+            token= {
+                'access_token': token,
+                'token_type': 'Bearer',
+                'scope': ['write_api', 'write_redactions'],
+                'created_at': create_at,
+            },
+        ))
         self._dry_run = dry_run
         self._prefix = prefix
         self._suffix = suffix

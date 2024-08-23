@@ -1499,10 +1499,16 @@ with open('belarus_report.atom') as t:
     )
 
 if AUTOFIX_OSM:
-    OSM_USER = os.environ['OSM_USER']
-    OSM_PASSWORD = os.environ['OSM_PASSWORD']
+    OSM_CLIENT_ID = os.environ['OSM_CLIENT_ID']
+    OSM_TOKEN = os.environ['OSM_TOKEN']
+    OSM_CREATED_AT = int(os.environ['OSM_TOKEN'])
     DRY_RUN = bool(int(os.environ['DRY_RUN']))
-    osm_api_rw_engine = OsmApiReadWriteEngine(username=OSM_USER, password=OSM_PASSWORD, dry_run=DRY_RUN)
+    osm_api_rw_engine = OsmApiReadWriteEngine(
+        client_id=OSM_CLIENT_ID,
+        token=OSM_TOKEN,
+        create_at=OSM_CREATED_AT,
+        dry_run=DRY_RUN,
+    )
     print_issues_engine = PrintIssuesEngine()
     engine = Engine(None, osm_api_rw_engine, osm_api_rw_engine, print_issues_engine, None, None)
     engine._update_elements(autofix_items)

@@ -26,8 +26,9 @@ POSTGRES_PORT = os.environ['POSTGRES_PORT']
 POSTGRES_DB = os.environ['POSTGRES_DB']
 POSTGRES_USER = os.environ['POSTGRES_USER']
 POSTGRES_PASSWORD = os.environ['POSTGRES_PASSWORD']
-OSM_USER = os.environ['OSM_USER']
-OSM_PASSWORD = os.environ['OSM_PASSWORD']
+OSM_CLIENT_ID = os.environ['OSM_CLIENT_ID']
+OSM_TOKEN = os.environ['OSM_TOKEN']
+OSM_CREATED_AT = int(os.environ['OSM_TOKEN'])
 DRY_RUN = bool(int(os.environ['DRY_RUN']))
 CHANGE_RULES = [
     [
@@ -629,8 +630,9 @@ if __name__ == '__main__':
         password=POSTGRES_PASSWORD,
     )
     osm_api_rw_engine = OsmApiReadWriteEngine(
-        username=OSM_USER,
-        password=OSM_PASSWORD,
+        client_id=OSM_CLIENT_ID,
+        token=OSM_TOKEN,
+        create_at=OSM_CREATED_AT,
         dry_run=DRY_RUN,
         suffix=(
             ': міграцыя на беларускую мову адпаведна з '
