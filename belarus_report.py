@@ -1501,7 +1501,7 @@ with open('belarus_report.atom') as t:
 if AUTOFIX_OSM:
     OSM_CLIENT_ID = os.environ['OSM_CLIENT_ID']
     OSM_TOKEN = os.environ['OSM_TOKEN']
-    OSM_CREATED_AT = int(os.environ['OSM_TOKEN'])
+    OSM_CREATED_AT = int(os.environ['OSM_CREATED_AT'])
     DRY_RUN = bool(int(os.environ['DRY_RUN']))
     osm_api_rw_engine = OsmApiReadWriteEngine(
         client_id=OSM_CLIENT_ID,

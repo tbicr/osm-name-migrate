@@ -28,7 +28,7 @@ POSTGRES_USER = os.environ['POSTGRES_USER']
 POSTGRES_PASSWORD = os.environ['POSTGRES_PASSWORD']
 OSM_CLIENT_ID = os.environ['OSM_CLIENT_ID']
 OSM_TOKEN = os.environ['OSM_TOKEN']
-OSM_CREATED_AT = int(os.environ['OSM_TOKEN'])
+OSM_CREATED_AT = int(os.environ['OSM_CREATED_AT'])
 DRY_RUN = bool(int(os.environ['DRY_RUN']))
 CHANGE_RULES = [
     [

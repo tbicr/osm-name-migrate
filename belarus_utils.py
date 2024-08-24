@@ -1150,7 +1150,7 @@ class OsmApiReadWriteEngine(BaseSearchReadWriteEngine):
         self._api = osmapi.OsmApi(session=OAuth2Session(
             client_id=client_id,
             scope=['write_api', 'write_redactions'],
-            token= {
+            token={
                 'access_token': token,
                 'token_type': 'Bearer',
                 'scope': ['write_api', 'write_redactions'],
