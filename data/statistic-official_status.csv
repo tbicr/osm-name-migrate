@@ -16,7 +16,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,traffic_sign = city_limit,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,admin_level = *,1,1,1,1.000,1.000,1,1,1,1.000,1.000
 #,allotments,3364,3362,3363,0.999,1.000,8,6,5,0.750,0.625
-,place = allotments,3340,3338,3339,0.999,1.000,8,6,5,0.750,0.625
+,place = allotments,3339,3337,3338,0.999,1.000,8,6,5,0.750,0.625
 ,landuse = allotments,3211,3209,3210,0.999,1.000,8,6,5,0.750,0.625
 ,allotments = *,36,36,36,1.000,1.000,2,2,1,1.000,0.500
 #,locality,0,0,0,0.000,0.000,0,0,0,0.000,0.000
