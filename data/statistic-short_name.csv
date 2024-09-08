@@ -136,7 +136,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = clinic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,emergency = *,33,0,0,0.000,0.000,32,0,0,0.000,0.000
 ,healthcare = *,42,3,3,0.071,0.071,40,3,3,0.075,0.075
-#,government,167,20,22,0.120,0.132,163,20,21,0.123,0.129
+#,government,168,20,22,0.119,0.131,164,20,21,0.122,0.128
 ,amenity = fire_station,21,6,8,0.286,0.381,21,6,8,0.286,0.381
 ,amenity = ranger_station,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = townhall,4,2,1,0.500,0.250,3,2,1,0.667,0.333
@@ -155,7 +155,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = public_building,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = public_bath,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = vehicle_inspection,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,office = government,47,5,5,0.106,0.106,46,5,4,0.109,0.087
+,office = government,48,5,5,0.104,0.104,47,5,4,0.106,0.085
 ,office = diplomatic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = newspaper,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = research,5,0,0,0.000,0.000,5,0,0,0.000,0.000
@@ -166,7 +166,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,office = notary,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = public,7,1,1,0.143,0.143,7,1,1,0.143,0.143
 ,landuse = military,5,0,0,0.000,0.000,5,0,0,0.000,0.000
-,government = *,37,4,5,0.108,0.135,36,4,4,0.111,0.111
+,government = *,38,4,5,0.105,0.132,37,4,4,0.108,0.108
 ,military = *,2,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,embassy = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,diplomatic = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -239,4 +239,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,entrance = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,other,1,0,0,0.000,0.000,1,0,0,0.000,0.000
-#,TOTAL,4610,3538,3549,0.767,0.770,3384,2448,2499,0.723,0.738
+#,TOTAL,4611,3538,3549,0.767,0.770,3385,2448,2499,0.723,0.738
