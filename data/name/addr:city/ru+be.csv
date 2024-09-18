@@ -1,1 +1,3 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+node,6604942985,Вороцевичи,relation,7465207,Вороцевичи,Варацэвічы,Вороцевичи
+way,379955218,Вороцевичи,relation,7465207,Вороцевичи,Варацэвічы,Вороцевичи
