@@ -1,8 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
-relation,1756407,МНПЗ,way,1332016540,МНПЗ,,
-relation,1756407,МНПЗ,way,1332016541,МНПЗ,,
-relation,18265753,МНПЗ,way,1332016540,МНПЗ,,
-relation,18265753,МНПЗ,way,1332016541,МНПЗ,,
 relation,17307686,Самара,node,1928962535,Самара,,
 relation,17307686,Самара,node,1928962535,Самара,,
 relation,17307686,Самара,node,1928962535,Самара,,
