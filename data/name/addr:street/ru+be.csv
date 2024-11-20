@@ -1,1 +1,3 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+node,12353418379,Есенина,node,3882325989,Есенина,Ясеніна,Есенина
+way,790182196,Радужная,node,3919333440,Радужная,Вясёлкавая,Радужная
