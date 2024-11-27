@@ -125,7 +125,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = dormitory,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = educational_institution,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,faculty = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,healthcare,262,152,152,0.580,0.580,31,4,4,0.129,0.129
+#,healthcare,263,152,152,0.578,0.578,31,4,4,0.129,0.129
 ,amenity = hospital,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = pharmacy,217,152,152,0.700,0.700,27,4,4,0.148,0.148
 ,amenity = clinic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -135,7 +135,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = hospital,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = clinic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,emergency = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,healthcare = *,262,152,152,0.580,0.580,31,4,4,0.129,0.129
+,healthcare = *,263,152,152,0.578,0.578,31,4,4,0.129,0.129
 #,government,244,165,166,0.676,0.680,13,3,4,0.231,0.308
 ,amenity = fire_station,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = ranger_station,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -239,4 +239,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,7,4,4,0.571,0.571,6,4,4,0.667,0.667
 ,entrance = *,1,1,1,1.000,1.000,1,1,1,1.000,1.000
 #,other,1,0,1,0.000,1.000,1,0,1,0.000,1.000
-#,TOTAL,6976,3004,3213,0.431,0.461,330,47,55,0.142,0.167
+#,TOTAL,6977,3004,3213,0.431,0.461,330,47,55,0.142,0.167
