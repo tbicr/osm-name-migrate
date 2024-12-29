@@ -136,7 +136,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = clinic,9,1,0,0.111,0.000,9,1,0,0.111,0.000
 ,emergency = *,38,3,3,0.079,0.079,38,3,3,0.079,0.079
 ,healthcare = *,212,13,14,0.061,0.066,177,12,13,0.068,0.073
-#,government,438,112,114,0.256,0.260,427,101,103,0.237,0.241
+#,government,439,112,114,0.255,0.260,428,101,103,0.236,0.241
 ,amenity = fire_station,15,2,2,0.133,0.133,15,2,2,0.133,0.133
 ,amenity = ranger_station,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = townhall,14,1,1,0.071,0.071,14,1,1,0.071,0.071
@@ -155,7 +155,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = public_building,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,amenity = public_bath,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,amenity = vehicle_inspection,6,0,0,0.000,0.000,6,0,0,0.000,0.000
-,office = government,107,8,11,0.075,0.103,107,8,11,0.075,0.103
+,office = government,108,8,11,0.074,0.102,108,8,11,0.074,0.102
 ,office = diplomatic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = newspaper,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,office = research,15,1,1,0.067,0.067,15,1,1,0.067,0.067
@@ -164,9 +164,9 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,office = utility,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = foundation,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,office = notary,3,0,0,0.000,0.000,3,0,0,0.000,0.000
-,building = public,15,1,2,0.067,0.133,15,1,2,0.067,0.133
+,building = public,16,1,2,0.062,0.125,16,1,2,0.062,0.125
 ,landuse = military,7,2,0,0.286,0.000,7,2,0,0.286,0.000
-,government = *,70,6,8,0.086,0.114,70,6,8,0.086,0.114
+,government = *,71,6,8,0.085,0.113,71,6,8,0.085,0.113
 ,military = *,4,1,0,0.250,0.000,4,1,0,0.250,0.000
 ,embassy = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,diplomatic = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -239,4 +239,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,3,0,0,0.000,0.000,3,0,0,0.000,0.000
 ,entrance = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,other,7,1,0,0.143,0.000,7,1,0,0.143,0.000
-#,TOTAL,6235,3767,3846,0.604,0.617,5077,2748,2730,0.541,0.538
+#,TOTAL,6236,3767,3846,0.604,0.617,5078,2748,2730,0.541,0.538
