@@ -230,8 +230,8 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = retail,91,0,1,0.000,0.011,85,0,1,0.000,0.012
 ,building = commercial,40,0,0,0.000,0.000,39,0,0,0.000,0.000
 ,building = office,7,0,0,0.000,0.000,7,0,0,0.000,0.000
-,building = house,54,0,3,0.000,0.056,51,0,3,0.000,0.059
-,building = apartments,60,0,0,0.000,0.000,46,0,0,0.000,0.000
+,building = house,53,0,3,0.000,0.057,50,0,3,0.000,0.060
+,building = apartments,61,0,0,0.000,0.000,47,0,0,0.000,0.000
 ,building = residential,6,0,0,0.000,0.000,6,0,0,0.000,0.000
 ,building = construction,11,1,0,0.091,0.000,11,1,0,0.091,0.000
 ,building = kiosk,6,0,0,0.000,0.000,5,0,0,0.000,0.000
