@@ -136,7 +136,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = clinic,9,1,0,0.111,0.000,9,1,0,0.111,0.000
 ,emergency = *,38,3,3,0.079,0.079,38,3,3,0.079,0.079
 ,healthcare = *,212,13,14,0.061,0.066,177,12,13,0.068,0.073
-#,government,441,113,115,0.256,0.261,430,102,104,0.237,0.242
+#,government,445,113,115,0.254,0.258,434,102,104,0.235,0.240
 ,amenity = fire_station,15,2,2,0.133,0.133,15,2,2,0.133,0.133
 ,amenity = ranger_station,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = townhall,14,1,1,0.071,0.071,14,1,1,0.071,0.071
@@ -147,7 +147,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = courthouse,4,1,1,0.250,0.250,4,1,1,0.250,0.250
 ,amenity = customs,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = mortuary,2,0,0,0.000,0.000,2,0,0,0.000,0.000
-,amenity = library,15,4,4,0.267,0.267,15,4,4,0.267,0.267
+,amenity = library,19,4,4,0.211,0.211,19,4,4,0.211,0.211
 ,amenity = theatre,5,1,1,0.200,0.200,5,1,1,0.200,0.200
 ,amenity = cinema,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = community_centre,19,2,2,0.105,0.105,19,2,2,0.105,0.105
@@ -239,4 +239,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,3,0,0,0.000,0.000,3,0,0,0.000,0.000
 ,entrance = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,other,7,1,0,0.143,0.000,7,1,0,0.143,0.000
-#,TOTAL,6240,3768,3847,0.604,0.617,5082,2749,2731,0.541,0.537
+#,TOTAL,6244,3768,3847,0.603,0.616,5086,2749,2731,0.541,0.537
