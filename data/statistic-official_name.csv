@@ -136,7 +136,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = clinic,9,1,0,0.111,0.000,9,1,0,0.111,0.000
 ,emergency = *,38,3,3,0.079,0.079,38,3,3,0.079,0.079
 ,healthcare = *,212,13,14,0.061,0.066,177,12,13,0.068,0.073
-#,government,445,113,115,0.254,0.258,434,102,104,0.235,0.240
+#,government,446,113,116,0.253,0.260,435,102,105,0.234,0.241
 ,amenity = fire_station,15,2,2,0.133,0.133,15,2,2,0.133,0.133
 ,amenity = ranger_station,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = townhall,14,1,1,0.071,0.071,14,1,1,0.071,0.071
@@ -155,7 +155,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = public_building,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,amenity = public_bath,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,amenity = vehicle_inspection,6,0,0,0.000,0.000,6,0,0,0.000,0.000
-,office = government,108,8,11,0.074,0.102,108,8,11,0.074,0.102
+,office = government,109,8,12,0.073,0.110,109,8,12,0.073,0.110
 ,office = diplomatic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = newspaper,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,office = research,15,1,1,0.067,0.067,15,1,1,0.067,0.067
@@ -239,4 +239,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,3,0,0,0.000,0.000,3,0,0,0.000,0.000
 ,entrance = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,other,7,1,0,0.143,0.000,7,1,0,0.143,0.000
-#,TOTAL,6245,3768,3847,0.603,0.616,5087,2749,2731,0.540,0.537
+#,TOTAL,6246,3768,3848,0.603,0.616,5088,2749,2732,0.540,0.537
