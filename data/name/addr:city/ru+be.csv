@@ -1,1 +1,5 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+node,306068638,Брест,relation,72615,Брест,Брэст,Брест
+node,1263056330,Брест,relation,72615,Брест,Брэст,Брест
+node,4625881494,Брест,relation,72615,Брест,Брэст,Брест
+way,104482869,Брест,relation,72615,Брест,Брэст,Брест
