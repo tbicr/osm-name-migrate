@@ -92,14 +92,14 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = warehouse,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = construction_company,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,industrial = *,22,4,3,0.182,0.136,21,4,3,0.190,0.143
-#,infrastructure,683,78,76,0.114,0.111,629,77,75,0.122,0.119
+#,infrastructure,684,78,76,0.114,0.111,630,77,75,0.122,0.119
 ,amenity = fuel,143,16,16,0.112,0.112,111,16,16,0.144,0.144
-,building = service,39,0,0,0.000,0.000,38,0,0,0.000,0.000
+,building = service,40,0,0,0.000,0.000,39,0,0,0.000,0.000
 ,barrier = *,395,54,54,0.137,0.137,393,53,53,0.135,0.135
 ,power = *,118,5,4,0.042,0.034,108,5,4,0.046,0.037
 ,substation = *,70,3,2,0.043,0.029,70,3,2,0.043,0.029
 ,pipeline = *,1,0,0,0.000,0.000,1,0,0,0.000,0.000
-,man_made = *,80,4,3,0.050,0.037,70,4,3,0.057,0.043
+,man_made = *,81,4,3,0.049,0.037,71,4,3,0.056,0.042
 ,embankment = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,religion,11,4,4,0.364,0.364,11,4,4,0.364,0.364
 ,amenity = place_of_worship,9,2,2,0.222,0.222,9,2,2,0.222,0.222
@@ -110,7 +110,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = chapel,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,religion = *,10,3,3,0.300,0.300,10,3,3,0.300,0.300
 ,cemetery = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,education,929,78,150,0.084,0.161,918,73,145,0.080,0.158
+#,education,930,79,151,0.085,0.162,919,74,146,0.081,0.159
 ,landuse = education,53,7,7,0.132,0.132,52,7,7,0.135,0.135
 ,amenity = university,21,7,7,0.333,0.333,16,2,2,0.125,0.125
 ,amenity = college,69,8,8,0.116,0.116,65,8,8,0.123,0.123
@@ -123,7 +123,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = school,70,4,41,0.057,0.586,70,4,41,0.057,0.586
 ,building = kindergarten,64,11,44,0.172,0.688,64,11,44,0.172,0.688
 ,building = dormitory,14,0,0,0.000,0.000,14,0,0,0.000,0.000
-,office = educational_institution,6,0,0,0.000,0.000,5,0,0,0.000,0.000
+,office = educational_institution,7,1,1,0.143,0.143,6,1,1,0.167,0.167
 ,faculty = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,healthcare,294,17,19,0.058,0.065,254,16,18,0.063,0.071
 ,amenity = hospital,62,4,5,0.065,0.081,62,4,5,0.065,0.081
@@ -136,7 +136,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = clinic,9,1,0,0.111,0.000,9,1,0,0.111,0.000
 ,emergency = *,38,3,3,0.079,0.079,38,3,3,0.079,0.079
 ,healthcare = *,212,13,14,0.061,0.066,177,12,13,0.068,0.073
-#,government,447,113,116,0.253,0.260,436,102,105,0.234,0.241
+#,government,448,113,116,0.252,0.259,437,102,105,0.233,0.240
 ,amenity = fire_station,15,2,2,0.133,0.133,15,2,2,0.133,0.133
 ,amenity = ranger_station,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = townhall,14,1,1,0.071,0.071,14,1,1,0.071,0.071
@@ -155,7 +155,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = public_building,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,amenity = public_bath,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,amenity = vehicle_inspection,6,0,0,0.000,0.000,6,0,0,0.000,0.000
-,office = government,109,8,12,0.073,0.110,109,8,12,0.073,0.110
+,office = government,110,8,12,0.073,0.109,110,8,12,0.073,0.109
 ,office = diplomatic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = newspaper,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,office = research,15,1,1,0.067,0.067,15,1,1,0.067,0.067
@@ -166,7 +166,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,office = notary,3,0,0,0.000,0.000,3,0,0,0.000,0.000
 ,building = public,16,1,2,0.062,0.125,16,1,2,0.062,0.125
 ,landuse = military,7,2,0,0.286,0.000,7,2,0,0.286,0.000
-,government = *,71,6,8,0.085,0.113,71,6,8,0.085,0.113
+,government = *,72,6,8,0.083,0.111,72,6,8,0.083,0.111
 ,military = *,4,1,0,0.250,0.000,4,1,0,0.250,0.000
 ,embassy = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,diplomatic = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -239,4 +239,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,3,0,0,0.000,0.000,3,0,0,0.000,0.000
 ,entrance = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,other,7,1,0,0.143,0.000,7,1,0,0.143,0.000
-#,TOTAL,6251,3770,3849,0.603,0.616,5092,2751,2734,0.540,0.537
+#,TOTAL,6254,3771,3850,0.603,0.616,5095,2752,2735,0.540,0.537
