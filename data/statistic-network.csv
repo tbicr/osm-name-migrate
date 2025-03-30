@@ -71,7 +71,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,type = street,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,highway = *,5,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,bridge = *,247,0,0,0.000,0.000,5,0,0,0.000,0.000
-#,public_transport,1915,35,50,0.018,0.026,69,3,4,0.043,0.058
+#,public_transport,1916,35,50,0.018,0.026,69,3,4,0.043,0.058
 ,highway = bus_stop,390,0,0,0.000,0.000,47,0,0,0.000,0.000
 ,type = route,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,type = route_master,9,3,0,0.333,0.000,4,1,0,0.250,0.000
@@ -84,7 +84,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,public_transport = *,552,0,0,0.000,0.000,51,0,0,0.000,0.000
 ,route = *,96,28,46,0.292,0.479,13,3,3,0.231,0.231
 ,route_master = *,9,3,0,0.333,0.000,4,1,0,0.250,0.000
-,railway = *,1329,4,4,0.003,0.003,11,1,1,0.091,0.091
+,railway = *,1330,4,4,0.003,0.003,11,1,1,0.091,0.091
 ,aeroway = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,industrial,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,landuse = industrial,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -92,7 +92,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = warehouse,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = construction_company,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,industrial = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,infrastructure,19,0,0,0.000,0.000,3,0,0,0.000,0.000
+#,infrastructure,20,0,0,0.000,0.000,3,0,0,0.000,0.000
 ,amenity = fuel,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = service,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,barrier = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -100,7 +100,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,substation = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,pipeline = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,man_made = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,embankment = *,19,0,0,0.000,0.000,3,0,0,0.000,0.000
+,embankment = *,20,0,0,0.000,0.000,3,0,0,0.000,0.000
 #,religion,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = place_of_worship,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = monastery,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -239,4 +239,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,entrance = *,1,1,1,1.000,1.000,1,1,1,1.000,1.000
 #,other,2,0,0,0.000,0.000,1,0,0,0.000,0.000
-#,TOTAL,1972,35,50,0.018,0.025,92,3,4,0.033,0.043
+#,TOTAL,1973,35,50,0.018,0.025,92,3,4,0.033,0.043
