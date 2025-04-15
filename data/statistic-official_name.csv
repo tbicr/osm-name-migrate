@@ -121,7 +121,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = university,4,3,3,0.750,0.750,4,3,3,0.750,0.750
 ,building = college,8,1,1,0.125,0.125,8,1,1,0.125,0.125
 ,building = school,68,4,39,0.059,0.574,68,4,39,0.059,0.574
-,building = kindergarten,63,11,43,0.175,0.683,63,11,43,0.175,0.683
+,building = kindergarten,64,11,44,0.172,0.688,64,11,44,0.172,0.688
 ,building = dormitory,14,0,0,0.000,0.000,14,0,0,0.000,0.000
 ,office = educational_institution,7,1,1,0.143,0.143,6,1,1,0.167,0.167
 ,faculty = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -225,8 +225,8 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,shop = *,52,9,11,0.173,0.212,46,9,10,0.196,0.217
 ,clothes = *,2,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,club = *,4,1,1,0.250,0.250,4,1,1,0.250,0.250
-#,building,403,41,43,0.102,0.107,400,40,42,0.100,0.105
-,building = yes,288,33,34,0.115,0.118,286,32,33,0.112,0.115
+#,building,402,41,42,0.102,0.104,399,40,41,0.100,0.103
+,building = yes,287,33,33,0.115,0.115,285,32,32,0.112,0.112
 ,building = retail,36,3,3,0.083,0.083,35,3,3,0.086,0.086
 ,building = commercial,17,1,1,0.059,0.059,17,1,1,0.059,0.059
 ,building = office,18,4,4,0.222,0.222,18,4,4,0.222,0.222
