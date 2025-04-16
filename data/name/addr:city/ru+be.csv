@@ -1,3 +1,2 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
-way,390603518,Лунинец,relation,6722245,Лунинец,Лунінец,Лунинец
-way,492601027,Лунинец,relation,6722245,Лунинец,Лунінец,Лунинец
+node,7460121785,Минск,relation,59195,Минск,Мінск,Минск
