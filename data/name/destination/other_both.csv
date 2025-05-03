@@ -2,3 +2,7 @@ dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
 relation,7154794,Dnieper,relation,2086905,Dnieper,Дняпро,Днепр
 relation,7190105,Dnieper,relation,2086905,Dnieper,Дняпро,Днепр
 relation,8889936,Świsłocz - Свіслач,way,558316221,Świsłocz - Свіслач,Свіслач,Свислочь
+relation,12659778,Нача / Nočia,relation,8523607,Нача / Nočia,Нача,Начка
+relation,8244402,Пеляса / Pelesa,relation,9350457,Пеляса / Pelesa,Пеляса,Пеляса
+relation,8244403,Пеляса / Pelesa,relation,9350457,Пеляса / Pelesa,Пеляса,Пеляса
+relation,8523607,Пеляса / Pelesa,relation,9350457,Пеляса / Pelesa,Пеляса,Пеляса
