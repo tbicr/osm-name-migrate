@@ -9,32 +9,4 @@
     <name>Unknown author</name>
   </author>
   <icon>https://openstreetmap.by/favicon.ico</icon>
-  <generator>daily report</generator><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">tourism +3 not fixed +3 total</title>
-    <id>tourism#2025-05-04T06:21:50Z</id>
-    <updated>2025-05-04T06:21:50Z</updated>
-    <published>2025-05-04T06:21:50Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>12806399401</td><td>Воинам освободителям</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>historic = * | memorial = *</td></tr><tr><td>node</td><td>12806675676</td><td>Неизвестный солдат</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>memorial = * | historic = *</td></tr><tr><td>node</td><td>12806176539</td><td>На гэтым месцы ў 1927-1941 гг. жыў народны паэт Беларусі Якуб Колас (К.М. Міцкевіч).</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>memorial = * | historic = *</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">government +3 not fixed +3 total</title>
-    <id>government#2025-05-04T06:21:50Z</id>
-    <updated>2025-05-04T06:21:50Z</updated>
-    <published>2025-05-04T06:21:50Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>352828853</td><td>Вокзал станцыя Гарочычы</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = government</td></tr><tr><td>way</td><td>1152364309</td><td>Вокзал станцыя Юшкі</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = government</td></tr><tr><td>node</td><td>12806227335</td><td>Белпошта</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>amenity = post_office</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">healthcare +1 not fixed +1 total</title>
-    <id>healthcare#2025-05-04T06:21:50Z</id>
-    <updated>2025-05-04T06:21:50Z</updated>
-    <published>2025-05-04T06:21:50Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>5553820123</td><td>Добрыя лекi</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>healthcare = * | amenity = pharmacy</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">addr:street +0 not fixed +1 total</title>
-    <id>addr:street#2025-05-04T06:21:50Z</id>
-    <updated>2025-05-04T06:21:50Z</updated>
-    <published>2025-05-04T06:21:50Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>dep_osm_type</th><th>dep_osm_id</th><th>dependant</th><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#d9ead3;"><td>node</td><td>12805846801</td><td><b>Партызанскі праспект</b></td><td>way</td><td>858681481</td><td>Партизанский проспект</td><td>Партызанскі праспект</td><td>Партизанский проспект</td><td>ru+be</td><td>addr:street</td></tr></table></content>
-  </entry></feed>
+  <generator>daily report</generator></feed>
