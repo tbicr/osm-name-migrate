@@ -2,8 +2,16 @@ dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
 relation,7154794,Dnieper,relation,2086905,Dnieper,Дняпро,Днепр
 relation,7190105,Dnieper,relation,2086905,Dnieper,Дняпро,Днепр
 relation,6232893,Gauja / Гаўя,relation,3240256,Gauja / Гаўя,Гаўя,Гавья
+relation,7790453,Gauja / Гаўя,relation,3240256,Gauja / Гаўя,Гаўя,Гавья
+relation,8524172,Gauja / Гаўя,relation,3240256,Gauja / Гаўя,Гаўя,Гавья
+relation,14725113,Gauja / Гаўя,relation,3240256,Gauja / Гаўя,Гаўя,Гавья
+relation,14725114,Gauja / Гаўя,relation,3240256,Gauja / Гаўя,Гаўя,Гавья
+relation,19099586,Kleva / Клява,relation,6232893,Kleva / Клява,Клява,Клева
 relation,8889936,Świsłocz - Свіслач,way,558316221,Świsłocz - Свіслач,Свіслач,Свислочь
 relation,12659778,Нача / Nočia,relation,8523607,Нача / Nočia,Нача,Начка
+relation,8411657,Нёман / Неман / Nemunas,relation,189775,Нёман / Неман / Nemunas,Нёман,Неман
+relation,8873359,Нёман / Неман / Nemunas,relation,189775,Нёман / Неман / Nemunas,Нёман,Неман
+relation,10948003,Нёман / Неман / Nemunas,relation,189775,Нёман / Неман / Nemunas,Нёман,Неман
 relation,8244402,Пеляса / Pelesa,relation,9350457,Пеляса / Pelesa,Пеляса,Пеляса
 relation,8244403,Пеляса / Pelesa,relation,9350457,Пеляса / Pelesa,Пеляса,Пеляса
 relation,8523607,Пеляса / Pelesa,relation,9350457,Пеляса / Pelesa,Пеляса,Пеляса
