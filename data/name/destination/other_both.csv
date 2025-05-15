@@ -1,4 +1,6 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+relation,8114570,Birvėta / Бірвета,relation,8114508,Birvėta / Бірвета,Бірвета,Бирвета
+relation,9209572,Birvėta / Бірвета,relation,8114508,Birvėta / Бірвета,Бірвета,Бирвета
 relation,7154794,Dnieper,relation,2086905,Dnieper,Дняпро,Днепр
 relation,7190105,Dnieper,relation,2086905,Dnieper,Дняпро,Днепр
 relation,8114508,Dysna / Дзісна,relation,6649335,Dysna / Дзісна,Дзісна,Дисна
@@ -9,6 +11,7 @@ relation,8524172,Gauja / Гаўя,relation,3240256,Gauja / Гаўя,Гаўя,Г�
 relation,14725113,Gauja / Гаўя,relation,3240256,Gauja / Гаўя,Гаўя,Гавья
 relation,14725114,Gauja / Гаўя,relation,3240256,Gauja / Гаўя,Гаўя,Гавья
 relation,19099586,Kleva / Клява,relation,6232893,Kleva / Клява,Клява,Клева
+relation,7895090,Neris / Вілія,relation,2824450,Neris / Вілія,Вілія,Вилия
 relation,8889936,Świsłocz - Свіслач,way,558316221,Świsłocz - Свіслач,Свіслач,Свислочь
 relation,12659778,Нача / Nočia,relation,8523607,Нача / Nočia,Нача,Начка
 relation,8411657,Нёман / Неман / Nemunas,relation,189775,Нёман / Неман / Nemunas,Нёман,Неман
