@@ -81,7 +81,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = transportation,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = bus_station,13,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,amenity = ferry_terminal,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,public_transport = *,563,0,0,0.000,0.000,52,0,0,0.000,0.000
+,public_transport = *,564,0,0,0.000,0.000,52,0,0,0.000,0.000
 ,route = *,100,28,46,0.280,0.460,14,3,3,0.214,0.214
 ,route_master = *,11,3,0,0.273,0.000,5,1,0,0.200,0.000
 ,railway = *,1363,4,4,0.003,0.003,12,1,1,0.083,0.083
