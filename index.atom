@@ -9,4 +9,46 @@
     <name>Unknown author</name>
   </author>
   <icon>https://openstreetmap.by/favicon.ico</icon>
-  <generator>daily report</generator></feed>
+  <generator>daily report</generator><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">addr:street +7 not fixed +7 total</title>
+    <id>addr:street#2025-05-29T06:20:27Z</id>
+    <updated>2025-05-29T06:20:27Z</updated>
+    <published>2025-05-29T06:20:27Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>dep_osm_type</th><th>dep_osm_id</th><th>dependant</th><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>way</td><td>953566335</td><td>М2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>addr:street</td></tr><tr style="background-color:#fff2cc;"><td>way</td><td>983298082</td><td>Каладзішчанскі сельсавет</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>addr:street</td></tr><tr style="background-color:#fff2cc;"><td>relation</td><td>7158130</td><td>М2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>addr:street</td></tr><tr style="background-color:#fff2cc;"><td>way</td><td>1215027008</td><td>Каладзішчанскі сельсавет</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>addr:street</td></tr><tr style="background-color:#fff2cc;"><td>node</td><td>9432770967</td><td>Р94</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>addr:street</td></tr><tr style="background-color:#fff2cc;"><td>way</td><td>954683302</td><td>вулiца Вясенняя</td><td>way</td><td>390493179</td><td>вулiца Вясенняя</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>addr:street</td></tr><tr style="background-color:#fff2cc;"><td>way</td><td>28461700</td><td>М2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>addr:street</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">infrastructure +3 not fixed +4 total</title>
+    <id>infrastructure#2025-05-29T06:20:27Z</id>
+    <updated>2025-05-29T06:20:27Z</updated>
+    <published>2025-05-29T06:20:27Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>way</td><td>1389573971</td><td>КНС</td><td>КПС</td><td>КНС</td><td>ru+be</td><td>man_made = *</td></tr><tr><td>way</td><td>1315084726</td><td>ТП-854</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>building = service | power = * | substation = *</td></tr><tr><td>node</td><td>12866694383</td><td>ТП-662</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = * | substation = *</td></tr><tr><td>way</td><td>297701993</td><td>ГРП№6</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>building = service</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">government +2 not fixed +2 total</title>
+    <id>government#2025-05-29T06:20:27Z</id>
+    <updated>2025-05-29T06:20:27Z</updated>
+    <published>2025-05-29T06:20:27Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>1348719073</td><td>&quot;ЛТП № 1&quot; управления ДИН МВД по Гомельской области</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>amenity = prison</td></tr><tr><td>node</td><td>12318874259</td><td>Гостехосмотр ДС 254</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>amenity = vehicle_inspection</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">healthcare +0 not fixed +1 total</title>
+    <id>healthcare#2025-05-29T06:20:27Z</id>
+    <updated>2025-05-29T06:20:27Z</updated>
+    <published>2025-05-29T06:20:27Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>node</td><td>12866111453</td><td>Витаинтегрум</td><td>Вітаінтэгрум</td><td>Витаинтегрум</td><td>ru+be</td><td>amenity = veterinary</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">highway +1 not fixed +1 total</title>
+    <id>highway#2025-05-29T06:20:27Z</id>
+    <updated>2025-05-29T06:20:27Z</updated>
+    <published>2025-05-29T06:20:27Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>390493179</td><td>вулiца Вясенняя</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>highway = residential</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">industrial +0 not fixed +1 total</title>
+    <id>industrial#2025-05-29T06:20:27Z</id>
+    <updated>2025-05-29T06:20:27Z</updated>
+    <published>2025-05-29T06:20:27Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>way</td><td>1389573971</td><td>КНС</td><td>КПС</td><td>КНС</td><td>ru+be</td><td>building = industrial</td></tr></table></content>
+  </entry></feed>
