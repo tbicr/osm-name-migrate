@@ -1,1 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+node,12876998646,Чаусы,relation,4785503,Чаусы,Чавусы,Чаусы
+node,12877007026,Чаусы,relation,4785503,Чаусы,Чавусы,Чаусы
+way,205337237,Чаусы,relation,4785503,Чаусы,Чавусы,Чаусы
