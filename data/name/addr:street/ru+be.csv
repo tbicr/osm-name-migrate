@@ -1,1 +1,3 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+node,12917621701,Рогачи,relation,7459229,Рогачи,Рагачы,Рогачи
+node,12918121301,улица Ленина,way,76476620,улица Ленина,вуліца Леніна,улица Ленина

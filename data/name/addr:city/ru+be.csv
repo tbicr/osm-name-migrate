@@ -1,1 +1,3 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+way,50884813,Логойск,relation,6722549,Логойск,Лагойск,Логойск
+way,103757050,Мацки,relation,5513095,Мацки,Мацкі,Мацки
