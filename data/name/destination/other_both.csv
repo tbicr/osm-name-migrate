@@ -9,6 +9,7 @@ relation,7154794,Dnieper,relation,2086905,Dnieper,Дняпро,Днепр
 relation,7190105,Dnieper,relation,2086905,Dnieper,Дняпро,Днепр
 relation,8114508,Dysna / Дзісна,relation,6649335,Dysna / Дзісна,Дзісна,Дисна
 relation,8123444,Dysna / Дзісна,relation,6649335,Dysna / Дзісна,Дзісна,Дисна
+relation,8134689,Dysna / Дзісна,relation,6649335,Dysna / Дзісна,Дзісна,Дисна
 relation,6232893,Gauja / Гаўя,relation,3240256,Gauja / Гаўя,Гаўя,Гавья
 relation,7790453,Gauja / Гаўя,relation,3240256,Gauja / Гаўя,Гаўя,Гавья
 relation,8377390,Gauja / Гаўя,relation,3240256,Gauja / Гаўя,Гаўя,Гавья
@@ -23,6 +24,10 @@ relation,7895090,Neris / Вілія,relation,2824450,Neris / Вілія,Вілі
 relation,8863991,Rosica / Росіца,relation,8862905,Rosica / Росіца,Росіца,Росица
 relation,9495144,Rosica / Росіца,relation,8862905,Rosica / Росіца,Росіца,Росица
 relation,8889936,Świsłocz - Свіслач,way,558316221,Świsłocz - Свіслач,Свіслач,Свислочь
+relation,6649335,Дзвіна / Daugava / Западная Двина,relation,549362,Дзвіна / Daugava / Западная Двина,Дзвіна,Западная Двина
+relation,8067168,Дзвіна / Daugava / Западная Двина,relation,549362,Дзвіна / Daugava / Западная Двина,Дзвіна,Западная Двина
+relation,8079720,Дзвіна / Daugava / Западная Двина,relation,549362,Дзвіна / Daugava / Западная Двина,Дзвіна,Западная Двина
+relation,8862905,Дзвіна / Daugava / Западная Двина,relation,549362,Дзвіна / Daugava / Западная Двина,Дзвіна,Западная Двина
 relation,19224814,Кобрин,node,1263169095,Кобрин,Кобрын,АГНКС Метан. Кобрин
 relation,3170528,Котра / Katra,relation,282218,Котра / Katra,Котра,Котра
 relation,8529615,Котра / Katra,relation,282218,Котра / Katra,Котра,Котра
