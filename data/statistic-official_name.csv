@@ -136,7 +136,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = clinic,9,1,0,0.111,0.000,9,1,0,0.111,0.000
 ,emergency = *,39,4,4,0.103,0.103,39,4,4,0.103,0.103
 ,healthcare = *,219,14,15,0.064,0.068,184,13,14,0.071,0.076
-#,government,496,152,156,0.306,0.315,484,140,144,0.289,0.298
+#,government,495,152,156,0.307,0.315,483,140,144,0.290,0.298
 ,amenity = fire_station,16,3,3,0.188,0.188,16,3,3,0.188,0.188
 ,amenity = ranger_station,5,5,5,1.000,1.000,5,5,5,1.000,1.000
 ,amenity = townhall,14,1,1,0.071,0.071,14,1,1,0.071,0.071
@@ -164,7 +164,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,office = utility,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = foundation,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,office = notary,3,0,0,0.000,0.000,3,0,0,0.000,0.000
-,building = public,16,1,2,0.062,0.125,16,1,2,0.062,0.125
+,building = public,15,1,2,0.067,0.133,15,1,2,0.067,0.133
 ,landuse = military,7,2,0,0.286,0.000,7,2,0,0.286,0.000
 ,government = *,90,24,26,0.267,0.289,90,24,26,0.267,0.289
 ,military = *,5,1,0,0.200,0.000,5,1,0,0.200,0.000
