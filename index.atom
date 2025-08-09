@@ -10,45 +10,38 @@
   </author>
   <icon>https://openstreetmap.by/favicon.ico</icon>
   <generator>daily report</generator><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">public_transport +0 not fixed +2 total</title>
-    <id>public_transport#2025-08-08T06:20:40Z</id>
-    <updated>2025-08-08T06:20:40Z</updated>
-    <published>2025-08-08T06:20:40Z</published>
+    <title type="text">tourism +1 not fixed +1 total</title>
+    <id>tourism#2025-08-09T06:20:25Z</id>
+    <updated>2025-08-09T06:20:25Z</updated>
+    <published>2025-08-09T06:20:25Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>relation</td><td>19430703</td><td>Подъезд к кладбищу упраздненной деревни Рассомаха-1 от автомобильной дороги Н-10753 Палуж 1 – упраздненная деревня Горезна</td><td>Падʼезд да могілак былой вёскі Расамаха 1 ад аўтамабільнай дарогі Н-Н-10753 Палуж 1 – былая вёска Гарэзна</td><td>Падʼезд да могілак былой вёскі Расамаха 1 ад аўтамабільнай дарогі Н-Н-10753 Палуж 1 – былая вёска Гарэзна</td><td>other_both</td><td>route = *</td></tr><tr style="background-color:#fff2cc;"><td>relation</td><td>19435566</td><td>Падʼезд да могілак былой вёскі Папаратнкі ад аўтамабільнай дарогі Н-10755 Былая вёска Наваельня – былая вёска Драгатынь</td><td>Падʼезд да могілакам былой вёскі Драгатынь і былой вёскі Гіцкевічы ад аўтамабільнай дарогі Н-10755 Былая вёска Наваельня – былая вёска Драгатынь</td><td>Подъезд к кладбищам упраздненной деревни Драготынь и упраздненной деревни Гацкевичи от автомобильной дороги Н-10755 Упраздненная деревня Новоельня – упраздненная деревня Драготынь</td><td>other_both</td><td>route = *</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">office +1 not fixed +1 total</title>
-    <id>office#2025-08-08T06:20:40Z</id>
-    <updated>2025-08-08T06:20:40Z</updated>
-    <published>2025-08-08T06:20:40Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13056239044</td><td>ЗАО «Айронтел»</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = *</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">sport +1 not fixed +1 total</title>
-    <id>sport#2025-08-08T06:20:40Z</id>
-    <updated>2025-08-08T06:20:40Z</updated>
-    <published>2025-08-08T06:20:40Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13056068469</td><td>Усадьба Каролина</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>leisure = *</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13057931425</td><td>Мы служим лесу, чтобы лес служил людям!</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>artwork_type = * | tourism = *</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
     <title type="text">infrastructure +2 not fixed +2 total</title>
-    <id>infrastructure#2025-08-08T06:20:40Z</id>
-    <updated>2025-08-08T06:20:40Z</updated>
-    <published>2025-08-08T06:20:40Z</published>
+    <id>infrastructure#2025-08-09T06:20:25Z</id>
+    <updated>2025-08-09T06:20:25Z</updated>
+    <published>2025-08-09T06:20:25Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13056423630</td><td>КТП-951</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>substation = * | power = *</td></tr><tr><td>node</td><td>13056423512</td><td>ШРП-126</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>man_made = *</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>1081352728</td><td>ТП-457</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>building = service | power = * | substation = *</td></tr><tr><td>way</td><td>1420895656</td><td>ТП-725</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = * | building = service | substation = *</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">suburb +1 not fixed +1 total</title>
-    <id>suburb#2025-08-08T06:20:40Z</id>
-    <updated>2025-08-08T06:20:40Z</updated>
-    <published>2025-08-08T06:20:40Z</published>
+    <title type="text">religion +2 not fixed +2 total</title>
+    <id>religion#2025-08-09T06:20:25Z</id>
+    <updated>2025-08-09T06:20:25Z</updated>
+    <published>2025-08-09T06:20:25Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>1410007131</td><td>Охранная зона моста</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>landuse = *</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13058106564</td><td>Дом молитвы евангельских христиан</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>amenity = place_of_worship | religion = *</td></tr><tr><td>node</td><td>13057377798</td><td>Протестантская церковь</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>amenity = place_of_worship | religion = *</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">government +2 not fixed +2 total</title>
-    <id>government#2025-08-08T06:20:40Z</id>
-    <updated>2025-08-08T06:20:40Z</updated>
-    <published>2025-08-08T06:20:40Z</published>
+    <title type="text">addr:street +0 not fixed +1 total</title>
+    <id>addr:street#2025-08-09T06:20:25Z</id>
+    <updated>2025-08-09T06:20:25Z</updated>
+    <published>2025-08-09T06:20:25Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>1049522213</td><td>Фрунзенский РОЧС</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>amenity = fire_station</td></tr><tr><td>node</td><td>13056254372</td><td>Первомайский РВК</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>military = *</td></tr></table></content>
+    <content type="html"><table><tr><th>dep_osm_type</th><th>dep_osm_id</th><th>dependant</th><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#d9ead3;"><td>node</td><td>13058586001</td><td><b>вуліца Сурганава</b></td><td>way</td><td>38575344</td><td>улица Сурганова</td><td>вуліца Сурганава</td><td>улица Сурганова</td><td>ru+be</td><td>addr:street</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">highway +1 not fixed +2 total</title>
+    <id>highway#2025-08-09T06:20:25Z</id>
+    <updated>2025-08-09T06:20:25Z</updated>
+    <published>2025-08-09T06:20:25Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>496951694</td><td>Старобин - Горняк</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>highway = track</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>500726125</td><td><b>Веладарожка</b></td><td><b>Веладарожка</b></td><td><b>Велодорожка</b></td><td>no_lang</td><td>highway = track</td></tr></table></content>
   </entry></feed>
