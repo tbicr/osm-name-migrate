@@ -9,4 +9,74 @@
     <name>Unknown author</name>
   </author>
   <icon>https://openstreetmap.by/favicon.ico</icon>
-  <generator>daily report</generator></feed>
+  <generator>daily report</generator><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">tourism +2 not fixed +3 total</title>
+    <id>tourism#2025-09-22T06:20:23Z</id>
+    <updated>2025-09-22T06:20:23Z</updated>
+    <published>2025-09-22T06:20:23Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13160522083</td><td>И-153</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>artwork_type = * | tourism = *</td></tr><tr style="background-color:#fff2cc;"><td>node</td><td>9711186717</td><td>Мядзведзь на дрэве</td><td>Мядзведзь на дрэве з арлом</td><td>Медведь на дереве с орлом</td><td>other_both</td><td>tourism = *</td></tr><tr><td>node</td><td>13158080122</td><td>Я люблю Пинск</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>tourism = * | information = *</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">healthcare +3 not fixed +4 total</title>
+    <id>healthcare#2025-09-22T06:20:23Z</id>
+    <updated>2025-09-22T06:20:23Z</updated>
+    <published>2025-09-22T06:20:23Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13158080120</td><td>Логопедический кабинет</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>amenity = doctors</td></tr><tr style="background-color:#fff2cc;"><td>node</td><td>2705229409</td><td>Инвитро</td><td>Інвітра</td><td>Инвитро</td><td>ru+be</td><td>amenity = doctors | healthcare = *</td></tr><tr><td>node</td><td>13160851461</td><td>Ремедика</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>healthcare = * | amenity = pharmacy</td></tr><tr><td>node</td><td>13158080123</td><td>Логопедический кабинет</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>amenity = doctors</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">office +2 not fixed +2 total</title>
+    <id>office#2025-09-22T06:20:23Z</id>
+    <updated>2025-09-22T06:20:23Z</updated>
+    <published>2025-09-22T06:20:23Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13157275239</td><td>Общество с ограниченной ответственностью &quot;ТвойБранч&quot;</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = *</td></tr><tr><td>node</td><td>13158080121</td><td>ОДО Алвитасервис</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = *</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">destination +1 not fixed +2 total</title>
+    <id>destination#2025-09-22T06:20:23Z</id>
+    <updated>2025-09-22T06:20:23Z</updated>
+    <published>2025-09-22T06:20:23Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>dep_osm_type</th><th>dep_osm_id</th><th>dependant</th><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>relation</td><td>8116906</td><td>Neris / Вілія</td><td>relation</td><td>2824450</td><td>Neris / Вілія</td><td>Вілія</td><td>Вилия</td><td>other_both</td><td>destination</td></tr><tr style="background-color:#fff2cc;"><td>relation</td><td>8531697</td><td>Прыпяць / Прип&#x27;ять</td><td>relation</td><td>7190105</td><td>Прыпяць / Прип&#x27;ять</td><td>Прыпяць</td><td>&nbsp;</td><td>other_be</td><td>destination</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">highway +7 not fixed +10 total</title>
+    <id>highway#2025-09-22T06:20:23Z</id>
+    <updated>2025-09-22T06:20:23Z</updated>
+    <published>2025-09-22T06:20:23Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>39735249</td><td>Мичурина</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>highway = residential</td></tr><tr><td>way</td><td>1431511457</td><td>Объед Ёлки</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>highway = *</td></tr><tr><td>way</td><td>1431511452</td><td>Просека</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>highway = *</td></tr><tr><td>way</td><td>1279588125</td><td>Альбертинский трейл</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>highway = *</td></tr><tr><td>way</td><td>1290307236</td><td>Альбертинский трейл</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>highway = *</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>30595058</td><td><b>Цэнтральная</b></td><td><b>Цэнтральная</b></td><td><b>Центральная</b></td><td>no_lang</td><td>highway = tertiary</td></tr><tr><td>way</td><td>1279587039</td><td>Альбертинский трейл</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>highway = *</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>124409435</td><td><b>Маскоўскі</b></td><td><b>Маскоўскі</b></td><td><b>Московская</b></td><td>no_lang</td><td>highway = residential</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>1431511459</td><td><b>Дзiцячы сад</b></td><td><b>Дзiцячы сад</b></td><td><b>Детский Сад</b></td><td>no_lang</td><td>highway = *</td></tr><tr><td>way</td><td>1277756106</td><td>Альбертинский трейл</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>highway = *</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">infrastructure +3 not fixed +4 total</title>
+    <id>infrastructure#2025-09-22T06:20:23Z</id>
+    <updated>2025-09-22T06:20:23Z</updated>
+    <published>2025-09-22T06:20:23Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>1279587039</td><td>Альбертинский трейл</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>man_made = *</td></tr><tr style="background-color:#fff2cc;"><td>way</td><td>1305608211</td><td>АГНКС Молодечно Газпром трансгаз Беларусь</td><td>АГНКС Маладзечна Газпрам трансгаз Беларусь</td><td>АГНКС Молодечно Газпром трансгаз Беларусь</td><td>ru+be</td><td>amenity = fuel</td></tr><tr><td>node</td><td>3503073895</td><td>Лукойл № 3</td><td>&nbsp;</td><td>Лукойл</td><td>other_ru</td><td>amenity = fuel</td></tr><tr><td>node</td><td>12385636919</td><td>Трансформаторная подстанция №139</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = * | substation = *</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">government +1 not fixed +4 total</title>
+    <id>government#2025-09-22T06:20:23Z</id>
+    <updated>2025-09-22T06:20:23Z</updated>
+    <published>2025-09-22T06:20:23Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>node</td><td>5499476231</td><td>Европочта</td><td>Еўрапошта</td><td>Европочта</td><td>ru+be</td><td>amenity = post_office</td></tr><tr style="background-color:#fff2cc;"><td>node</td><td>305674534</td><td>Белпочта</td><td>Белпошта</td><td>Белпочта</td><td>ru+be</td><td>amenity = post_office</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>13159281333</td><td>Европочта</td><td><b>Еўрапошта</b></td><td><b>Европочта</b></td><td>no_lang</td><td>amenity = post_office</td></tr><tr><td>node</td><td>13157262562</td><td>Библиотека</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>amenity = library</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">addr:street +3 not fixed +5 total</title>
+    <id>addr:street#2025-09-22T06:20:23Z</id>
+    <updated>2025-09-22T06:20:23Z</updated>
+    <published>2025-09-22T06:20:23Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>dep_osm_type</th><th>dep_osm_id</th><th>dependant</th><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>node</td><td>13159602077</td><td>трасса м8, е95, 69км</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>addr:street</td></tr><tr style="background-color:#fff2cc;"><td>node</td><td>6329544777</td><td>56-ы км дарогі М6 Мінск-Гродна</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>addr:street</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>13157673002</td><td><b>Уральская вуліца</b></td><td>way</td><td>875428741</td><td>Уральская улица</td><td>Уральская вуліца</td><td>Уральская улица</td><td>ru+be</td><td>addr:street</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>13157673001</td><td><b>Уральская вуліца</b></td><td>way</td><td>876653213</td><td>Уральская улица</td><td>Уральская вуліца</td><td>Уральская улица</td><td>ru+be</td><td>addr:street</td></tr><tr style="background-color:#fff2cc;"><td>node</td><td>9846812127</td><td>56-ы км дарогі М6 Мінск-Гродна</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>addr:street</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">education +1 not fixed +1 total</title>
+    <id>education#2025-09-22T06:20:23Z</id>
+    <updated>2025-09-22T06:20:23Z</updated>
+    <published>2025-09-22T06:20:23Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13157801376</td><td>Вастроўская Сярэдняя Школа</td><td>&nbsp;</td><td>Островская Средняя Школа</td><td>other_ru</td><td>amenity = school</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">other +0 not fixed +1 total</title>
+    <id>other#2025-09-22T06:20:23Z</id>
+    <updated>2025-09-22T06:20:23Z</updated>
+    <published>2025-09-22T06:20:23Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#d9ead3;"><td>way</td><td>25326990</td><td>Следчы камітэт</td><td>Следчы камітэт</td><td>Следственный комитет</td><td>be+ru</td><td>other</td></tr></table></content>
+  </entry></feed>
