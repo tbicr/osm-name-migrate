@@ -1,7 +1,3 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
-way,25226593,Нарач,relation,12097777,Нарач,,
-way,25226593,Нарач,relation,12097777,Нарач,,
-way,38235605,Нарач,relation,12097777,Нарач,,
-way,38235605,Нарач,relation,12097777,Нарач,,
 relation,14464275,С.Т. Прогресс,node,9955883859,С.Т. Прогресс,,
 relation,14464276,с/т «Строитель-1985»,node,9955883868,с/т «Строитель-1985»,,
