@@ -1,5 +1,6 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
 way,203127279,14,way,398653889,14,,
+way,1432303361,15,relation,13087209,15,,
 way,457000176,2,way,383608365,2,,
 node,8176131618,23,way,463487165,23,,
 way,838590650,50,way,344050878,50,,
