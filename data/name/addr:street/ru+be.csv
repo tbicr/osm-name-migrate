@@ -1,1 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+node,4090701952,Ленина,node,6495739277,Ленина,Леніна,Ленина
+node,6858657764,Ленина,node,6495739277,Ленина,Леніна,Ленина
+node,6858657765,Ленина,node,6495739277,Ленина,Леніна,Ленина
