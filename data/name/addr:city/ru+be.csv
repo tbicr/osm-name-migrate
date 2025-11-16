@@ -1,1 +1,4 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+node,6920535196,Лида,relation,400507,Лида,Ліда,Лида
+node,13252073799,Лида,relation,400507,Лида,Ліда,Лида
+node,3771745904,Ольшаны,relation,7468451,Ольшаны,Альшаны,Ольшаны
