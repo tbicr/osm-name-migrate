@@ -47,7 +47,6 @@ relation,8863991,Rosica / Росіца,relation,8862905,Rosica / Росіца,Р
 relation,9495144,Rosica / Росіца,relation,8862905,Rosica / Росіца,Росіца,Росица
 relation,8549038,Zilupe / Сінюха / Синяя,relation,8534004,Zilupe / Сінюха / Синяя,Сінюха,Синюха
 relation,9256961,ež. Drūkšiai / возера Дрысвяты,relation,2219214,ež. Drūkšiai / возера Дрысвяты,возера Дрысвяты,озеро Дрисвяты
-relation,8889936,Świsłocz - Свіслач,way,558316221,Świsłocz - Свіслач,Свіслач,Свислочь
 relation,9196407,Šalčia / Солча,relation,6462794,Šalčia / Солча,Солча,Шальчя
 relation,19443569,Šalčia / Солча,relation,6462794,Šalčia / Солча,Солча,Шальчя
 relation,19673979,Ваўкушанка / Wołkuszanka,relation,4173643,Ваўкушанка / Wołkuszanka,Ваўкушанка,Волкушанка
@@ -222,6 +221,7 @@ relation,19194735,Нёман / Неман / Nemunas,relation,189775,Нёман /
 relation,19208958,Нёман / Неман / Nemunas,relation,189775,Нёман / Неман / Nemunas,Нёман,Неман
 relation,19258759,Нёман / Неман / Nemunas,relation,189775,Нёман / Неман / Nemunas,Нёман,Неман
 relation,19567450,Нёман / Неман / Nemunas,relation,189775,Нёман / Неман / Nemunas,Нёман,Неман
+relation,19909327,Одла / Odła,relation,8415392,Одла / Odła,Одла,Одла
 relation,8244402,Пеляса / Pelesa,relation,9350457,Пеляса / Pelesa,Пеляса,Пеляса
 relation,8244403,Пеляса / Pelesa,relation,9350457,Пеляса / Pelesa,Пеляса,Пеляса
 relation,8523607,Пеляса / Pelesa,relation,9350457,Пеляса / Pelesa,Пеляса,Пеляса
@@ -235,5 +235,8 @@ relation,8415654,Свіслач / Świsłocz,relation,182084,Свіслач / Ś
 relation,8415661,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
 relation,8415812,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
 relation,8535871,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
+relation,8542745,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
 relation,8588680,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
+relation,8889936,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
 relation,9205112,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
+relation,19909325,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
