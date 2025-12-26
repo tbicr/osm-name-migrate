@@ -73,7 +73,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,bridge = *,249,0,0,0.000,0.000,5,0,0,0.000,0.000
 #,public_transport,1986,35,50,0.018,0.025,71,3,4,0.042,0.056
 ,highway = bus_stop,392,0,0,0.000,0.000,47,0,0,0.000,0.000
-,type = route,0,0,0,0.000,0.000,0,0,0,0.000,0.000
+,type = route,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,type = route_master,11,3,0,0.273,0.000,5,1,0,0.200,0.000
 ,type = disused:route,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,type = public_transport,0,0,0,0.000,0.000,0,0,0,0.000,0.000
