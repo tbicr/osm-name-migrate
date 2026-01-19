@@ -68,6 +68,8 @@ relation,9259376,Дзвіна / Daugava / Западная Двина,relation,5
 relation,19769429,Дзвіна / Daugava / Западная Двина,relation,549362,Дзвіна / Daugava / Западная Двина,Дзвіна,Западная Двина
 relation,19443568,Жыжма / Žižma,relation,8377390,Жыжма / Žižma,Жыжма,Жижма
 relation,19443570,Жыжма / Žižma,relation,8377390,Жыжма / Žižma,Жыжма,Жижма
+relation,7770817,Калонка / Kołonna,relation,9205036,Калонка / Kołonna,Калонка,Колонка
+relation,9191948,Калонка / Kołonna,relation,9205036,Калонка / Kołonna,Калонка,Колонка
 relation,9205035,Калонка / Kołonna,relation,9205036,Калонка / Kołonna,Калонка,Колонка
 relation,9584608,Калонка / Kołonna,relation,9205036,Калонка / Kołonna,Калонка,Колонка
 relation,20085124,Калонка / Kołonna,relation,9205036,Калонка / Kołonna,Калонка,Колонка
@@ -240,11 +242,13 @@ relation,8415392,Свіслач / Świsłocz,relation,182084,Свіслач / Ś
 relation,8415607,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
 relation,8415654,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
 relation,8415661,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
-relation,8415812,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
+relation,8415812,Свіслач / Świsłocz,way,558331180,Свіслач / Świsłocz,Свіслач,Свислочь
 relation,8535871,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
+relation,8536032,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
 relation,8542745,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
 relation,8588680,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
-relation,8889936,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
+relation,8889936,Свіслач / Świsłocz,way,476993382,Свіслач / Świsłocz,Свіслач,Свислочь
+relation,9191950,Свіслач / Świsłocz,way,476993382,Свіслач / Świsłocz,Свіслач,Свислочь
 relation,9205112,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
 relation,9256666,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
 relation,19909325,Свіслач / Świsłocz,relation,182084,Свіслач / Świsłocz,Свіслач,Свислочь
