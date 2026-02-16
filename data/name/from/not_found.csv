@@ -1,4 +1,5 @@
 dep_osm_type,dep_osm_id,dependant,osm_type,osm_id,name,name:be,name:ru
+relation,20219948,Aўтастанцыя,,,,,
 relation,17771373,Brest,,,,,
 relation,17816767,Brest,,,,,
 relation,17816886,Brest Sieviernyj,,,,,
@@ -737,6 +738,7 @@ relation,2952092,"рынок ""Южный""",,,,,
 relation,3105467,"рынок ""Южный""",,,,,
 relation,3495414,"рынок ""Южный""",,,,,
 relation,3495414,"рынок ""Южный""",,,,,
+relation,19932939,ст. Друть,,,,,
 relation,19932939,ст. Друть,,,,,
 relation,19932939,ст. Друть,,,,,
 relation,19932939,ст. Друть,,,,,
