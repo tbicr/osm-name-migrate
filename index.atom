@@ -10,17 +10,52 @@
   </author>
   <icon>https://openstreetmap.by/favicon.ico</icon>
   <generator>daily report</generator><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">office +4 not fixed +4 total</title>
-    <id>office#2026-02-18T07:21:15Z</id>
-    <updated>2026-02-18T07:21:15Z</updated>
-    <published>2026-02-18T07:21:15Z</published>
+    <title type="text">addr:city +1 not fixed +27 total</title>
+    <id>addr:city#2026-02-19T07:21:06Z</id>
+    <updated>2026-02-19T07:21:06Z</updated>
+    <published>2026-02-19T07:21:06Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13573862436</td><td>БТИ</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = *</td></tr><tr><td>node</td><td>13573862435</td><td>ЖКХ</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = *</td></tr><tr><td>node</td><td>13573968701</td><td>ПромТехноЛидер</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = *</td></tr><tr><td>node</td><td>13573968601</td><td>ПромТехноЛидер</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = *</td></tr></table></content>
+    <content type="html"><table><tr><th>dep_osm_type</th><th>dep_osm_id</th><th>dependant</th><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>node</td><td>13577701506</td><td>МИНСК</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>58108781</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>6693546085</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>1270323505</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>4727727592</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>8374837259</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>4727692992</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>10114102079</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>57991217</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>86983911</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>96324286</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>10960118550</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>86983821</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>86983995</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>13294658590</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>9025856672</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>86983952</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>4727712991</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>8749187839</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>4727728389</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>86983885</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>12623394714</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>4727704890</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>10960127652</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>1255792744</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>10960127651</td><td><b>Брэст</b></td><td>relation</td><td>72615</td><td>Брест</td><td>Брэст</td><td>Брест</td><td>ru+be</td><td>addr:city</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>1479998744</td><td><b>Бабруйск</b></td><td>relation</td><td>167857</td><td>Бобруйск</td><td>Бабруйск</td><td>Бобруйск</td><td>ru+be</td><td>addr:city</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">industrial +0 not fixed +1 total</title>
-    <id>industrial#2026-02-18T07:21:15Z</id>
-    <updated>2026-02-18T07:21:15Z</updated>
-    <published>2026-02-18T07:21:15Z</published>
+    <title type="text">natural +1 not fixed +1 total</title>
+    <id>natural#2026-02-19T07:21:06Z</id>
+    <updated>2026-02-19T07:21:06Z</updated>
+    <published>2026-02-19T07:21:06Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#d9ead3;"><td>way</td><td>663039021</td><td>ААТ БЕЛХІМ</td><td><b>ААТ БЕЛХІМ</b></td><td><b>ОАО БЕЛХИМ</b></td><td>no_lang</td><td>building = industrial</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>1479997799</td><td>Остров Эпштейна &quot;Литл-Сент-Джеймс&quot;</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>place = islet</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">healthcare +1 not fixed +1 total</title>
+    <id>healthcare#2026-02-19T07:21:06Z</id>
+    <updated>2026-02-19T07:21:06Z</updated>
+    <published>2026-02-19T07:21:06Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>12623394714</td><td>Аптека № 36</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>healthcare = * | amenity = pharmacy</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">addr:street +1 not fixed +1 total</title>
+    <id>addr:street#2026-02-19T07:21:06Z</id>
+    <updated>2026-02-19T07:21:06Z</updated>
+    <published>2026-02-19T07:21:06Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>dep_osm_type</th><th>dep_osm_id</th><th>dependant</th><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>way</td><td>1479998744</td><td>Карбышева</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>addr:street</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">government +1 not fixed +1 total</title>
+    <id>government#2026-02-19T07:21:06Z</id>
+    <updated>2026-02-19T07:21:06Z</updated>
+    <published>2026-02-19T07:21:06Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>25321647</td><td>Городской Клинический Центр Паллиативной Медицинской Помощи</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>building = public</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">religion +1 not fixed +1 total</title>
+    <id>religion#2026-02-19T07:21:06Z</id>
+    <updated>2026-02-19T07:21:06Z</updated>
+    <published>2026-02-19T07:21:06Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>1479998744</td><td>Мечеть «Дом Аллаха» (Бейту-Ллах)</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>religion = * | amenity = place_of_worship</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">sport +1 not fixed +1 total</title>
+    <id>sport#2026-02-19T07:21:06Z</id>
+    <updated>2026-02-19T07:21:06Z</updated>
+    <published>2026-02-19T07:21:06Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>25321647</td><td>Городской Клинический Центр Паллиативной Медицинской Помощи</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>leisure = *</td></tr></table></content>
   </entry></feed>
