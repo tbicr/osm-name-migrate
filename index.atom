@@ -10,45 +10,38 @@
   </author>
   <icon>https://openstreetmap.by/favicon.ico</icon>
   <generator>daily report</generator><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">infrastructure +24 not fixed +26 total</title>
-    <id>infrastructure#2026-02-27T07:21:19Z</id>
-    <updated>2026-02-27T07:21:19Z</updated>
-    <published>2026-02-27T07:21:19Z</published>
+    <title type="text">addr:street +0 not fixed +1 total</title>
+    <id>addr:street#2026-02-28T07:21:28Z</id>
+    <updated>2026-02-28T07:21:28Z</updated>
+    <published>2026-02-28T07:21:28Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#d9ead3;"><td>relation</td><td>20267274</td><td>Мірадзіна - Бабірова</td><td><b>Мірадзіна - Бабірова</b></td><td><b>Мирадино - Бабирово</b></td><td>no_lang</td><td>power = *</td></tr><tr><td>relation</td><td>20267269</td><td>№1 Мірадзіна - Бабруйск Заходняя</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>relation</td><td>20267432</td><td>№1 Бабруйск Паўднёвая - Бярэзінская</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>relation</td><td>20267361</td><td>ЦЭЦ-22 - Цітаўка</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>way</td><td>1057810806</td><td>ППС</td><td>&nbsp;</td><td>ППС</td><td>ru</td><td>building = service</td></tr><tr><td>relation</td><td>20267363</td><td>Бабруйск Цэнтральная - Цітаўка</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>relation</td><td>20267009</td><td>Бабруйск-цягавая - ЦЭЦ-22</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>relation</td><td>20267433</td><td>№2 Бабруйск Паўднёвая - Бярэзінская</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>relation</td><td>20267359</td><td>№2 ЦЭЦ-22 - ЦЭЦ-9</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>way</td><td>1483567705</td><td>ДНС</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>man_made = *</td></tr><tr><td>node</td><td>11208511427</td><td>Проходная комплектная транформаторная подстация №18</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>substation = * | power = *</td></tr><tr><td>relation</td><td>20267360</td><td>№1 ЦЭЦ-22 - ЦЭЦ-9</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>relation</td><td>20267362</td><td>Цітаўка - Дубаўка</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>relation</td><td>20267272</td><td>№2 Мірадзіна - Бабруйск Паўднёвая</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>relation</td><td>20267008</td><td>Мірадзіна - СБГШ</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>way</td><td>751707638</td><td>ППС</td><td>&nbsp;</td><td>ППС</td><td>ru</td><td>building = service</td></tr><tr style="background-color:#d9ead3;"><td>relation</td><td>20267273</td><td>Мірадзіна - Гарбацэвічы</td><td><b>Мірадзіна - Гарбацэвічы</b></td><td><b>Мирадино - Горбацевичи</b></td><td>no_lang</td><td>power = *</td></tr><tr><td>relation</td><td>20267005</td><td>№1 Мірадзіна - ЦЭЦ-22</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>way</td><td>1483567704</td><td>Пожарный резервуар</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>man_made = *</td></tr><tr><td>relation</td><td>20267006</td><td>№2 Мірадзіна - ЦЭЦ-22</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>relation</td><td>20267271</td><td>№1 Мірадзіна - Бабруйск Паўднёвая</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>way</td><td>798867752</td><td>ЦЭЦ-22 - Цітаўка</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>way</td><td>833152566</td><td>ГРП №51</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>man_made = * | building = service</td></tr><tr><td>relation</td><td>20267270</td><td>№2 Мірадзіна - Бабруйск Заходняя</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>relation</td><td>20267007</td><td>Мірадзіна - Бабруйск-цягавая</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>way</td><td>384180367</td><td>№1 ЦЭЦ-22 - ЦЭЦ-9</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr></table></content>
+    <content type="html"><table><tr><th>dep_osm_type</th><th>dep_osm_id</th><th>dependant</th><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#d9ead3;"><td>way</td><td>1226894820</td><td><b>Маладзёжная</b></td><td>node</td><td>1180352635</td><td>Молодёжная</td><td>Маладзёжная</td><td>Молодёжная</td><td>ru+be</td><td>addr:street</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">destination +2 not fixed +2 total</title>
-    <id>destination#2026-02-27T07:21:19Z</id>
-    <updated>2026-02-27T07:21:19Z</updated>
-    <published>2026-02-27T07:21:19Z</published>
+    <title type="text">office +2 not fixed +3 total</title>
+    <id>office#2026-02-28T07:21:28Z</id>
+    <updated>2026-02-28T07:21:28Z</updated>
+    <published>2026-02-28T07:21:28Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>dep_osm_type</th><th>dep_osm_id</th><th>dependant</th><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>relation</td><td>15087825</td><td>Volma</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>destination</td></tr><tr style="background-color:#fff2cc;"><td>relation</td><td>3751404</td><td>Прыпяць / Прип&#x27;ять</td><td>relation</td><td>7190105</td><td>Прыпяць / Прип&#x27;ять</td><td>Прыпяць</td><td>&nbsp;</td><td>other_be</td><td>destination</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>node</td><td>8860123317</td><td>КУМПП ЖКХ &quot;Жабинковское ЖКХ&quot;</td><td>ЖКГ</td><td>ЖКХ</td><td>other_both</td><td>office = *</td></tr><tr><td>node</td><td>13604981308</td><td>ООО «Давла»</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = *</td></tr><tr><td>node</td><td>13605821261</td><td>Белорусский союз ветеранов войны в Афганистане</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = *</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">natural +1 not fixed +1 total</title>
-    <id>natural#2026-02-27T07:21:19Z</id>
-    <updated>2026-02-27T07:21:19Z</updated>
-    <published>2026-02-27T07:21:19Z</published>
+    <title type="text">infrastructure +2 not fixed +2 total</title>
+    <id>infrastructure#2026-02-28T07:21:28Z</id>
+    <updated>2026-02-28T07:21:28Z</updated>
+    <published>2026-02-28T07:21:28Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>relation</td><td>20267270</td><td>№2 Мірадзіна - Бабруйск Заходняя</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>boundary = *</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>relation</td><td>20269785</td><td>БелДРЭС - Орша КС-2</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr><tr><td>relation</td><td>20269784</td><td>Віцебск - БелДРЭС</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>power = *</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">sport +1 not fixed +1 total</title>
-    <id>sport#2026-02-27T07:21:19Z</id>
-    <updated>2026-02-27T07:21:19Z</updated>
-    <published>2026-02-27T07:21:19Z</published>
+    <title type="text">industrial +1 not fixed +1 total</title>
+    <id>industrial#2026-02-28T07:21:28Z</id>
+    <updated>2026-02-28T07:21:28Z</updated>
+    <published>2026-02-28T07:21:28Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13603920822</td><td>Пуля</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>sport = *</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>1226894820</td><td>АЗС</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>landuse = industrial</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">government +0 not fixed +1 total</title>
-    <id>government#2026-02-27T07:21:19Z</id>
-    <updated>2026-02-27T07:21:19Z</updated>
-    <published>2026-02-27T07:21:19Z</published>
+    <title type="text">other +0 not fixed +1 total</title>
+    <id>other#2026-02-28T07:21:28Z</id>
+    <updated>2026-02-28T07:21:28Z</updated>
+    <published>2026-02-28T07:21:28Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>node</td><td>13598152873</td><td>Белпочта</td><td>Белпошта</td><td>Белпочта</td><td>ru+be</td><td>amenity = post_office</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">addr:city +0 not fixed +1 total</title>
-    <id>addr:city#2026-02-27T07:21:19Z</id>
-    <updated>2026-02-27T07:21:19Z</updated>
-    <published>2026-02-27T07:21:19Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>dep_osm_type</th><th>dep_osm_id</th><th>dependant</th><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#d9ead3;"><td>way</td><td>1483567713</td><td><b>Мінск</b></td><td>relation</td><td>59195</td><td>Минск</td><td>Мінск</td><td>Минск</td><td>ru+be</td><td>addr:city</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>node</td><td>13605504840</td><td>Декантер</td><td>Вайлдберис</td><td>Вайлдберис</td><td>other_both</td><td>other</td></tr></table></content>
   </entry></feed>
