@@ -136,7 +136,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building = clinic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,emergency = *,36,5,5,0.139,0.139,35,5,5,0.143,0.143
 ,healthcare = *,52,12,12,0.231,0.231,47,9,9,0.191,0.191
-#,government,176,20,22,0.114,0.125,171,20,21,0.117,0.123
+#,government,177,20,23,0.113,0.130,172,20,22,0.116,0.128
 ,amenity = fire_station,21,6,8,0.286,0.381,20,6,8,0.300,0.400
 ,amenity = ranger_station,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = townhall,4,2,1,0.500,0.250,3,2,1,0.667,0.333
@@ -155,7 +155,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = public_building,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = public_bath,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,amenity = vehicle_inspection,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,office = government,49,5,5,0.102,0.102,48,5,4,0.104,0.083
+,office = government,50,5,6,0.100,0.120,49,5,5,0.102,0.102
 ,office = diplomatic,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = newspaper,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = research,5,0,0,0.000,0.000,5,0,0,0.000,0.000
@@ -166,7 +166,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,office = notary,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,building = public,7,1,1,0.143,0.143,7,1,1,0.143,0.143
 ,landuse = military,5,0,0,0.000,0.000,5,0,0,0.000,0.000
-,government = *,40,4,5,0.100,0.125,39,4,4,0.103,0.103
+,government = *,41,4,6,0.098,0.146,40,4,5,0.100,0.125
 ,military = *,2,0,0,0.000,0.000,2,0,0,0.000,0.000
 ,embassy = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,diplomatic = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
@@ -239,4 +239,4 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,building:part = *,1,0,0,0.000,0.000,1,0,0,0.000,0.000
 ,entrance = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 #,other,1,0,0,0.000,0.000,1,0,0,0.000,0.000
-#,TOTAL,4688,3582,3589,0.764,0.766,3463,2496,2545,0.721,0.735
+#,TOTAL,4689,3582,3590,0.764,0.766,3464,2496,2546,0.721,0.735
