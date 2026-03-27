@@ -86,8 +86,8 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,route_master = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,railway = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,aeroway = *,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-#,industrial,135,0,0,0.000,0.000,6,0,0,0.000,0.000
-,landuse = industrial,126,0,0,0.000,0.000,4,0,0,0.000,0.000
+#,industrial,136,0,0,0.000,0.000,6,0,0,0.000,0.000
+,landuse = industrial,127,0,0,0.000,0.000,4,0,0,0.000,0.000
 ,building = industrial,8,0,0,0.000,0.000,3,0,0,0.000,0.000
 ,building = warehouse,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,office = construction_company,0,0,0,0.000,0.000,0,0,0,0.000,0.000
