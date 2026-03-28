@@ -10,38 +10,17 @@
   </author>
   <icon>https://openstreetmap.by/favicon.ico</icon>
   <generator>daily report</generator><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">to +1 not fixed +1 total</title>
-    <id>to#2026-03-27T07:21:05Z</id>
-    <updated>2026-03-27T07:21:05Z</updated>
-    <published>2026-03-27T07:21:05Z</published>
+    <title type="text">tourism +2 not fixed +3 total</title>
+    <id>tourism#2026-03-28T07:21:17Z</id>
+    <updated>2026-03-28T07:21:17Z</updated>
+    <published>2026-03-28T07:21:17Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>dep_osm_type</th><th>dep_osm_id</th><th>dependant</th><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>relation</td><td>317889</td><td>Kuźnica Białostocka</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>to</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>node</td><td>13022498891</td><td>Конь, слон и черепаха</td><td>Конь, слон и чарапаха</td><td>Конь, слон и черепаха</td><td>ru+be</td><td>artwork_type = *</td></tr><tr><td>node</td><td>13681659003</td><td>Хороший вид (Рядом руины ДОТа ПМВ)</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>tourism = *</td></tr><tr><td>node</td><td>13684863905</td><td>Необычная сосна &quot;Гидра&quot;</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>tourism = *</td></tr></table></content>
   </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">tourism +5 not fixed +5 total</title>
-    <id>tourism#2026-03-27T07:21:05Z</id>
-    <updated>2026-03-27T07:21:05Z</updated>
-    <published>2026-03-27T07:21:05Z</published>
+    <title type="text">education +1 not fixed +2 total</title>
+    <id>education#2026-03-28T07:21:17Z</id>
+    <updated>2026-03-28T07:21:17Z</updated>
+    <published>2026-03-28T07:21:17Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13681659002</td><td>Красивый заток</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>tourism = *</td></tr><tr><td>node</td><td>13681659003</td><td>Хороший вид (рядом Руины немец. ДОТа ПМВ)</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>tourism = *</td></tr><tr><td>node</td><td>13681661401</td><td>Руины немец. ДОТа (ПМВ)</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>tourism = *</td></tr><tr><td>node</td><td>13681602202</td><td>Руины бетон. укреплений ПМВ</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>tourism = *</td></tr><tr><td>node</td><td>13681612501</td><td>Руины немец. укреплений/ДОТ-ов ПМВ (вдоль склона)</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>tourism = *</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">office +1 not fixed +1 total</title>
-    <id>office#2026-03-27T07:21:05Z</id>
-    <updated>2026-03-27T07:21:05Z</updated>
-    <published>2026-03-27T07:21:05Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13681105968</td><td>Ингосстрах</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = *</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">from +1 not fixed +1 total</title>
-    <id>from#2026-03-27T07:21:05Z</id>
-    <updated>2026-03-27T07:21:05Z</updated>
-    <published>2026-03-27T07:21:05Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>dep_osm_type</th><th>dep_osm_id</th><th>dependant</th><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>relation</td><td>317889</td><td>Grodno</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>not_found</td><td>from</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">place +0 not fixed +1 total</title>
-    <id>place#2026-03-27T07:21:05Z</id>
-    <updated>2026-03-27T07:21:05Z</updated>
-    <published>2026-03-27T07:21:05Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#d9ead3;"><td>node</td><td>242978889</td><td><b>Камянец</b></td><td>Камянец</td><td>Каменец</td><td>ru+be</td><td>place = town</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>way</td><td>269525481</td><td>Детский сад</td><td>Дзіцячы садок</td><td>Детский сад</td><td>ru+be</td><td>building = kindergarten</td></tr><tr><td>node</td><td>12382174012</td><td>Детский сад</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>amenity = kindergarten</td></tr></table></content>
   </entry></feed>
