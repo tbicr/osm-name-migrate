@@ -10,45 +10,45 @@
   </author>
   <icon>https://openstreetmap.by/favicon.ico</icon>
   <generator>daily report</generator><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">infrastructure +1 not fixed +1 total</title>
-    <id>infrastructure#2026-04-01T06:21:36Z</id>
-    <updated>2026-04-01T06:21:36Z</updated>
-    <published>2026-04-01T06:21:36Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>1494530517</td><td>ГРП №57</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>building = service | man_made = *</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">addr:place +0 not fixed +40 total</title>
-    <id>addr:place#2026-04-01T06:21:36Z</id>
-    <updated>2026-04-01T06:21:36Z</updated>
-    <published>2026-04-01T06:21:36Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>dep_osm_type</th><th>dep_osm_id</th><th>dependant</th><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927554</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927587</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927877</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927600</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927546</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927568</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927621</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927551</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927556</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927574</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927602</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927593</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927550</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927577</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927608</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927580</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927619</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927559</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927584</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927579</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927539</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927879</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927564</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927570</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927558</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927548</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927543</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927572</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927555</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927576</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927562</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927604</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927882</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927614</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927541</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>13694483376</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927590</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927878</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927585</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr><tr style="background-color:#d9ead3;"><td>way</td><td>903927566</td><td><b>Раманы</b></td><td>way</td><td>963749169</td><td>Романы</td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>addr:place</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">allotments +0 not fixed +1 total</title>
-    <id>allotments#2026-04-01T06:21:36Z</id>
-    <updated>2026-04-01T06:21:36Z</updated>
-    <published>2026-04-01T06:21:36Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#d9ead3;"><td>way</td><td>963749169</td><td><b>Раманы</b></td><td>Раманы</td><td>Романы</td><td>ru+be</td><td>place = allotments | landuse = allotments</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">government +0 not fixed +2 total</title>
-    <id>government#2026-04-01T06:21:36Z</id>
-    <updated>2026-04-01T06:21:36Z</updated>
-    <published>2026-04-01T06:21:36Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>way</td><td>551285781</td><td>Суд Слонимского района</td><td>Суд</td><td>Суд</td><td>other_both</td><td>amenity = courthouse</td></tr><tr style="background-color:#d9ead3;"><td>node</td><td>13695490001</td><td>Европочта</td><td><b>Еўрапошта</b></td><td><b>Европочта</b></td><td>no_lang</td><td>amenity = post_office</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
-    <title type="text">tourism +1 not fixed +1 total</title>
-    <id>tourism#2026-04-01T06:21:36Z</id>
-    <updated>2026-04-01T06:21:36Z</updated>
-    <published>2026-04-01T06:21:36Z</published>
-    <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13695400701</td><td>Руины немец. ДОТа</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>historic = *</td></tr></table></content>
-  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
     <title type="text">office +1 not fixed +1 total</title>
-    <id>office#2026-04-01T06:21:36Z</id>
-    <updated>2026-04-01T06:21:36Z</updated>
-    <published>2026-04-01T06:21:36Z</published>
+    <id>office#2026-04-02T06:21:18Z</id>
+    <updated>2026-04-02T06:21:18Z</updated>
+    <published>2026-04-02T06:21:18Z</published>
     <link href="https://tbicr.github.io/osm-name-migrate/" />
-    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>103538411</td><td>СМУ-1 Белсельэлектросетьстрой</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = *</td></tr></table></content>
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13698930496</td><td>Grantex производство рекламы</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>office = *</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">healthcare +1 not fixed +1 total</title>
+    <id>healthcare#2026-04-02T06:21:18Z</id>
+    <updated>2026-04-02T06:21:18Z</updated>
+    <published>2026-04-02T06:21:18Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>11629881120</td><td>Аптека №5</td><td>&nbsp;</td><td>Аптека №5</td><td>ru</td><td>amenity = pharmacy | healthcare = *</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">government +0 not fixed +1 total</title>
+    <id>government#2026-04-02T06:21:18Z</id>
+    <updated>2026-04-02T06:21:18Z</updated>
+    <published>2026-04-02T06:21:18Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#fff2cc;"><td>node</td><td>13695490001</td><td>Европочта</td><td>Еўрапошта</td><td>Европочта</td><td>ru+be</td><td>amenity = post_office</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">education +0 not fixed +1 total</title>
+    <id>education#2026-04-02T06:21:18Z</id>
+    <updated>2026-04-02T06:21:18Z</updated>
+    <published>2026-04-02T06:21:18Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr style="background-color:#d9ead3;"><td>way</td><td>99057416</td><td>Средняя школа №10</td><td><b>Сярэдняя школа №10</b></td><td><b>Средняя школа №10</b></td><td>no_lang</td><td>amenity = school</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">infrastructure +2 not fixed +2 total</title>
+    <id>infrastructure#2026-04-02T06:21:18Z</id>
+    <updated>2026-04-02T06:21:18Z</updated>
+    <published>2026-04-02T06:21:18Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>way</td><td>1331693101</td><td>КНС №92</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>man_made = * | building = service</td></tr><tr><td>node</td><td>13698945987</td><td>КНС №162</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>man_made = * | building = service</td></tr></table></content>
+  </entry><entry xml:base="https://tbicr.github.io/osm-name-migrate/index.atom">
+    <title type="text">religion +1 not fixed +1 total</title>
+    <id>religion#2026-04-02T06:21:18Z</id>
+    <updated>2026-04-02T06:21:18Z</updated>
+    <published>2026-04-02T06:21:18Z</published>
+    <link href="https://tbicr.github.io/osm-name-migrate/" />
+    <content type="html"><table><tr><th>osm_type</th><th>osm_id</th><th>name</th><th>name:be</th><th>name:ru</th><th>issue</th><th>categories</th></tr><tr><td>node</td><td>13698930492</td><td>Часовня в честь иконы божией матери Знамение</td><td>&nbsp;</td><td>&nbsp;</td><td>no_lang</td><td>religion = * | amenity = place_of_worship</td></tr></table></content>
   </entry></feed>
