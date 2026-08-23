@@ -197,7 +197,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,amenity = fast_food,443,0,107,0.000,0.242,14,0,6,0.000,0.429
 ,amenity = restaurant,7,0,1,0.000,0.143,7,0,1,0.000,0.143
 ,amenity = bar,0,0,0,0.000,0.000,0,0,0,0.000,0.000
-,shop = convenience,1535,6,47,0.004,0.031,58,3,7,0.052,0.121
+,shop = convenience,1535,6,47,0.004,0.031,59,3,7,0.051,0.119
 ,shop = clothes,53,41,41,0.774,0.774,12,4,4,0.333,0.333
 ,shop = car_repair,8,0,0,0.000,0.000,5,0,0,0.000,0.000
 ,shop = hairdresser,1,1,0,1.000,0.000,1,1,0,1.000,0.000
