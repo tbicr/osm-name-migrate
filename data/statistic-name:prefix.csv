@@ -12,7 +12,7 @@ lvl,category,all,all be,all ru,all be%,all ru%,uniq,uniq be,uniq ru,uniq be%,uni
 ,place = village,4884,4882,4884,1.000,1.000,7,7,7,1.000,1.000
 ,place = hamlet,38343,38343,38342,1.000,1.000,6,5,5,0.833,0.833
 ,place = isolated_dwelling,1281,1281,1281,1.000,1.000,4,4,4,1.000,1.000
-,boundary = administrative,22506,22505,22505,1.000,1.000,10,9,9,0.900,0.900
+,boundary = administrative,22507,22506,22506,1.000,1.000,10,9,9,0.900,0.900
 ,traffic_sign = city_limit,0,0,0,0.000,0.000,0,0,0,0.000,0.000
 ,admin_level = *,22340,22339,22339,1.000,1.000,10,9,9,0.900,0.900
 #,allotments,9,5,4,0.556,0.444,3,2,1,0.667,0.333
